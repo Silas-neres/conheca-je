@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    border: 1px solid hotpink;
+    font-family: 'Space Grotesk';
+}
+
+h1{
+   @apply text-[#000C79] font-bold  text-[32px] ;
+}
+
+h2{
+    @apply text-[#000C79] font-bold leading-5 text-xl ;
+}
+
+.teste {
+    @apply flex justify-items-stretch items-center space-x-4 ;
+}
+
+.conheca-je {
+  
+    @apply text-right  ;
+
+    &__container {
+        @apply container mx-auto px-4 ;
+
+        &__sub {
+            @apply flex space-x-4 ;
+        }
+    }
+    
+    &__teste {
+        @apply grid grid-cols-3 ;
+    }
+
+    &__bgamarelo{
+        @apply  bg-yellow-400 ;
+    }
+
+    &__imagem {
+        @apply  flex ;
+    }
+
+    &__cenario {
+        @apply flex justify-end ;
+    }
+
+    &__nivel1 {
+        @apply relative z-0 ;
+
+        &__mulher {
+            @apply relative left-32 ;
+        }
+    }
+
+    &__nivel2 {
+        @apply relative z-10 ;
+
+        &__star {
+            @apply relative left-[-80px] ;
+        }
+    }
+
+    &__nivel3 {
+        @apply relative z-20 ;
+
+        &__urna {
+            @apply relative left-16 ;
+        }
+    }
+
+
+
+    
+    
+}
