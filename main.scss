@@ -4,15 +4,16 @@
 
 *{
     border: 1px solid hotpink;
-    font-family: 'Space Grotesk';
+    font-family: 'Space Grotesk', sans-serif;   
+    font-family: 'Unbounded', sans-serif;
 }
 
 h1{
-   @apply text-[#000C79] font-bold  text-[32px] ;
+    @apply text-[#000C79] font-bold  text-6xl ;
 }
 
 h2{
-    @apply text-[#000C79] font-bold leading-5 text-xl ;
+    @apply text-[#000C79] font-bold leading-5 text-3xl ;
 }
 
 .teste {
@@ -20,8 +21,15 @@ h2{
 }
 
 .conheca-je {
+
   
-    @apply text-right  ;
+    &__bg{
+        @apply bg-no-repeat bg-left-top bg-[url("src/fonts/bgTopo.png")]  ;
+    }
+
+    &__position{
+        @apply flex flex-col items-end justify-center ;
+    }
 
     &__container {
         @apply container mx-auto px-4 ;
@@ -32,12 +40,14 @@ h2{
     }
     
     &__teste {
-        @apply grid grid-cols-3 ;
+        @apply grid grid-cols-2 ;
     }
-
+        
     &__bgamarelo{
         @apply  bg-yellow-400 ;
+        @apply text-center ;
     }
+
 
     &__imagem {
         @apply  flex ;
