@@ -4,33 +4,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/main.css" rel="stylesheet">
   <style lang="sass">
-    @import url('./main.scss');
+    @import url('./scss/main.scss');
   </style>
 </head>
 <body>
 
   <header class="conheca-je">
-    <div class="conheca-je__bg">
-        <div class="conheca-je__teste ">
-              <div class="conheca-je__position space-y-2">
-                <h2 class="conheca-je mr-2">Conheça a</h2>
-                <h1 class="conheca-je__bgamarelo w-1/2 ">Justiça Eleitoral</h1>
+    <div class="conheca-je__header__bg-azul">
+        <div class="conheca-je__header__grid">
+              <div class="conheca-je__header__position-titulo space-y-2">
+                <h2 class="conheca-je__header mr-2">Conheça a</h2>
+                <h1 class="conheca-je__header__bgamarelo">Justiça Eleitoral</h1>
               </div>
 
-              <div class="conheca-je__container conheca-je__imagem ">
-                <img class="conheca-je__nivel1" src="src/fonts/urna 1.png" alt="">
-                <img class="conheca-je__nivel2" src="src/fonts/mulher-feliz.png" alt="">
-                <img class="conheca-je__nivel3" src="src/fonts/star.svg" alt="">
+              <div class="conheca-je__header__position-imagens conheca-je__header__imagem  ">
+                <img class="conheca-je__header__nivel1__mulher" src="src/fonts/mulher-feliz.png" alt="">
+                <img class="conheca-je__header__nivel2__star" src="src/fonts/star.svg" alt="">
+                <img class="conheca-je__header__nivel3__urna" src="src/fonts/urna 1.png" alt="">
             </div>
+        </div>
+        
+      <div class="conheca-je__header__bg-verde">
+        <img src="src/fonts/barra-verde.svg" alt="">
+      </div>
+    </div>  
+    <!-- <div class="box-border h-96 w-full p-4 border-4">babidi</div> -->
+  </header>
 
+  <section class="conheca-je__container mt-6">
+    <div class="conheca-je__grid">
+      <div class="conheca-je__glossario__bg-brasil">
+
+        <div class="conheca-je__glossario__posicao-legenda-verde">
+          <h2 class="conheca-je__glossario__bg-tre conheca-je__glossario__fonte-titulo mb-16">TREs</h2>
+          <h3 class="m-6">NORTE</h3>
+          <h3 class="m-6">NORDESTE</h3>
+          <h3 class="m-6">CENTRO-OESTE</h3>
+          <h3 class="m-6">SUDESTE</h3>
+          <h3 class="m-6">SUL</h3>
         </div>
 
-    </div>  
+      
 
-    <div class="conheca-je__imagem ">
-      <img src="src/fonts/barra-verde.svg" alt="">
+      </div>
+      <div>infos</div>
     </div>
-  </header>
+  </section>
+
+
 
 </body>
 </html>

@@ -1,0 +1,35 @@
+
+
+&__glossario {
+
+    &__bg{
+        &-brasil{
+            @apply bg-no-repeat bg-center bg-[url("src/fonts/brasilbg.svg")]  ;
+        }
+
+        &-tre{
+            @apply bg-red-400  w-1/5 ;
+        }
+    }
+
+    &__fonte{
+
+        &-titulo{
+           @apply text-[#000C79] font-semibold  text-3xl ; 
+        }
+        
+
+    }
+    
+    &__posicao{
+
+        &-legenda-verde{
+            @apply flex flex-col items-start justify-center ml-16 ;
+        }
+        &-imagens{
+            @apply flex flex-col items-end justify-end ;
+        }
+    }
+
+
+}

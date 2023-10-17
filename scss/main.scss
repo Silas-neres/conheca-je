@@ -1,0 +1,46 @@
+@import './tailwind';
+
+
+*{
+    border: 1px solid hotpink;
+    font-family: 'Unbounded', sans-serif;  
+    font-family: 'Space Grotesk', sans-serif; 
+    
+}
+
+// h1{
+//     @apply text-[#000C79] font-bold  text-6xl ;
+// }
+
+// h2{
+//     @apply text-[#000C79] font-semibold leading-5 text-3xl ;
+// }
+
+
+.teste {
+    @apply flex justify-items-stretch items-center space-x-4 ;
+}
+
+.conheca-je {
+
+    &__container {
+        @apply container mx-auto px-4 ;
+
+        &__sub {
+            @apply flex space-x-4 ;
+        }
+    }
+    
+
+    &__imagem {
+        @apply flex ;
+    }
+
+    &__grid {
+        @apply grid grid-cols-2 ;
+    }
+    
+    @import './header.scss';
+    @import './glossario.scss';
+    
+}
