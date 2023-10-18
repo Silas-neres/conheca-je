@@ -1,12 +1,13 @@
 @import './tailwind';
+@import './mixins.scss';
 
 
-*{
-    border: 1px solid hotpink;
-    font-family: 'Unbounded', sans-serif;  
-    font-family: 'Space Grotesk', sans-serif; 
+// *{
+//     border: 1px solid hotpink;
+//     font-family: 'Unbounded', sans-serif;  
+//     font-family: 'Space Grotesk', sans-serif; 
     
-}
+// }
 
 // h1{
 //     @apply text-[#000C79] font-bold  text-6xl ;
@@ -16,6 +17,21 @@
 //     @apply text-[#000C79] font-semibold leading-5 text-3xl ;
 // }
 
+.link {
+    @apply flex w-max justify-center items-center bg-lime-400 rounded-3xl text-[#41934B] py-2 px-8 hover:bg-[#41934B] hover:text-[#ecfcef];
+
+    &--ativo {
+        @apply bg-[#41934B] text-[#ecfcef];
+    }
+}
+
+.lista {
+    @apply divide-y flex flex-row md:flex-col gap-4 md:gap-0;
+}
+
+.item {
+    @apply py-4 ;
+}
 
 .teste {
     @apply flex justify-items-stretch items-center space-x-4 ;

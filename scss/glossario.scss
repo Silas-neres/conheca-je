@@ -24,12 +24,41 @@
     &__posicao{
 
         &-legenda-verde{
-            @apply flex flex-col items-start justify-center ml-16 ;
+            @apply flex flex-col items-start justify-end ml-16 ;
         }
         &-imagens{
             @apply flex flex-col items-end justify-end ;
         }
     }
 
+    &__regioes {
+        
+        @apply flex flex-col md:flex-row ;
+
+        &__caixa {
+
+            @apply box-border h-full w-full p-4 border-4 bg-lime-400 rounded-3xl ;
+    
+        }
+    
+    }
+
+    &__conteudo {
+        @apply w-full text-[#081326];
+
+        .tabs {
+            @apply hidden;
+
+            &--ativo {
+                @apply block;
+            }
+
+            &__ano {
+                @apply text-5xl font-bold p-10; 
+            }
+        }
+        @include nav-tabs();
+        @include tab-content();
+    }
 
 }

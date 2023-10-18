@@ -1,0 +1,63 @@
+@mixin nav-tabs() {
+    .lista {
+        @apply flex flex-row gap-6 border-[#F1EEEE] border-t-[.5px] border-b-[.5px] py-4 px-10 overflow-x-scroll md:overflow-auto;
+    }
+
+    .link {
+        @apply flex w-max justify-center items-center bg-[#ecfcef] rounded-3xl text-[#41934B] py-2 px-6 hover:bg-[#41934B] hover:text-[#ecfcef];
+
+        &--ativo {
+            @apply bg-[#41934B] text-[#ecfcef];
+        }
+    }
+}
+
+@mixin tab-content() {
+    .tab {
+        @apply p-10 hidden text-xl text-[#081326];
+
+        &--ativo {
+            @apply block;
+        }
+
+        p {
+            @apply leading-7 mb-4;
+        }
+
+        h3 {
+            @apply text-3xl font-bold mb-5;
+        }
+
+        h4 {
+            @apply text-2xl font-bold mb-5;
+        }
+        
+        .file-pdf, .file-vid {
+            @apply flex before:content-[""] before:block before:w-[25px] before:h-[25px] before:mr-2;
+        }
+
+        .file-pdf {
+            @apply before:bg-[url:var(--icone-pdf)];
+        }
+
+        .file-vid {
+            @apply before:bg-[url:var(--icone-play)];
+        }
+
+        a {
+            @apply underline hover:no-underline;
+        }
+
+        ul {
+            @apply list-disc ml-4;
+        }
+
+        li {
+            @apply my-2;
+        }
+
+        .painel-fotos {
+            @apply grid grid-cols-3 md:grid-cols-5 gap-4;
+        }
+    }
+}
