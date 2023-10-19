@@ -18,10 +18,10 @@
 // }
 
 .link {
-    @apply flex w-max justify-center items-center bg-lime-400 rounded-3xl text-[#41934B] py-2 px-8 hover:bg-[#41934B] hover:text-[#ecfcef];
+    @apply flex justify-end items-end bg-[#B8FE43] text-[#163570] text-2xl py-2 px-8 hover:font-bold ;
 
     &--ativo {
-        @apply bg-[#41934B] text-[#ecfcef];
+        @apply font-bold text-2xl text-[#163570] bg-no-repeat bg-right bg-[url(src/fonts/seta-azul.svg)];
     }
 }
 
