@@ -31,79 +31,182 @@
     <!-- <div class="box-border h-96 w-full p-4 border-4">babidi</div> -->
   </header>
 
+  <!-- glossário -->
   <section class="conheca-je__container mt-6">
     <div class="conheca-je__grid">
-      <div class="conheca-je__glossario__bg-brasil p-32 ">
+      <div class="conheca-je__glossario__bg-brasil p-32 ml-16 ">
         <div>
-        <h1 class="conheca-je__glossario__tre ">TREs</h1>
+        <h1 class="conheca-je__glossario__tre">TREs</h1>
         </div>
 
-        <div class="conheca-je__glossario__regioes mt-16">
-          <ul class="conheca-je__glossario__regioes--caixa">
-              <li class="item">
-                  <a href="#" class="link" tab="norte">NORTE</a>
-              </li>
-              <li class="item">
-                  <a href="#" class="link " tab="nordeste">NORDESTE</a>
-              </li>
-              <li class="item">
-                  <a href="#" class="link link--ativo" tab="centro-oeste">CENTRO-OESTE</a>
-              </li>
-              <li class="item">
-                  <a href="#" class="link" tab="sudeste">SUDESTE</a>
-              </li>
-              <li class="item">
-                  <a href="#" class="link" tab="sul">SUL</a>
-              </li>
-          </ul>
-        </div>
+      <div class="conheca-je__imagem">
 
-
-        <div class="conheca-je__glossario__conteudo flex-col">
-          <div class="tabs tab-nordeste tab--ativo">
-            <ul>
-              <li><a href="https://www.tre-al.jus.br/#/">ALAGOAS</a></li>
-              <li><a href="https://www.tre-ba.jus.br/#/">BAHIA</a></li>
-              <li><a href="https://www.tre-ce.jus.br/#/">CEARA</a></li>
-              <li><a href="https://www.tre-ma.jus.br/#/">MARANHAO</a></li>
-              <li><a href="https://www.tre-pa.jus.br/#/">PARAIBA</a></li>
-              <li><a href="https://www.tre-pb.jus.br/#/">PERNAMBUCO</a></li>
-              <li><a href="https://www.tre-pi.jus.br/#/">PIAUI</a></li>
-              <li><a href="https://www.tre-RN.jus.br/#/">RIO GRANDE DO NORTE</a></li>
-              <li><a href="https://www.tre-SE.jus.br/#/">SERGIPE</a></li>
+          <div class="conheca-je__glossario__regioes mt-16 ">
+            <ul class="conheca-je__glossario__regioes--caixa">
+                <li class="item">
+                    <a href="#" class="link" tab="norte">NORTE</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link " tab="nordeste">NORDESTE</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link" tab="centro-oeste">CENTRO-OESTE</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link" tab="sudeste">SUDESTE</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link" tab="sul">SUL</a>
+                </li>
             </ul>
           </div>
-        </div>
 
-              
-      <script>
-        const links = document.querySelectorAll(".conheca-je__glossario__regioes .link");
-        const tabs = document.querySelectorAll(".conheca-je__glossario__conteudo .tabs");
+          <div class="conheca-je__glossario__conteudo conheca-je__glossario__posicao-estados">
 
-        links.forEach(link => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
+            <!-- Norte -->
+
+            <div class="tabs tab-norte ">
+            <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="linkinterno">ACRE</a>
+            </li>
+            <li>
+              <a href="https://www.tre-ap.jus.br/#/" class="linkinterno">AMAPÁ</a>
+            </li>
+            <li>
+              <a href="https://www.tre-am.jus.br/#/" class="linkinterno">AMAZONAS</a>
+            </li>
+            <li>
+              <a href="https://www.tre-pa.jus.br/#/" class="linkinterno">PARÁ</a>
+            </li>
+            <li>
+              <a href="https://www.tre-ro.jus.br/#/" class="linkinterno">RONDÔNIA</a>
+            </li>
+            <li>
+              <a href="https://www.tre-rr.jus.br/#/" class="linkinterno">RORAIMA</a>
+            </li>
+            <li>
+              <a href="https://www.tre-to.jus.br/#/" class="linkinterno">TOCANTINS</a>
+            </li>
+            </ul>
+            </div>
+
+            <!-- Nordeste -->
+              <div class="tabs tab-nordeste ">
+                <ul>
+                  <li>
+                    <a href="https://www.tre-al.jus.br/#/" class="linkinterno">ALAGOAS</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ba.jus.br/#/" class="linkinterno">BAHIA</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ce.jus.br/#/" class="linkinterno">CEARÁ</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ma.jus.br/#/" class="linkinterno">MARANHÃO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-pa.jus.br/#/" class="linkinterno">PARAÍBA</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-pb.jus.br/#/" class="linkinterno">PERNAMBUCO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-pi.jus.br/#/" class="linkinterno">PIAUÍ</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-RN.jus.br/#/" class="linkinterno">RIO GRANDE DO NORTE</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-SE.jus.br/#/" class="linkinterno">SERGIPE</a>
+                  </li>
+                </ul>
+              </div>
+
+            <!-- Centro-Oeste -->
+              <div class="tabs tab-centro-oeste">
+                <ul>
+                  <li>
+                    <a href="https://www.tre-df.jus.br/#/" class="linkinterno">DISTRITO FEDERAL</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-go.jus.br/#/" class="linkinterno">GOIÁS</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-mt.jus.br/#/" class="linkinterno">MATO GROSOO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ms.jus.br/#/" class="linkinterno">MATO GROSSO DO SUL</a>
+                  </li>
+                </ul>
+              </div>
+
+            <!-- Sudeste -->
+              <div class="tabs tab-sudeste">
+                <ul>
+                  <li>
+                    <a href="https://www.tre-es.jus.br/#/" class="linkinterno">ESPÍRITO SANTO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-mg.jus.br/#/" class="linkinterno">MINAS GERAIS</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-rj.jus.br/#/" class="linkinterno">RIO DE JANEIRO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-sp.jus.br/#/" class="linkinterno">SÃO PAULO</a>
+                  </li>
+                </ul>
+              </div>
+
+            <!-- Sul -->
+              <div class="tabs tab-sul">
+                <ul>
+                  <li>
+                    <a href="https://www.tre-pr.jus.br/#/" class="linkinterno">PARANÁ</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-rs.jus.br/#/" class="linkinterno">RIO GRANDE DO SUL</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-sc.jus.br/#/" class="linkinterno">SANTA CATARINA</a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+
                 
-                // Remove a classe ativa de todos os links
-                links.forEach(l => l.classList.remove("link--ativo"));
-                
-                // Adiciona a classe ativa ao link clicado
-                link.classList.add("link--ativo");
-                
-                // Obtém o valor do atributo "tab" do link clicado
-                const tabId = link.getAttribute("tab");
-                
-                // Remove a classe ativa de todas as abas de conteúdo
-                tabs.forEach(tab => tab.classList.remove("tab--ativo"));
-                
-                // Adiciona a classe ativa à aba de conteúdo correspondente
-                const selectedTab = document.querySelector(`.tabs.tab-${tabId}`);
-                if (selectedTab) {
-                    selectedTab.classList.add("tab--ativo");
-                }
-            });
-        });
-      </script>
+        <script>
+          const links = document.querySelectorAll(".conheca-je__glossario__regioes .link");
+          const tabs = document.querySelectorAll(".conheca-je__glossario__conteudo .tabs");
+
+          links.forEach(link => {
+              link.addEventListener("click", (e) => {
+                  e.preventDefault();
+                  
+                  // Remove a classe ativa de todos os links
+                  links.forEach(l => l.classList.remove("link--ativo"));
+                  
+                  // Adiciona a classe ativa ao link clicado
+                  link.classList.add("link--ativo");
+                  
+                  // Obtém o valor do atributo "tab" do link clicado
+                  const tabId = link.getAttribute("tab");
+                  
+                  // Remove a classe ativa de todas as abas de conteúdo
+                  tabs.forEach(tab => tab.classList.remove("tab--ativo"));
+                  
+                  // Adiciona a classe ativa à aba de conteúdo correspondente
+                  const selectedTab = document.querySelector(`.tabs.tab-${tabId}`);
+                  if (selectedTab) {
+                      selectedTab.classList.add("tab--ativo");
+                  }
+              });
+          });
+        </script>
+      </div>
+
 
        
 
