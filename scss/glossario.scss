@@ -8,8 +8,13 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
             @apply bg-no-repeat bg-center bg-[url("src/fonts/brasilbg.svg")]  ;
         }
 
-        &-tre{
-            @apply bg-red-400  w-1/5 ;
+
+        &-explicatse{
+            @apply w-full rounded-full py-4 px-8 space-x-2 text-center text-4xl  text-[#FFF] bg-[#A13FE6] ;
+
+            &-bold{
+                @apply font-bold;
+            }
         }
     }
 
@@ -28,11 +33,15 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
             @apply  py-8 mt-16 ml-10 ;
         }
 
+        &-container{
+            @apply p-32 ml-16 ;
+        }
+
     }
 
     &__regioes {
         
-        @apply flex flex-col md:flex-row ;
+        @apply flex flex-col md:flex-row justify-center ;
 
         &--caixa {
 
