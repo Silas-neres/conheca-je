@@ -10,7 +10,7 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
 
 
         &-explicatse{
-            @apply w-full rounded-full py-4 px-8 space-x-2 text-center text-4xl  text-[#FFF] bg-[#A13FE6] ;
+            @apply w-2/3 rounded-full py-4 px-8 space-x-2 text-center text-4xl  text-[#FFF] bg-[#A13FE6] ;
 
             &-bold{
                 @apply font-bold;
@@ -37,6 +37,10 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
             @apply p-32 ml-16 ;
         }
 
+        &-container-infos {
+            @apply p-24 ;
+        }
+
     }
 
     &__regioes {
@@ -46,7 +50,10 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
         &--caixa {
 
             @apply box-border h-full w-48 p-4 border-2 bg-[#B8FE43] rounded-3xl ;
-    
+        }
+
+        &--caixa2 {
+            @apply box-border h-48 w-full p-4 border-2 bg-[#D99CD533] rounded-3xl ;   
         }
     
     }
