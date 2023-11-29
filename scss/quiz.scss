@@ -1,0 +1,43 @@
+
+&__quiz {
+
+    &__regioes{
+
+        @apply flex flex-col justify-center ;
+
+        &-caixa1{
+            @apply box-border h-24 w-1/3 p-3 border-4 bg-[#f4f4f4] ;
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0 99%, 0 41%);
+            // box-shadow: rgb(38, 57, 77) 0px 20px 0px -10px;
+        }
+        &-caixa2{
+            @apply box-border h-full w-48 p-4 border-2 bg-[#B8FE43] rounded-3xl ;
+        }
+    }
+
+    &__alinhar{
+
+        &-centro{
+            @apply grid grid-rows-3 gap-4 ;
+        }
+    }
+
+    &__texto{
+
+        &-titulo1{
+            @apply text-[#000C79] font-bold  text-5xl mr-2 ;
+        }
+        &-titulo2{
+            @apply text-[#00DB4D] font-bold  text-5xl mr-2 ;
+        }
+    }
+
+    &__perguntas {
+
+        @apply  w-96  rounded-full p-3 text-center text-3xl place-self-start  bg-[#B8FE43] ;
+    }
+
+    &__box {
+        @apply container h-48 w-3/4 border-4 place-self-start ; 
+    }
+}
