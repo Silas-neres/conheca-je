@@ -1,0 +1,67 @@
+@layer components{
+    .accordion-header {
+        @apply py-4 px-6 cursor-pointer ;
+    }
+    .accordion-header.active i {
+        @apply transition ease-in-out duration-300 ;
+        transform: rotateX(180deg) ;
+    }
+    .accordion-body {
+        @apply max-h-0 overflow-hidden transition-all duration-200 ease-out ;
+    }
+}
+
+
+&__perguntas {
+    
+
+    @apply space-y-4 ;
+
+    &__alinhar{
+
+        @apply  h-auto ;
+
+        &-centro{
+            @apply flex  justify-start items-start max-w-4xl mx-auto;
+        }
+
+        &-entre{
+            @apply flex items-center justify-between  ;
+        }
+
+        &-conteudo{
+            @apply p-4 border-t ; 
+        }
+        
+       
+    }
+
+    &__fonte{
+
+        &-titulo{
+            @apply  w-1/2 text-center  rounded-full p-3  text-slate-900 text-3xl mb-3   bg-[#00FF5A] ;
+
+        }
+        &-subtitulo{
+            @apply font-semibold text-2xl text-green-500 ;
+        }
+    }
+
+    &__box{
+
+        &-tamanho{
+            @apply max-w-2xl mx-auto ;
+        }
+
+        &-borda{
+            @apply   bg-black ;
+        }
+
+        &-borda2{
+            @apply border-2 border-gray-300 bg-white ;
+        }
+    }
+
+ 
+
+}

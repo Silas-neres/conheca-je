@@ -1,0 +1,61 @@
+
+&__playlists{
+
+    &__fonte{
+
+        &-titulo{
+            @apply text-center font-bold text-5xl bg-[#15FEF8] w-1/3 mb-4 p-4;
+        }
+
+        &-subtitulo{
+            @apply text-center font-bold text-3xl text-white w-1/3;
+        }
+
+        &-links{
+            @apply  text-white text-lg font-bold p-4 hover:bg-[#D9D9D933] ;
+        }
+    }
+
+    &__alinhar{
+
+        &-comeco{
+            @apply flex justify-self-start ;
+        }
+    }
+
+    &__bg{
+        @apply bg-black mt-20 ;
+    }
+
+    &__box{
+
+        @apply grid grid-cols-3 gap-6 mx-6;
+
+    }
+
+    &__alinhar{
+
+        &-entre{
+            @apply flex items-center justify-between ;
+        }
+    }
+
+    &__box{
+
+        &-tamanho{
+            @apply mx-10  ;
+        }
+
+        &-borda{
+            @apply   bg-[#15fef8] ;
+        }
+
+        &-borda2{
+            @apply border-2 border-gray-300 bg-white ;
+        }
+
+        
+
+    }
+
+}
