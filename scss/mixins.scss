@@ -4,10 +4,10 @@
     }
 
     .link {
-        @apply flex w-max justify-center items-center bg-[#ecfcef] rounded-3xl text-[#41934B] py-2 px-6 hover:bg-[#41934B] hover:text-[#ecfcef];
+        @apply flex w-max justify-center items-center bg-white rounded-3xl text-[#41934B] py-2 px-6 hover:bg-[#41934B] hover:text-[#ecfcef];
 
         &--ativo {
-            @apply bg-[#41934B] text-[#ecfcef];
+            @apply bg-white text-[#ecfcef];
         }
     }
 }

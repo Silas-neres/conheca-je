@@ -16,31 +16,37 @@
         }
     }
 
+    &__bg{
+        @apply bg-black mt-20 pt-20 pb-20 ;
+    }
+
+
     &__alinhar{
+
+        @apply  h-auto ;
+
+        &-entre{
+            @apply flex items-center justify-between ;
+        }
+
+        &-frente{
+            @apply relative top-[5px] left-[5px];
+
+        }
+
+        &-links{
+            @apply p-4 font-bold text-center text-2xl hover:text-sky-500 ;
+        }
 
         &-comeco{
             @apply flex justify-self-start ;
         }
     }
 
-    &__bg{
-        @apply bg-black mt-20 ;
-    }
-
     &__box{
+
 
         @apply grid grid-cols-3 gap-6 mx-6;
-
-    }
-
-    &__alinhar{
-
-        &-entre{
-            @apply flex items-center justify-between ;
-        }
-    }
-
-    &__box{
 
         &-tamanho{
             @apply mx-10  ;
@@ -51,7 +57,7 @@
         }
 
         &-borda2{
-            @apply border-2 border-gray-300 bg-white ;
+            @apply border-2 border-gray-300 bg-white p-2 ;
         }
 
         

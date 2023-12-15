@@ -17,6 +17,10 @@
 //     @apply text-[#000C79] font-semibold leading-5 text-3xl ;
 // }
 
+p {
+    @apply mb-4;
+}
+
 .link {
     @apply flex justify-end items-end bg-[#B8FE43] text-[#163570] text-2xl py-2 px-8 hover:font-bold ;
 
@@ -24,6 +28,16 @@
         @apply font-bold text-2xl text-[#163570] bg-no-repeat bg-right bg-[url(src/fonts/seta-azul.svg)];
     }
 }
+
+.link2 {
+    @apply flex justify-center items-end bg-white text-[#163570] text-3xl  hover:font-bold ;
+
+    &--ativo {
+        @apply font-bold text-3xl text-[#163570] bg-no-repeat bg-right bg-[url(src/fonts/seta-azul.svg)];
+    }
+}
+
+
 
 .lista {
     @apply divide-y flex flex-row md:flex-col gap-4 md:gap-0;
@@ -40,7 +54,7 @@
 .conheca-je {
 
     &__container {
-        @apply container mx-auto px-4 ;
+        @apply container mx-auto px-4 py-4 my-auto ;
 
         &__sub {
             @apply flex space-x-4 ;
@@ -61,5 +75,8 @@
     @import './quiz.scss';
     @import './perguntas.scss';
     @import './playlists.scss';
+    @import './historia.scss';
+    @import './90anos.scss';
+
     
 }

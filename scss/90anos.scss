@@ -1,0 +1,28 @@
+&__90anos{
+
+    &__tamanho{
+
+        &-titulo{
+            @apply max-w-lg ;
+        }
+    }
+
+    &__fonte{
+
+        &-titulo{
+            @apply text-5xl text-center font-bold p-3 ;
+        }
+    }
+
+    &__estilo{
+
+        &-titulo{
+            @apply bg-yellow-500;
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0 99%, 0 50%);
+        }
+    }
+
+    &__grid{
+        @apply grid grid-cols-5 gap-6 ;
+    }
+}
