@@ -11,8 +11,10 @@
     /* Estilos do Modal */
     #calendar-container {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+      grid-template-columns: 1fr 1fr;
+      /* Duas colunas iguais */
     }
+
     .day {
       width: 100px;
       padding: 10px;
@@ -28,10 +30,6 @@
       border-radius: 15%;
       width: 100%;
       height: 100%;
-    }
-
-    .day:hover {
-      background-color: var(--hover);
     }
 
     .padding {
@@ -70,15 +68,13 @@
     }
 
     #eventText {
-      font-size: 30px;
+      font-size: 10px;
     }
 
     .event {
-      background-color: #ffcc00;
-      /* Altere a cor conforme necessário */
+      background-color: #00FF5A;
       border-radius: 5px;
-      padding: 2px;
-      width: 100%;
+      color: #fff;
     }
 
     #myModal {
@@ -1276,58 +1272,59 @@
         </div>
       </div>
 
+      <div class="rounded-full bg-[#00FF5A] max-w-xl my-4">
+        <h1 class="text-center text-4xl font-bold p-4">Ações e eventos realizados</h1>
+      </div>
+
       <!-- calendario -->
-
-    </div>
-  </section>
-
-  <!-- calendário -->
-  <section>
-    <div id="calendar-container" class="grid grid-cols-2">
-      <div id="container" class="max-w-screen-lg mx-auto p-4">
-        <div id="header" class="flex justify-between items-center bg-white p-4 shadow-md mb-4">
-          <div id="monthDisplay" class="text-lg font-semibold"></div>
-          <div class="flex space-x-2">
-            <button id="backButton" class="bg-blue-500 text-white px-4 py-2 rounded">Voltar</button>
-            <button id="nextButton" class="bg-blue-500 text-white px-4 py-2 rounded">Próximo</button>
+      <div class="conheca-je__calendario__container">
+        <div id="container" class="conheca-je__calendario__tamanho col-span-1">
+          <div id="header" class="conheca-je__calendario__header-space">
+            <div id="monthDisplay" class="conheca-je__calendario__header-fonte"></div>
+            <div class="flex space-x-2">
+              <button id="backButton" class="bg-[#00FF5A] text-white px-2 py-2 rounded"><i
+                  class='bx bx-chevron-left text-3xl'></i></button>
+              <button id="nextButton" class="bg-[#00FF5A] text-white px-2 py-2 rounded"><i
+                  class='bx bx-chevron-right text-3xl'></i></button>
+            </div>
           </div>
+
+          <div id="weekdays" class="grid grid-cols-7 gap-2 text-2xl font-bold p-2">
+            <div>D</div>
+            <div>S</div>
+            <div>T</div>
+            <div>Q</div>
+            <div>Q</div>
+            <div>S</div>
+            <div>S</div>
+          </div>
+
+          <!-- div dinâmica -->
+          <div id="calendar" class="grid grid-cols-7 gap-2"></div>
         </div>
-  
-        <div id="weekdays" class="grid grid-cols-7 gap-2 bg-blue-500 text-white p-2">
-          <div>Domingo</div>
-          <div>Segunda-feira</div>
-          <div>Terça-feira</div>
-          <div>Quarta-feira</div>
-          <div>Quinta-feira</div>
-          <div>Sexta-feira</div>
-          <div>Sábado</div>
+
+        <!-- Seus modais (simplificados para o exemplo) -->
+        <div id="newEventModal" class="hidden bg-white p-4 rounded shadow-md absolute ">
+          <h2 class="text-lg font-semibold mb-2">Novo Evento</h2>
+          <input id="eventTitleInput" class="border rounded px-2 py-1 mb-2" placeholder="Título do Evento" />
+          <button id="saveButton" class="bg-blue-500 text-white px-4 py-2 rounded">Salvar</button>
+          <button id="cancelButton" class="bg-gray-300 text-gray-700 px-4 py-2 rounded">Cancelar</button>
         </div>
-  
-        <!-- div dinâmica -->
-        <div id="calendar" class="grid grid-cols-7 gap-2"></div>
-      </div>
-  
-      <!-- Seus modais (simplificados para o exemplo) -->
-      <div id="newEventModal" class="hidden bg-white p-4 rounded shadow-md absolute">
-        <h2 class="text-lg font-semibold mb-2">Novo Evento</h2>
-        <input id="eventTitleInput" class="border rounded px-2 py-1 mb-2" placeholder="Título do Evento" />
-        <button id="saveButton" class="bg-blue-500 text-white px-4 py-2 rounded">Salvar</button>
-        <button id="cancelButton" class="bg-gray-300 text-gray-700 px-4 py-2 rounded">Cancelar</button>
-      </div>
-  
-      <div id="eventDetails" class="hidden bg-white p-4 rounded shadow-md absolute">
-        <h2 class="text-lg font-semibold mb-2">Evento</h2>
-        <div id="eventText" class="mb-2"></div>
-        <button id="eventDetailsButton" class="bg-blue-500 text-white px-4 py-2 rounded">Detalhes do Evento</button>
-        <br>
-        <button id="closeButton" class="bg-blue-500 text-white px-4 py-2 rounded">Fechar</button>
-      </div>
-  
-      <div id="eventDetails"
-        class="hidden bg-white p-16 rounded shadow-md absolute  ">
+
+        <div id="eventDetails" class="hidden bg-slate-100 p-4 rounded shadow-md hidth-auto col-span-2">
+          <h2 class="text-lg font-semibold mb-2">Evento</h2>
+          <div id="eventText" class="mb-2">hatumalaka</div>
+          <button id="eventDetailsButton" class="bg-blue-500 text-white px-4 py-2 rounded">Detalhes do Evento</button>
+          <br>
+          <button id="closeButton" class="bg-blue-500 text-white px-4 py-2 rounded">Fechar</button>
+        </div>
+
+        <div id="eventDetails" class="hidden bg-black p-16 rounded shadow-md absolute  ">
+        </div>
       </div>
     </div>
   </section>
+
 
 
   <!-- accordions -->
@@ -1457,10 +1454,10 @@
     let nav = 0;
     let clicked = null;
     let predefinedEvents = [
-      { date: '12/15/2022', title: 'Event 1' },
-      { date: '12/20/2022', title: 'Event 2' },
-      { date: '1/14/2022', title: 'Event 3' },
-      // Add more predefined events as needed
+      { date: '3/15/2022', data: '15 DE MARÇO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
+      { date: '2/20/2022', data: '20 DE FEVEREIRO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
+      { date: '1/14/2022', data: '14 DE JANEIRO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
+      // Adicione mais eventos predefinidos conforme necessário
     ];
 
     // variavel do modal:
@@ -1468,7 +1465,7 @@
     const eventDetailsDiv = document.getElementById('eventDetails');
     const backDrop = document.getElementById('modalBackDrop');
     const calendar = document.getElementById('calendar'); // div calendar:
-    const weekdays = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado']; // array with weekdays:
+    const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']; // array with weekdays:
 
     //funções
     function openModal(date) {
@@ -1476,10 +1473,16 @@
       const eventDay = predefinedEvents.find((event) => event.date === clicked);
 
       if (eventDay) {
-        eventDetailsDiv.innerHTML = `<h2>Evento</h2><div>${eventDay.title}</div><br><button id="closeButton">Fechar</button>`;
+        eventDetailsDiv.innerHTML = `<h2 class="font-bold text-3xl mb-10">${eventDay.data}</h2><br>
+                                     <div class="font-bold text-2xl mb-5 flex items-center justify-between ">${eventDay.title} <h2>STATUS: REALIZADO</h2></div><br>
+                                     <h2 class="font-bold text-xl" >AÇÃO</h2>
+                                     <div>${eventDay.acao}</div><br>
+                                     <h2 class="font-bold text-xl">DETALHES</h2>
+                                     <div>${eventDay.detalhes}</div><br>`;
         eventDetailsDiv.style.display = 'block';
         backDrop.style.display = 'block';
       }
+
 
       backDrop.style.display = 'block';
     }
@@ -1519,7 +1522,7 @@
       const paddinDays = weekdays.indexOf(dateString.split(', ')[0]);
 
       //mostrar mês e ano:
-      document.getElementById('monthDisplay').innerText = `${date.toLocaleDateString('pt-br', { month: 'long' })}, ${year}`;
+      document.getElementById('monthDisplay').innerText = `${date.toLocaleDateString('pt-br', { month: 'long' })} ${year}`;
 
       calendar.innerHTML = '';
 
@@ -1542,9 +1545,10 @@
 
           if (eventDay) {
             const eventDiv = document.createElement('div');
-            eventDiv.classList.add('event');
-            eventDiv.innerText = eventDay.title;
-            dayS.appendChild(eventDiv);
+            dayS.classList.add('event');
+            // eventDiv.classList.add('event');
+            // eventDiv.innerText = eventDay.title;
+            // dayS.appendChild(dayS);
 
             dayS.addEventListener('click', () => openModal(dayString));
           }
