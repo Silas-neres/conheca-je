@@ -33,7 +33,7 @@
         }
 
         &-grid{
-            @apply grid grid-cols-2 gap-6 mx-6 py-20 ;
+            @apply grid grid-cols-1 gap-6   xl:grid-cols-2 gap-6 lg:mx-6 py-20 ;
         }
 
         &-entre{
@@ -46,6 +46,10 @@
 
         &-inicio{
             @apply flex  justify-start items-start max-w-4xl mx-auto;
+        }
+
+        &-subtitulo{
+            @apply grid justify-items-center xl:justify-items-start ;
         }
 
 
@@ -70,7 +74,7 @@
         }
 
         &-topicos2{
-            @apply  w-3/5 font-bold text-center  rounded-full p-4  text-slate-900 text-4xl    bg-[#FFC700] ;
+            @apply  w-full font-bold text-center  rounded-full p-4  text-slate-900 text-4xl bg-[#FFC700] lg:w-3/5 ;
         }
 
         &-conteudo{
@@ -103,7 +107,7 @@
     }
 
     &__conteudo {
-        @apply w-3/5 py-12 mt-6 ;
+        @apply w-full py-12 mt-6 xl:w-3/5 ;
 
         .tabs {
             @apply hidden;

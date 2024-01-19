@@ -329,7 +329,7 @@
 
       <!-- O que a JE faz? -->
       <div class=" conheca-je__quiz__alinhar-centro p-3">
-        <div class="conheca-je__quiz__box-borda w-1/2 ">
+        <div class="conheca-je__quiz__box-borda ">
           <div class="conheca-je__quiz__box-position conheca-je__quiz__box-borda2">
             <h1 class="conheca-je__quiz__fonte-titulo">O que a <b class="conheca-je__quiz__fonte-titulo2">JE</b> faz?
             </h1>
@@ -340,10 +340,10 @@
 
       <div class="conheca-je__quiz__box">
         <div>
-          <img src="src/fonts/quiz 1.png" alt="">
+          <img src="src/fonts/quiz 1.png" class="conheca-je__quiz__hide" alt="">
         </div>
         <div class="grid gap-4 content-around">
-          <h1 class="conheca-je__quiz__fonte-texto1 ">Você sabe o que a Justiça Eleitoral faz?</h1>
+          <div class="conheca-je__quiz__fonte-texto1 ">Você sabe o que a Justiça Eleitoral faz?</div>
           <h2 class="conheca-je__quiz__fonte-texto2">Responda e descubra</h2>
         </div>
       </div>
@@ -361,12 +361,13 @@
 
           <div
             class="conheca-je__quiz__box-tamanho-placar conheca-je__quiz__grid-placar conheca-je__quiz-teste2  conheca-je__quiz__bg-placar-centro ">
-            <div class="conheca-je__quiz__fonte-placar-acerto  col-span-2 pt-3">Acertos</div>
-            <div class="flex justify-center space-x-6  conheca-je__quiz__bg-placar col-span-3 ">
+            <div class="conheca-je__quiz__fonte-placar-acerto conheca-je__quiz__grid-placar-acertos pt-3">Acertos</div>
+            <div
+              class="flex justify-center space-x-2 md:space-x-6  conheca-je__quiz__bg-placar conheca-je__quiz__grid-placar-contador">
               <div id="acertos" class="text-5xl font-bold text-black text-center py-2">0</div>
               <div id="erros" class="text-5xl font-bold text-black text-center py-2">0</div>
             </div>
-            <div class="conheca-je__quiz__fonte-placar-erro col-span-2 pt-3">Erros</div>
+            <div class="conheca-je__quiz__fonte-placar-erro conheca-je__quiz__grid-placar-erros pt-3">Erros</div>
           </div>
 
           <div class="conheca-je__quiz__box-tamanho-placar-inferior conheca-je__quiz__bg-placar-inferior ">
@@ -781,7 +782,7 @@
   <section class="conheca-je__playlists__bg ">
 
     <div class="conheca-je__container space-y-16 conheca-je__playlists__alinhar">
-      <div class="p-4">
+      <div class="conheca-je__playlists__alinhar-titulo">
         <div class="conheca-je__playlists__fonte-titulo">
           <h1>PLAYLISTS</h1>
         </div>
@@ -793,160 +794,169 @@
 
       <!-- videos -->
       <div class="conheca-je__playlists__box p-4 ">
-        <div>
-          <iframe width="456" height="315" src="https://www.youtube.com/embed/W8GCjqYuMnU?si=XgCUcvZ2xy0MFko8"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div>
-          <iframe width="456" height="315" src="https://www.youtube.com/embed/xiPvubv4330?si=c7dpvjdBpRSHgMfk"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div>
-          <iframe width="456" height="315" src="https://www.youtube.com/embed/4wrMLzqgKEI?si=L66dOEfXeb8ZNm0r"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+
+        <!-- 1 coluna -->
+        <div class="conheca-je__playlists__box-grid">
+          <div class="conheca-je__playlists__box-tamanho-iframe">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/W8GCjqYuMnU?si=XgCUcvZ2xy0MFko8"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="conheca-je__playlists__box-tamanho">
+            <div class="conheca-je__playlists__box-borda">
+              <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
+                <ul>
+                  <li>
+                    <a href="https://youtube.com/playlist?list=PLljYw1P54c4xyxdTWdD-fPwQhhA_5FOyI&si=MWI7QyxvwpRRPvan">
+                      <h1 class="conheca-je__playlists__alinhar-links">+ vídeos da playlist</h1>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <ul>
-          <li>
-            <a href="https://www.tre-ac.jus.br/#/" class="">
-              <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
-                <i class='bx bxs-right-arrow text-2xl'></i>
-                <h1>Os povos indigenas e o sistema eleitoral</h1>
+        <!-- 2 coluna -->
+        <div class="conheca-je__playlists__box-grid">
+          
+          <div class="conheca-je__playlists__box-tamanho-iframe">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xiPvubv4330?si=c7dpvjdBpRSHgMfk"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="conheca-je__playlists__box-tamanho">
+            <div class="conheca-je__playlists__box-borda">
+              <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
+                <ul>
+                  <li>
+                    <a href="https://youtube.com/playlist?list=PLljYw1P54c4xyxdTWdD-fPwQhhA_5FOyI&si=MWI7QyxvwpRRPvan">
+                      <h1 class="conheca-je__playlists__alinhar-links">+ vídeos da playlist</h1>
+                    </a>
+                  </li>
+                </ul>
               </div>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://www.tre-ac.jus.br/#/" class="">
-              <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
-                <i class='bx bxs-right-arrow text-2xl'></i>
-                <h1>Os povos indigenas e o sistema eleitoral</h1>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://www.tre-ac.jus.br/#/" class="">
-              <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
-                <i class='bx bxs-right-arrow text-2xl'></i>
-                <h1>Os povos indigenas e o sistema eleitoral</h1>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://www.tre-ac.jus.br/#/" class="">
-              <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
-                <i class='bx bxs-right-arrow text-2xl'></i>
-                <h1>Os povos indigenas e o sistema eleitoral</h1>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://www.tre-ac.jus.br/#/" class="">
-              <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
-                <i class='bx bxs-right-arrow text-2xl'></i>
-                <h1>Os povos indigenas e o sistema eleitoral</h1>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://www.tre-ac.jus.br/#/" class="">
-              <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
-                <i class='bx bxs-right-arrow text-2xl'></i>
-                <h1>Os povos indigenas e o sistema eleitoral</h1>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://www.tre-ac.jus.br/#/" class="">
-              <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
-                <i class='bx bxs-right-arrow text-2xl'></i>
-                <h1>Os povos indigenas e o sistema eleitoral</h1>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://www.tre-ac.jus.br/#/" class="">
-              <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
-                <i class='bx bxs-right-arrow text-2xl'></i>
-                <h1>Os povos indigenas e o sistema eleitoral</h1>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://www.tre-ac.jus.br/#/" class="">
-              <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
-                <i class='bx bxs-right-arrow text-2xl'></i>
-                <h1>Os povos indigenas e o sistema eleitoral</h1>
-              </div>
-            </a>
-          </li>
-        </ul>
-
-
-        <div class="conheca-je__playlists__box-tamanho">
-          <div class="conheca-je__playlists__box-borda">
-            <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
-              <ul>
-                <li>
-                  <a href="https://youtube.com/playlist?list=PLljYw1P54c4xyxdTWdD-fPwQhhA_5FOyI&si=MWI7QyxvwpRRPvan">
-                    <h1 class="conheca-je__playlists__alinhar-links">+ vídeos da playlist</h1>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
 
-        <div class="conheca-je__playlists__box-tamanho">
-          <div class="conheca-je__playlists__box-borda">
-            <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
-              <ul>
-                <li>
-                  <a href="https://youtube.com/playlist?list=PLljYw1P54c4xyxdTWdD-fPwQhhA_5FOyI&si=MWI7QyxvwpRRPvan">
-                    <h1 class="conheca-je__playlists__alinhar-links">+ vídeos da playlist</h1>
-                  </a>
-                </li>
-              </ul>
+        <!-- 3 coluna -->
+        <div class="conheca-je__playlists__box-grid">
+          
+          <div class="conheca-je__playlists__box-tamanho-iframe">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4wrMLzqgKEI?si=L66dOEfXeb8ZNm0r"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="conheca-je__playlists__box-tamanho">
+            <div class="conheca-je__playlists__box-borda">
+              <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
+                <ul>
+                  <li>
+                    <a href="https://youtube.com/playlist?list=PLljYw1P54c4xyxdTWdD-fPwQhhA_5FOyI&si=MWI7QyxvwpRRPvan">
+                      <h1 class="conheca-je__playlists__alinhar-links">+ vídeos da playlist</h1>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
+
         </div>
-
-        <div class="conheca-je__playlists__box-tamanho">
-          <div class="conheca-je__playlists__box-borda">
-            <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
-              <ul>
-                <li>
-                  <a href="https://youtube.com/playlist?list=PLljYw1P54c4xyxdTWdD-fPwQhhA_5FOyI&si=MWI7QyxvwpRRPvan">
-                    <h1 class="conheca-je__playlists__alinhar-links">+ vídeos da playlist</h1>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-
 
       </div>
 
@@ -955,6 +965,7 @@
 
   <!-- história -->
   <section class="conheca-je__historia__bg pt-20">
+
     <div class="conheca-je__container conheca-je__historia__alinhar-conteudo ">
       <!-- titulo -->
       <div>
@@ -1037,8 +1048,8 @@
 
         <!-- linha do tempo -->
         <div class="">
-          <div>
-            <h1 class="conheca-je__historia__fonte-topicos2">Linha do Tempo</h1>
+          <div class="conheca-je__historia__alinhar-subtitulo">
+            <div class="conheca-je__historia__fonte-topicos2">Linha do Tempo</div>
           </div>
 
           <div class="conheca-je__imagem ">
@@ -1289,7 +1300,7 @@
             </div>
           </div>
 
-          <div id="weekdays" class="grid grid-cols-7 gap-2 text-2xl font-bold p-2">
+          <div id="weekdays" class="grid grid-cols-7 gap-8 text-2xl font-bold p-2">
             <div>D</div>
             <div>S</div>
             <div>T</div>
@@ -1465,7 +1476,7 @@
     const eventDetailsDiv = document.getElementById('eventDetails');
     const backDrop = document.getElementById('modalBackDrop');
     const calendar = document.getElementById('calendar'); // div calendar:
-    const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']; // array with weekdays:
+    const weekdays = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];  // array with weekdays:
 
     //funções
     function openModal(date) {

@@ -22,7 +22,7 @@
         @apply  h-auto ;
 
         &-centro{
-            @apply flex  justify-start items-start max-w-4xl mx-auto;
+            @apply flex justify-center items-start max-w-4xl mx-auto md:justify-start items-start max-w-4xl mx-auto;
         }
 
         &-entre{
@@ -41,11 +41,11 @@
     &__fonte{
 
         &-titulo{
-            @apply  w-1/2 text-center  rounded-full p-3  text-slate-900 text-3xl mb-3   bg-[#00FF5A] ;
+            @apply   text-center  rounded-full p-3  text-slate-900 text-2xl mb-3   bg-[#00FF5A] w-full md:text-3xl md:w-1/2 ;
 
         }
         &-subtitulo{
-            @apply font-semibold text-2xl text-green-500 ;
+            @apply font-semibold text-xl text-green-500 md:text-2xl ;
         }
     }
 
