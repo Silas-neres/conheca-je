@@ -1,0 +1,1436 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/main.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style lang="sass">
+    @import url('./scss/main.scss');
+
+    /* Estilos do Modal */
+    #calendar-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      /* Duas colunas iguais */
+    }
+
+    .day {
+      width: 100px;
+      padding: 10px;
+      height: 100px;
+      cursor: pointer;
+      box-sizing: border-box;
+      background-color: var(--color-day);
+      margin: 5px;
+      box-shadow: 0px 0px 3px var(--box-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 15%;
+      width: 100%;
+      height: 100%;
+    }
+
+    .padding {
+      cursor: default !important;
+      background-color: var(--body-color) !important;
+      box-shadow: none !important;
+    }
+
+    #newEventModal,
+    #deleteEventModal {
+      display: none;
+      z-index: 20;
+      padding: 25px;
+      background-color: var(--modal-event);
+      box-shadow: 0px 0px 3px black;
+      border-radius: 5px;
+      width: 350px;
+      top: 100px;
+      position: absolute;
+      font-family: sans-serif;
+    }
+
+    #eventTitleInput {
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 25px;
+      border-radius: 3px;
+      outline: none;
+      border: none;
+      box-shadow: 0px 0px 3px gray;
+    }
+
+    #eventTitleInput.error {
+      border: 2px solid red;
+    }
+
+    #eventText {
+      font-size: 10px;
+    }
+
+    .event {
+      background-color: #00FF5A;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    #myModal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #modalContent {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 40px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    #closeModal {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    #closeModal:hover,
+    #closeModal:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="conheca-je">
+    <div class="conheca-je__header__bg-azul">
+      <div class="conheca-je__header__grid">
+        <div class="conheca-je__header__position-titulo space-y-2">
+          <h2 class="conheca-je__header mr-5">Conheça a</h2>
+          <h1 class="conheca-je__header__bgamarelo">Justiça Eleitoral</h1>
+        </div>
+
+        <div class="conheca-je__header__position-imagens conheca-je__header__imagem  ">
+          <img class="conheca-je__header__nivel1__mulher" src="src/fonts/mulher-feliz.png" alt="">
+          <img class="conheca-je__header__nivel2__star" src="src/fonts/star.svg" alt="">
+          <img class="conheca-je__header__nivel3__urna" src="src/fonts/urna 1.png" alt="">
+        </div>
+      </div>
+
+      <div class="conheca-je__header__bg-verde">
+        <img src="src/fonts/barra-verde.svg" alt="">
+      </div>
+    </div>
+    <!-- <div class="box-border h-96 w-full p-4 border-4">babidi</div> -->
+  </header>
+
+  <!-- glossário -->
+  <section class="conheca-je__container mt-6 ">
+    <div class="conheca-je__glossario__grid">
+
+      <!-- glossario-brasil -->
+      <div class=" conheca-je__glossario__bg-brasil conheca-je__glossario__posicao-container">
+        <div class="">
+          <div class=" px-4 ">
+            <h1 class="conheca-je__glossario__tre">TREs</h1>
+          </div>
+
+  
+          <div class="conheca-je__grid ">
+  
+            <div class="conheca-je__glossario__regioes mt-16  ">
+              <ul class="conheca-je__glossario__regioes--caixa">
+                <li class="item">
+                  <a href="#" class="link" tab="norte">NORTE</a>
+                </li>
+                <li class="item">
+                  <a href="#" class="link " tab="nordeste">NORDESTE</a>
+                </li>
+                <li class="item">
+                  <a href="#" class="link" tab="centro-oeste">CENTRO-OESTE</a>
+                </li>
+                <li class="item">
+                  <a href="#" class="link" tab="sudeste">SUDESTE</a>
+                </li>
+                <li class="item">
+                  <a href="#" class="link" tab="sul">SUL</a>
+                </li>
+              </ul>
+            </div>
+  
+            <div class="conheca-je__glossario__conteudo conheca-je__glossario__posicao-estados ">
+  
+              <!-- Norte -->
+  
+              <div class="tabs tab-norte ">
+                <ul>
+                  <li>
+                    <a href="https://www.tre-ac.jus.br/#/" class="linkinterno">ACRE</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ap.jus.br/#/" class="linkinterno">AMAPÁ</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-am.jus.br/#/" class="linkinterno">AMAZONAS</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-pa.jus.br/#/" class="linkinterno">PARÁ</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ro.jus.br/#/" class="linkinterno">RONDÔNIA</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-rr.jus.br/#/" class="linkinterno">RORAIMA</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-to.jus.br/#/" class="linkinterno">TOCANTINS</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <!-- Nordeste -->
+              <div class="tabs tab-nordeste ">
+                <ul>
+                  <li>
+                    <a href="https://www.tre-al.jus.br/#/" class="linkinterno">ALAGOAS</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ba.jus.br/#/" class="linkinterno">BAHIA</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ce.jus.br/#/" class="linkinterno">CEARÁ</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ma.jus.br/#/" class="linkinterno">MARANHÃO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-pa.jus.br/#/" class="linkinterno">PARAÍBA</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-pb.jus.br/#/" class="linkinterno">PERNAMBUCO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-pi.jus.br/#/" class="linkinterno">PIAUÍ</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-RN.jus.br/#/" class="linkinterno">RIO GRANDE DO NORTE</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-SE.jus.br/#/" class="linkinterno">SERGIPE</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <!-- Centro-Oeste -->
+              <div class="tabs tab-centro-oeste">
+                <ul>
+                  <li>
+                    <a href="https://www.tre-df.jus.br/#/" class="linkinterno">DISTRITO FEDERAL</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-go.jus.br/#/" class="linkinterno">GOIÁS</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-mt.jus.br/#/" class="linkinterno">MATO GROSOO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-ms.jus.br/#/" class="linkinterno">MATO GROSSO DO SUL</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <!-- Sudeste -->
+              <div class="tabs tab-sudeste">
+                <ul>
+                  <li>
+                    <a href="https://www.tre-es.jus.br/#/" class="linkinterno">ESPÍRITO SANTO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-mg.jus.br/#/" class="linkinterno">MINAS GERAIS</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-rj.jus.br/#/" class="linkinterno">RIO DE JANEIRO</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-sp.jus.br/#/" class="linkinterno">SÃO PAULO</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <!-- Sul -->
+              <div class="tabs tab-sul">
+                <ul>
+                  <li>
+                    <a href="https://www.tre-pr.jus.br/#/" class="linkinterno">PARANÁ</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-rs.jus.br/#/" class="linkinterno">RIO GRANDE DO SUL</a>
+                  </li>
+                  <li>
+                    <a href="https://www.tre-sc.jus.br/#/" class="linkinterno">SANTA CATARINA</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+  
+      </div>
+      <!-- tse-explica -->
+      <div class="conheca-je__glossario__posicao-container-infos ">
+        <div class="conheca-je__glossario__bg-explicatse conheca-je__glossario__regioes mt-8 ">
+          <h1>Série:</h1>
+          <h2 class="conheca-je__glossario__bg-explicatse-bold">TSE Explica</h2>
+        </div>
+
+        <div class="relative h-44 w-full"><img class="conheca-je__glossario__imagem" src="src/fonts/exclamacao.png"
+            alt=""></div>
+
+
+        <div class="flex  conheca-je__glossario__regioes--caixa2 ">
+
+          <h1 class="conheca-je__glossario__fonte-titulo ">Mesário: importante ator para a transparência e a segurança
+            nas eleições</h1>
+          <h2 class="conheca-je__glossario__fonte-subtitulo p-auto">Os mesários atuam na condução dos trabalhos na seção
+            eleitoral e são peças fundamentais para garantir o sucesso de uma eleição </h2>
+
+          <div class="mt-12 flex justify-between ">
+            <button id="anterior">
+              <img src="/src/fonts/arrow.svg" alt="">
+            </button>
+
+            <button id="proximo">
+              <img src="/src/fonts/arrow-black.svg" alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="bg-yellow-400">
+    <div class="conheca-je__container mt-8 mb-10 ">
+
+      <!-- O que a JE faz? -->
+      <div class=" conheca-je__quiz__alinhar-centro p-3">
+        <div class="conheca-je__quiz__box-borda ">
+          <div class="conheca-je__quiz__box-position conheca-je__quiz__box-borda2">
+            <h1 class="conheca-je__quiz__fonte-titulo">O que a <b class="conheca-je__quiz__fonte-titulo2">JE</b> faz?
+            </h1>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="conheca-je__quiz__box">
+        <div>
+          <img src="src/fonts/quiz 1.png" class="conheca-je__quiz__hide" alt="">
+        </div>
+        <div class="grid gap-4 content-around">
+          <div class="conheca-je__quiz__fonte-texto1 ">Você sabe o que a Justiça Eleitoral faz?</div>
+          <h2 class="conheca-je__quiz__fonte-texto2">Responda e descubra</h2>
+        </div>
+      </div>
+
+      <!-- Quiz -->
+      <div class="my-10 conheca-je__quiz__box-tamanho conheca-je__quiz__bg py-5">
+
+        <div id="quiz-container" class="">
+          <div class="max-w-sm mx-auto">
+            <div class="w-24 mx-auto grid grid-cols-2  conheca-je__quiz__bg-placar-topo border-2 border-gray-200">
+              <h1 id="placar" class="text-end">1</h1>
+              <h1>/16</h1>
+            </div>
+          </div>
+
+          <div
+            class="conheca-je__quiz__box-tamanho-placar conheca-je__quiz__grid-placar conheca-je__quiz-teste2  conheca-je__quiz__bg-placar-centro ">
+            <div class="conheca-je__quiz__fonte-placar-acerto conheca-je__quiz__grid-placar-acertos pt-3">Acertos</div>
+            <div
+              class="flex justify-center space-x-2 md:space-x-6  conheca-je__quiz__bg-placar conheca-je__quiz__grid-placar-contador">
+              <div id="acertos" class="text-5xl font-bold text-black text-center py-2">0</div>
+              <div id="erros" class="text-5xl font-bold text-black text-center py-2">0</div>
+            </div>
+            <div class="conheca-je__quiz__fonte-placar-erro conheca-je__quiz__grid-placar-erros pt-3">Erros</div>
+          </div>
+
+          <div class="conheca-je__quiz__box-tamanho-placar-inferior conheca-je__quiz__bg-placar-inferior ">
+          </div>
+
+          <p class="conheca-je__quiz__fonte-perguntas" id="pergunta"></p>
+          <div class="conheca-je__quiz__grid-botao conheca-je__quiz__box-tamanho-button ">
+            <button class="conheca-je__quiz__box-botao " id="respostaA" onclick="verificarResposta('a')"></button>
+            <button class="conheca-je__quiz__box-botao " id="respostaB" onclick="verificarResposta('b')"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="myModal">
+        <div id="modalContent">
+          <span id="closeModal" onclick="fecharModal()">&times;</span>
+          <p id="explicacao"></p>
+        </div>
+      </div>
+
+      <script>
+        var perguntas = [
+          {
+            pergunta: "Fiscaliza os candidatos eleitos",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Acertou! Quem fiscaliza a atuação dos eleitos e denuncia eventuais irregularidades cometidas são os órgãos de controle, como Tribunal de Contas da União e dos estados e dos municípios e o Ministério Público."
+          },
+          {
+            pergunta: "Organiza o processo eleitoral",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Cuida do alistamento eleitoral, votação, apuração dos votos, diplomação dos eleitos etc."
+          },
+          {
+            pergunta: "Envia e-mails informando cancelamento de título",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Define o perfil dos candidatos dos partidos políticos",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Cobra taxa pelos serviços oferecidos",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "b",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "recusa pedidos de registro de candidatura",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "b",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Atua de forma consultiva",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Elege seus própios magistrados(juízes)",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "b",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Realiza testes públicos de segurança de urna periodicamente",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Organiza, fiscaliza e realiza eleições, plebiscitos e referendos ",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Examina as contas dos partidos e candidatos",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Cancela o título de eleitor",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Prende qualquer cidadão durante as eleições",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "b",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Autoriza os partidos políticos a fiscalizarem todas as etapas da eleição",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Emite a indentificação Civil Nacional (ICN)",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          {
+            pergunta: "Julga crimes eleitorais(corrupção, lavagem de dinheiro etc.)",
+            respostas: {
+              a: "FAZ",
+              b: "NÃO FAZ"
+            },
+            respostaCorreta: "a",
+            explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
+          },
+          // Adicione mais perguntas conforme necessário
+        ];
+
+        var numeroPergunta = 0;
+        var acertos = 0;
+        var erros = 0;
+        var placar = 0;
+
+        function mostrarPergunta() {
+          var pergunta = perguntas[numeroPergunta];
+          document.getElementById('pergunta').textContent = pergunta.pergunta;
+          document.getElementById('respostaA').textContent = pergunta.respostas.a;
+          document.getElementById('respostaB').textContent = pergunta.respostas.b;
+        }
+
+        function verificarResposta(resposta) {
+          var pergunta = perguntas[numeroPergunta];
+
+          if (resposta == pergunta.respostaCorreta) {
+            acertos++;
+            // Exibir o modal com a explicação
+            document.getElementById('explicacao').textContent = pergunta.explicacao;
+            document.getElementById('myModal').style.display = 'block';
+          } else {
+            erros++;
+            document.getElementById('explicacao').textContent = pergunta.explicacao;
+            document.getElementById('myModal').style.display = 'block';
+          }
+
+          numeroPergunta++;
+
+          if (numeroPergunta < perguntas.length) {
+            mostrarPergunta();
+          } else {
+            // O quiz terminou
+            document.getElementById('pergunta').textContent = "Quiz terminado!";
+            document.getElementById('respostaA').style.display = 'none';
+            document.getElementById('respostaB').style.display = 'none';
+
+          }
+
+          document.getElementById('acertos').textContent = acertos;
+          document.getElementById('erros').textContent = erros;
+          document.getElementById('placar').textContent = erros + acertos;
+        }
+
+        function fecharModal() {
+          // Fechar o modal
+          document.getElementById('myModal').style.display = 'none';
+
+          // Avançar para a próxima pergunta ou finalizar o quiz
+          if (numeroPergunta < perguntas.length) {
+            mostrarPergunta();
+          } else {
+            // O quiz terminou
+            document.getElementById('pergunta').textContent = "Quiz terminado!";
+            document.getElementById('respostaA').style.display = 'none';
+            document.getElementById('respostaB').style.display = 'none';
+            // Reiniciar o quiz
+            numeroPergunta = 0;
+            acertos = 0;
+            erros = 0;
+          }
+        }
+
+        mostrarPergunta();
+      </script>
+
+    </div>
+  </section>
+
+
+
+  <!-- Playlists -->
+  <section class="conheca-je__playlists__bg ">
+
+    <div class="conheca-je__container space-y-16 conheca-je__playlists__alinhar">
+      <div class="conheca-je__playlists__alinhar-titulo">
+        <div class="conheca-je__playlists__fonte-titulo">
+          <h1>PLAYLISTS</h1>
+        </div>
+
+        <div class="conheca-je__playlists__fonte-subtitulo">
+          <h1>Em todo lugar</h1>
+        </div>
+      </div>
+
+      <!-- videos -->
+      <div class="conheca-je__playlists__box p-4 ">
+
+        <!-- 1 coluna -->
+        <div class="conheca-je__playlists__box-grid">
+          <div class="conheca-je__playlists__box-tamanho-iframe">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/W8GCjqYuMnU?si=XgCUcvZ2xy0MFko8"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="conheca-je__playlists__box-tamanho">
+            <div class="conheca-je__playlists__box-borda">
+              <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
+                <ul>
+                  <li>
+                    <a href="https://youtube.com/playlist?list=PLljYw1P54c4xyxdTWdD-fPwQhhA_5FOyI&si=MWI7QyxvwpRRPvan">
+                      <h1 class="conheca-je__playlists__alinhar-links">+ vídeos da playlist</h1>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 2 coluna -->
+        <div class="conheca-je__playlists__box-grid">
+          
+          <div class="conheca-je__playlists__box-tamanho-iframe">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xiPvubv4330?si=c7dpvjdBpRSHgMfk"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="conheca-je__playlists__box-tamanho">
+            <div class="conheca-je__playlists__box-borda">
+              <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
+                <ul>
+                  <li>
+                    <a href="https://youtube.com/playlist?list=PLljYw1P54c4xyxdTWdD-fPwQhhA_5FOyI&si=MWI7QyxvwpRRPvan">
+                      <h1 class="conheca-je__playlists__alinhar-links">+ vídeos da playlist</h1>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 coluna -->
+        <div class="conheca-je__playlists__box-grid">
+          
+          <div class="conheca-je__playlists__box-tamanho-iframe">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4wrMLzqgKEI?si=L66dOEfXeb8ZNm0r"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tre-ac.jus.br/#/" class="">
+                <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
+                  <i class='bx bxs-right-arrow text-2xl'></i>
+                  <h1>Os povos indigenas e o sistema eleitoral</h1>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="conheca-je__playlists__box-tamanho">
+            <div class="conheca-je__playlists__box-borda">
+              <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
+                <ul>
+                  <li>
+                    <a href="https://youtube.com/playlist?list=PLljYw1P54c4xyxdTWdD-fPwQhhA_5FOyI&si=MWI7QyxvwpRRPvan">
+                      <h1 class="conheca-je__playlists__alinhar-links">+ vídeos da playlist</h1>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- história -->
+  <section class="conheca-je__historia__bg pt-20">
+
+    <div class="conheca-je__container conheca-je__historia__alinhar-conteudo ">
+      <!-- titulo -->
+      <div>
+        <div class="conheca-je__historia__box-borda ">
+          <div class="conheca-je__historia__box-borda1 ">
+            <h1 class="conheca-je__historia__fonte-titulo">HISTÓRIA</h1>
+          </div>
+        </div>
+        <h1 class="conheca-je__historia__fonte-subtitulo">DA JUSTIÇA ELEITORAL</h1>
+      </div>
+
+      <!-- conteudo -->
+      <div class="conheca-je__historia__alinhar-grid">
+
+        <!-- accordions -->
+        <div class="conheca-je__historia__box-space">
+
+          <div class="conheca-je conheca-je__historia__box-tamanho ">
+            <div class="conheca-je__historia__box-borda">
+              <div class=" conheca-je__historia__box-borda2">
+                <div class="accordion-header conheca-je__historia__alinhar-entre">
+                  <span class="conheca-je__historia__fonte-topicos">ANTECEDENTES</span>
+                  <i class='bx bx-chevron-down text-3xl'></i>
+                </div>
+
+                <div class="accordion-body">
+                  <div class="p-4 ">
+                    <p>
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                      blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
+                      quas molestias excepturi sint occaecati cupiditate non provident, similique
+                      sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="conheca-je conheca-je__historia__box-tamanho  ">
+            <div class="conheca-je__historia__box-borda">
+              <div class=" conheca-je__historia__box-borda2 ">
+                <div class="accordion-header conheca-je__historia__alinhar-entre">
+                  <span class="conheca-je__historia__fonte-topicos">HISTÓRIA DO VOTO FEMININO NO BRASIL</span>
+                  <i class='bx bx-chevron-down text-3xl'></i>
+                </div>
+
+                <div class="accordion-body ">
+                  <div class="p-4 ">
+                    <div class="conheca-je__historia__alinhar-centro p-4">
+                      <img src="src/fonts/mulher-voto.png" alt="">
+                    </div>
+
+                    <p>
+                      Em 2022, comemoram-se os 90 anos do voto feminino no Brasil. As mulheres lutaram pelo direito de
+                      votar por muito tempo. Embora esse direito fosse legítimo, elas tiveram de persistir e contar com
+                      o apoio de diversos setores da sociedade, como intelectuais, clérigos e políticos, para
+                      conseguirem escolher seus(suas) representantes.
+                    </p>
+                    <p>
+                      Nesse contexto, ganhou força o movimento
+                      feminista, tendo à frente a professora Maria Lacerda de Moura e a bióloga Bertha Lutz, que
+                      fundaram a Liga para a Emancipação Internacional da Mulher – um grupo de estudos cuja finalidade
+                      era a luta pela igualdade política das mulheres.
+                    </p>
+                    <p>
+                      Antes mesmo de 1932, documentos históricos
+                      apontam que a professora Celina Guimarães foi a primeira eleitora brasileira, com repercussão
+                      internacional. Celina requereu sua inclusão no rol de eleitores do município de Mossoró (RN), onde
+                      nasceu, em 1927, após a entrada em vigor da Lei Estadual nº 660, de 25 de outubro daquele ano, que
+                      tornava o Rio Grande do Norte o primeiro estado a estabelecer a não distinção de sexo para o
+                      exercício do voto.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- linha do tempo -->
+        <div class="">
+          <div class="conheca-je__historia__alinhar-subtitulo">
+            <div class="conheca-je__historia__fonte-topicos2">Linha do Tempo</div>
+          </div>
+
+          <div class="conheca-je__imagem ">
+
+            <div class="conheca-je__historia__regioes">
+              <ul class="conheca-je__historia__regioes--caixa conheca-je__historia">
+                <li class="item2">
+                  <a href="#" class="link2 " tab="1930">1930</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2 " tab="1932">1932</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1933">1933</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1934">1934</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1935">1935</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1937">1937</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1945">1945</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1946">1946</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1947">1947</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1950">1950</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1951">1951</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1952">1952</a>
+                </li>
+                <li class="item2">
+                  <a href="#" class="link2" tab="1953">1953</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="conheca-je__historia__conteudo  ">
+
+              <!-- 1930 -->
+              <div class="tabs tab-1930  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1930</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1932 -->
+              <div class="tabs tab-1932  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1932</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1933 -->
+              <div class="tabs tab-1933  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1933</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1934 -->
+              <div class="tabs tab-1934  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1934</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1935 -->
+              <div class="tabs tab-1935  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1935</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1937 -->
+              <div class="tabs tab-1937  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1937</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1945 -->
+              <div class="tabs tab-1945  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1945</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1945 -->
+              <div class="tabs tab-1946  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1946</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1947 -->
+              <div class="tabs tab-1947  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1947</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.
+                  3 DE NOVEMBRO: Data em que o governo provisório de Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1950 -->
+              <div class="tabs tab-1950  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1950</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1951 -->
+              <div class="tabs tab-1951  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1951</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1952 -->
+              <div class="tabs tab-1952  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1952</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+              <!-- 1953 -->
+              <div class="tabs tab-1953  conheca-je__historia__posicao-informacao">
+                <h1 class="conheca-je__historia__fonte-titulo-timeline ">1953</h1>
+                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
+                  Getulio Vargas enviou ao Congresso Nacional o
+                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
+                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 90 anos je -->
+  <section>
+    <div class="conheca-je__container py-10">
+      <!-- 90 anos -->
+      <div class="conheca-je__90anos__tamanho-titulo conheca-je__90anos__estilo-titulo">
+        <h1 class="conheca-je__90anos__fonte-titulo ">GT 90 ANOS JE</h1>
+      </div>
+
+      <!-- historia -->
+      <div class="conheca-je__90anos__grid">
+        <!-- conteudo -->
+        <div class="col-span-3">
+          <div class="flex justify-end p-5">
+            <img class="" src="src/fonts/90-anos.png" alt="">
+          </div>
+          <p>
+            Para celebrar os 90 anos da Justiça Eleitoral desde a sua primeira instituição, em 24 de fevereiro de 1932,
+            mesma data em que se comemorarão os 90 anos do voto feminino no Brasil, o Tribunal Superior Eleitoral
+            instituiu um grupo de trabalho (GT) multidisciplinar para organizar as ações e eventos relacionados ao tema
+            no transcorrer de 2022. Criado em 12 de agosto pela Portaria-TSE nº 521/2021, e alterado pela Portaria-TSE
+            nº 552/2022, esse GT possui atualmente a seguinte composição:
+          </p>
+          <ul>
+            <li>
+              Cleber Schumann - coordenadorSecretário de Gestão da Informação e do Conhecimento
+            </li>
+            <li>
+              Rui Moreira de OliveiraDiretor-Geral da Secretaria do Tribunal
+            </li>
+            <li>
+              Larissa Almeida NascimentoJuíza Auxiliar da Presidência e Juíza Ouvidora do Tribunal
+            </li>
+            <li>
+              Julianna Sant'ana SesconettoAssessora-Chefe do Gabinete do Diretor-Geral da Secretaria do Tribunal
+            </li>
+            <li>
+              Frederico Franco AlvimAssessor-Chefe da Assessoria Especial de Enfrentamento à Desinformação
+            </li>
+            <li>
+              Liliam Sayuri Evangelista KusanoRepresentante do Gabinete do Ministro Alexandre de Moraes
+            </li>
+            <li>
+              Giselly SiqueiraSecretária de Comunicação e Multimídia
+            </li>
+          </ul>
+          </p>
+        </div>
+        <div class="col-span-2 flex justify-center">
+          <img class="" src="src/fonts/90anos-em-acao.PNG" alt="">
+        </div>
+      </div>
+
+      <div class="rounded-full bg-[#00FF5A] max-w-xl my-4">
+        <h1 class="text-center text-4xl font-bold p-4">Ações e eventos realizados</h1>
+      </div>
+
+      <!-- calendario -->
+      <div class="conheca-je__calendario__container">
+        <div id="container" class="conheca-je__calendario__tamanho col-span-1">
+          <div id="header" class="conheca-je__calendario__header-space">
+            <div id="monthDisplay" class="conheca-je__calendario__header-fonte"></div>
+            <div class="flex space-x-2">
+              <button id="backButton" class="bg-[#00FF5A] text-white px-2 py-2 rounded"><i
+                  class='bx bx-chevron-left text-3xl'></i></button>
+              <button id="nextButton" class="bg-[#00FF5A] text-white px-2 py-2 rounded"><i
+                  class='bx bx-chevron-right text-3xl'></i></button>
+            </div>
+          </div>
+
+          <div id="weekdays" class="grid grid-cols-7 gap-8 text-2xl font-bold p-2">
+            <div>D</div>
+            <div>S</div>
+            <div>T</div>
+            <div>Q</div>
+            <div>Q</div>
+            <div>S</div>
+            <div>S</div>
+          </div>
+
+          <!-- div dinâmica -->
+          <div id="calendar" class="grid grid-cols-7 gap-2"></div>
+        </div>
+
+        <!-- Seus modais (simplificados para o exemplo) -->
+        <div id="newEventModal" class="hidden bg-white p-4 rounded shadow-md absolute ">
+          <h2 class="text-lg font-semibold mb-2">Novo Evento</h2>
+          <input id="eventTitleInput" class="border rounded px-2 py-1 mb-2" placeholder="Título do Evento" />
+          <button id="saveButton" class="bg-blue-500 text-white px-4 py-2 rounded">Salvar</button>
+          <button id="cancelButton" class="bg-gray-300 text-gray-700 px-4 py-2 rounded">Cancelar</button>
+        </div>
+
+        <div id="eventDetails" class="hidden bg-slate-100 p-4 rounded shadow-md hidth-auto col-span-2">
+          <h2 class="text-lg font-semibold mb-2">Evento</h2>
+          <div id="eventText" class="mb-2">hatumalaka</div>
+          <button id="eventDetailsButton" class="bg-blue-500 text-white px-4 py-2 rounded">Detalhes do Evento</button>
+          <br>
+          <button id="closeButton" class="bg-blue-500 text-white px-4 py-2 rounded">Fechar</button>
+        </div>
+
+        <div id="eventDetails" class="hidden bg-black p-16 rounded shadow-md absolute  ">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- accordions -->
+  <script>
+    const accordionHeader = document.querySelectorAll('.accordion-header')
+
+    accordionHeader.forEach(accordionHeader => {
+      accordionHeader.addEventListener("click", event => {
+        accordionHeader.classList.toggle("active")
+        const accordionBody = accordionHeader.nextElementSibling
+        if (accordionHeader.classList.contains("active")) {
+          accordionBody.style.maxHeight = accordionBody.scrollHeight + "px"
+        }
+        else {
+          accordionBody.style.maxHeight = 0
+        }
+      })
+
+    })
+  </script>
+
+  <!-- tse-explica -->
+  <script>
+    const titulos = [
+      "Mesário: importante ator para a transparência e a segurança nas eleições",
+      "Representante do TSE destaca re19tados de Missão de Observação das eleições regionais da Colômbia",
+      "Saiba as diferenças entre as sessões jurisdicional e administrativa do TSE",
+      // Adicione mais títulos conforme necessário
+    ];
+
+    const subtitulos = [
+      "Os mesários atuam na condução dos trabalhos na seção eleitoral e são peças fundamentais para garantir o sucesso de uma eleição",
+      "Eleitoras e eleitores da Colômbia foram às urnas no último domingo (29) eleger representantes aos cargos de governador,",
+      "As sessões plenárias ordinárias do Tribunal Superior Eleitoral (TSE), realizadas sempre as terças, às 19h,",
+      // Adicione mais subtítulos conforme necessário
+    ];
+
+    let currentIndex = 0;
+
+    const tituloElement = document.querySelector(".conheca-je__glossario__fonte-titulo");
+    const subtituloElement = document.querySelector(".conheca-je__glossario__fonte-subtitulo");
+
+    const botaoAnterior = document.getElementById("anterior");
+    const botaoProximo = document.getElementById("proximo");
+
+    botaoAnterior.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + titulos.length) % titulos.length;
+      atualizarConteudoCard();
+    });
+
+    botaoProximo.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % titulos.length;
+      atualizarConteudoCard();
+    });
+
+    function atualizarConteudoCard() {
+      tituloElement.textContent = titulos[currentIndex];
+      subtituloElement.textContent = subtitulos[currentIndex];
+    }
+
+    atualizarConteudoCard();
+  </script>
+
+  <!-- menus -->
+  <script>
+    const links = document.querySelectorAll(" .link");
+    const tabs = document.querySelectorAll(" .tabs");
+
+    links.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Remove a classe ativa de todos os links
+        links.forEach(l => l.classList.remove("link--ativo"));
+
+        // Adiciona a classe ativa ao link clicado
+        link.classList.add("link--ativo");
+
+        // Obtém o valor do atributo "tab" do link clicado
+        const tabId = link.getAttribute("tab");
+
+        // Remove a classe ativa de todas as abas de conteúdo
+        tabs.forEach(tab => tab.classList.remove("tab--ativo"));
+
+        // Adiciona a classe ativa à aba de conteúdo correspondente
+        const selectedTab = document.querySelector(`.tabs.tab-${tabId}`);
+        if (selectedTab) {
+          selectedTab.classList.add("tab--ativo");
+        }
+      });
+    });
+  </script>
+
+  <!-- menus -->
+  <script>
+    const links2 = document.querySelectorAll(" .link2 ");
+    const tabs2 = document.querySelectorAll(" .tabs");
+
+    links2.forEach(link2 => {
+      link2.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Remove a classe ativa de todos os links
+        links2.forEach(l => l.classList.remove("link2--ativo"));
+
+        // Adiciona a classe ativa ao link clicado
+        link2.classList.add("link2--ativo");
+
+        // Obtém o valor do atributo "tab" do link clicado
+        const tabId = link2.getAttribute("tab");
+
+        // Remove a classe ativa de todas as abas de conteúdo
+        tabs2.forEach(tab => tab.classList.remove("tab--ativo"));
+
+        // Adiciona a classe ativa à aba de conteúdo correspondente
+        const selectedTab = document.querySelector(`.tabs.tab-${tabId}`);
+        if (selectedTab) {
+          selectedTab.classList.add("tab--ativo");
+        }
+      });
+    });
+  </script>
+
+  <!-- calendario -->
+  <script>
+    // variaveis globais
+    let nav = 0;
+    let clicked = null;
+    let predefinedEvents = [
+      { date: '3/15/2022', data: '15 DE MARÇO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
+      { date: '2/20/2022', data: '20 DE FEVEREIRO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
+      { date: '1/14/2022', data: '14 DE JANEIRO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
+      // Adicione mais eventos predefinidos conforme necessário
+    ];
+
+    // variavel do modal:
+    const newEvent = document.getElementById('newEventModal');
+    const eventDetailsDiv = document.getElementById('eventDetails');
+    const backDrop = document.getElementById('modalBackDrop');
+    const calendar = document.getElementById('calendar'); // div calendar:
+    const weekdays = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];  // array with weekdays:
+
+    //funções
+    function openModal(date) {
+      clicked = date;
+      const eventDay = predefinedEvents.find((event) => event.date === clicked);
+
+      if (eventDay) {
+        eventDetailsDiv.innerHTML = `<h2 class="font-bold text-3xl mb-10">${eventDay.data}</h2><br>
+                                     <div class="font-bold text-2xl mb-5 flex items-center justify-between ">${eventDay.title} <h2>STATUS: REALIZADO</h2></div><br>
+                                     <h2 class="font-bold text-xl" >AÇÃO</h2>
+                                     <div>${eventDay.acao}</div><br>
+                                     <h2 class="font-bold text-xl">DETALHES</h2>
+                                     <div>${eventDay.detalhes}</div><br>`;
+        eventDetailsDiv.style.display = 'block';
+        backDrop.style.display = 'block';
+      }
+
+
+      backDrop.style.display = 'block';
+    }
+
+    //função load() será chamada quando a pagina carregar:
+    function load() {
+      const date = new Date(2022, 0, 1); // Inicia em janeiro de 2022
+
+      //mudar titulo do mês:
+      if (nav !== 0) {
+        date.setMonth(date.getMonth() + nav);
+        if (date.getMonth() < 0) {
+          date.setMonth(11);
+          date.setFullYear(date.getFullYear() - 1);
+        } else if (date.getMonth() > 11) {
+          date.setMonth(0);
+          date.setFullYear(date.getFullYear() + 1);
+        }
+      }
+
+
+
+      const day = date.getDate();
+      const month = date.getMonth();
+      const year = date.getFullYear();
+
+      const daysMonth = new Date(year, month + 1, 0).getDate();
+      const firstDayMonth = new Date(year, month, 1);
+
+      const dateString = firstDayMonth.toLocaleDateString('pt-br', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+      });
+
+      const paddinDays = weekdays.indexOf(dateString.split(', ')[0]);
+
+      //mostrar mês e ano:
+      document.getElementById('monthDisplay').innerText = `${date.toLocaleDateString('pt-br', { month: 'long' })} ${year}`;
+
+      calendar.innerHTML = '';
+
+      // criando uma div com os dias:
+      for (let i = 1; i <= paddinDays + daysMonth; i++) {
+        const dayS = document.createElement('div');
+        dayS.classList.add('day');
+
+        const dayString = `${month + 1}/${i - paddinDays}/${year}`;
+
+        //condicional para criar os dias de um mês:
+        if (i > paddinDays) {
+          dayS.innerText = i - paddinDays;
+
+          const eventDay = predefinedEvents.find((event) => event.date === dayString);
+
+          if (i - paddinDays === day && nav === 0) {
+            dayS.id = 'currentDay';
+          }
+
+          if (eventDay) {
+            const eventDiv = document.createElement('div');
+            dayS.classList.add('event');
+            // eventDiv.classList.add('event');
+            // eventDiv.innerText = eventDay.title;
+            // dayS.appendChild(dayS);
+
+            dayS.addEventListener('click', () => openModal(dayString));
+          }
+        } else {
+          dayS.classList.add('padding');
+        }
+
+        calendar.appendChild(dayS);
+      }
+    }
+
+    function closeModal() {
+      newEvent.style.display = 'none';
+      eventDetailsDiv.style.display = 'none'; // Oculta a div de detalhes do evento
+      backDrop.style.display = 'none';
+      eventTitleInput.value = '';
+      clicked = null;
+      load();
+    }
+
+    // botões
+    function buttons() {
+      document.getElementById('backButton').addEventListener('click', () => {
+        nav--;
+        load();
+      });
+
+      document.getElementById('nextButton').addEventListener('click', () => {
+        nav++;
+        load();
+      });
+
+      document.getElementById('cancelButton').addEventListener('click', () => closeModal());
+
+      document.getElementById('closeButton').addEventListener('click', () => closeModal());
+    }
+    buttons();
+    load();
+
+
+  </script>
+</body>
+
+</html>
