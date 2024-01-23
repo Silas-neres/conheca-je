@@ -142,7 +142,7 @@
     <div class="conheca-je__glossario__grid">
 
       <!-- glossario-brasil -->
-      <div class=" conheca-je__glossario__bg-brasil conheca-je__glossario__posicao-container">
+      <div class=" conheca-je__glossario__bg-brasil bg-[url('src/fonts/brasilbg.svg')]  conheca-je__glossario__posicao-container">
         <div class="">
           <div class=" px-4 ">
             <h1 class="conheca-je__glossario__tre">TREs</h1>
@@ -381,8 +381,6 @@
         </div>
       </div>
 
-
-
       <!-- Modal -->
       <div id="myModal">
         <div id="modalContent">
@@ -391,7 +389,9 @@
         </div>
       </div>
 
+
       <script>
+
         var perguntas = [
           {
             pergunta: "Fiscaliza os candidatos eleitos",
@@ -602,7 +602,11 @@
           }
         }
 
+
+
+
         mostrarPergunta();
+
       </script>
 
     </div>
@@ -774,17 +778,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Modal -->
-      <div id="myModal">
-        <div id="modalContent">
-          <span id="closeModal" onclick="fecharModal()">&times;</span>
-          <p id="explicacao"></p>
-        </div>
-      </div>
-
-
-
     </div>
   </section>
 
@@ -1347,116 +1340,20 @@
     </div>
   </section>
 
-  <!-- accordions -->
-  <script>
-  </script>
-
   <!-- tse-explica -->
-  <script>
-    const titulos = [
-      "Mesário: importante ator para a transparência e a segurança nas eleições",
-      "Representante do TSE destaca re19tados de Missão de Observação das eleições regionais da Colômbia",
-      "Saiba as diferenças entre as sessões jurisdicional e administrativa do TSE",
-      // Adicione mais títulos conforme necessário
-    ];
+  <script type="module" src="src/js/tse-explica.js"></script>
 
-    const subtitulos = [
-      "Os mesários atuam na condução dos trabalhos na seção eleitoral e são peças fundamentais para garantir o sucesso de uma eleição",
-      "Eleitoras e eleitores da Colômbia foram às urnas no último domingo (29) eleger representantes aos cargos de governador,",
-      "As sessões plenárias ordinárias do Tribunal Superior Eleitoral (TSE), realizadas sempre as terças, às 19h,",
-      // Adicione mais subtítulos conforme necessário
-    ];
+  <!-- menu brasil -->
+  <script type="module" src="src/js/glossario.js"></script>
 
-    let currentIndex = 0;
 
-    const tituloElement = document.querySelector(".conheca-je__glossario__fonte-titulo");
-    const subtituloElement = document.querySelector(".conheca-je__glossario__fonte-subtitulo");
-
-    const botaoAnterior = document.getElementById("anterior");
-    const botaoProximo = document.getElementById("proximo");
-
-    botaoAnterior.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + titulos.length) % titulos.length;
-      atualizarConteudoCard();
-    });
-
-    botaoProximo.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % titulos.length;
-      atualizarConteudoCard();
-    });
-
-    function atualizarConteudoCard() {
-      tituloElement.textContent = titulos[currentIndex];
-      subtituloElement.textContent = subtitulos[currentIndex];
-    }
-
-    atualizarConteudoCard();
-  </script>
-
-  <!-- menus -->
-  <script>
-    const links = document.querySelectorAll(" .link");
-    const tabs = document.querySelectorAll(" .tabs");
-
-    links.forEach(link => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        // Remove a classe ativa de todos os links
-        links.forEach(l => l.classList.remove("link--ativo"));
-
-        // Adiciona a classe ativa ao link clicado
-        link.classList.add("link--ativo");
-
-        // Obtém o valor do atributo "tab" do link clicado
-        const tabId = link.getAttribute("tab");
-
-        // Remove a classe ativa de todas as abas de conteúdo
-        tabs.forEach(tab => tab.classList.remove("tab--ativo"));
-
-        // Adiciona a classe ativa à aba de conteúdo correspondente
-        const selectedTab = document.querySelector(`.tabs.tab-${tabId}`);
-        if (selectedTab) {
-          selectedTab.classList.add("tab--ativo");
-        }
-      });
-    });
-  </script>
-
-  <!-- menus -->
-  <script>
-    const links2 = document.querySelectorAll(" .link2 ");
-    const tabs2 = document.querySelectorAll(" .tabs");
-
-    links2.forEach(link2 => {
-      link2.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        // Remove a classe ativa de todos os links
-        links2.forEach(l => l.classList.remove("link2--ativo"));
-
-        // Adiciona a classe ativa ao link clicado
-        link2.classList.add("link2--ativo");
-
-        // Obtém o valor do atributo "tab" do link clicado
-        const tabId = link2.getAttribute("tab");
-
-        // Remove a classe ativa de todas as abas de conteúdo
-        tabs2.forEach(tab => tab.classList.remove("tab--ativo"));
-
-        // Adiciona a classe ativa à aba de conteúdo correspondente
-        const selectedTab = document.querySelector(`.tabs.tab-${tabId}`);
-        if (selectedTab) {
-          selectedTab.classList.add("tab--ativo");
-        }
-      });
-    });
-  </script>
+  <!-- menu linha do tempo -->
+  <script type="module" src="src/js/linha-do-tempo.js"></script>
 
   <!-- calendario -->
   <script type="module" src="src/js/accordions.js"></script>
 
-  <!-- calendário -->
+  <!-- accordion -->
   <script type="module" src="src/js/calendario.js"></script>
 
 </body>
