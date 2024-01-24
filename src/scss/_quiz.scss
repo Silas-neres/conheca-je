@@ -92,10 +92,10 @@
     }
 
     &__bg{
-        @apply bg-no-repeat bg-bottom bg-[url("src/fonts/game.svg")] ;
+        @apply bg-no-repeat bg-bottom bg-[url("../../src/fonts/game-quiz.svg")] ;
 
         &-placar{
-            @apply z-0 bg-no-repeat bg-center bg-[url("src/fonts/placar-bg-centro.svg")] ;
+            @apply z-0 bg-no-repeat bg-center bg-[url("../../src/fonts/placar-bg-centro.svg")] ;
 
             &-centro{
                 @apply   bg-no-repeat bg-center  bg-gradient-to-t from-black to-gray-400 ;

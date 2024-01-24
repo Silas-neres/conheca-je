@@ -12,7 +12,7 @@ h2{
     &__bg{
 
         &-azul{
-            @apply bg-no-repeat bg-left-top bg-[url("src/fonts/bgTopo.png")]  ;
+            @apply bg-no-repeat bg-left-top bg-[url("../../src/fonts/bgTopo.png")]  ;
         }
         &-verde{
             @apply bg-cover bg-no-repeat bg-center  ;

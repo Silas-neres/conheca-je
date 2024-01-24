@@ -6,8 +6,6 @@
   <link href="src/scss/main.scss" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <style lang="sass">
-    @import url('./src/scss/main.scss');
-
     /* Estilos do Modal */
     #calendar-container {
       display: grid;
@@ -124,7 +122,7 @@
         </div>
 
         <div class="conheca-je__header__position-imagens conheca-je__header__imagem  ">
-          <img class="conheca-je__header__nivel1__mulher" src="src/fonts/mulher-feliz.png" alt="">
+          <img class="conheca-je__header__nivel1__mulher" src="./src/fonts/mulher-feliz.png" alt="">
           <img class="conheca-je__header__nivel2__star" src="src/fonts/star.svg" alt="">
           <img class="conheca-je__header__nivel3__urna" src="src/fonts/urna 1.png" alt="">
         </div>
@@ -142,7 +140,7 @@
     <div class="conheca-je__glossario__grid">
 
       <!-- glossario-brasil -->
-      <div class=" conheca-je__glossario__bg-brasil bg-[url('src/fonts/brasilbg.svg')]  conheca-je__glossario__posicao-container">
+      <div class=" conheca-je__glossario__bg-brasil  conheca-je__glossario__posicao-container">
         <div class="">
           <div class=" px-4 ">
             <h1 class="conheca-je__glossario__tre">TREs</h1>
@@ -156,6 +154,7 @@
                 <li class="item">
                   <a href="#" class="link" tab="norte">NORTE</a>
                 </li>
+                <!-- <i class='bx bxs-right-arrow'></i> -->
                 <li class="item">
                   <a href="#" class="link " tab="nordeste">NORDESTE</a>
                 </li>
@@ -297,16 +296,16 @@
           <h2 class="conheca-je__glossario__bg-explicatse-bold">TSE Explica</h2>
         </div>
 
-        <div class="relative h-44 w-full"><img class="conheca-je__glossario__imagem" src="src/fonts/exclamacao.png"
-            alt=""></div>
-
+        <div class="relative h-44 w-full"><img class="conheca-je__glossario__imagem conheca-je__glossario__hide"
+            src="src/fonts/exclamacao.png" alt="">
+        </div>
 
         <div class="flex  conheca-je__glossario__regioes--caixa2 ">
 
-          <h1 class="conheca-je__glossario__fonte-titulo ">Mesário: importante ator para a transparência e a segurança
-            nas eleições</h1>
-          <h2 class="conheca-je__glossario__fonte-subtitulo p-auto">Os mesários atuam na condução dos trabalhos na seção
-            eleitoral e são peças fundamentais para garantir o sucesso de uma eleição </h2>
+          <div class="conheca-je__glossario__fonte-titulo ">
+          </div>
+          <div class=" conheca-je__glossario__fonte-subtitulo">
+          </div>
 
           <div class="mt-12 flex justify-between ">
             <button id="anterior">
@@ -321,6 +320,8 @@
       </div>
 
     </div>
+
+
   </section>
 
   <!-- Quiz -->

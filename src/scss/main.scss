@@ -21,7 +21,7 @@ p {
     @apply flex justify-center items-center bg-[#B8FE43] text-[#163570]  py-2 px-2  hover:font-bold text-lg sm:text-2xl ;
 
     &--ativo {
-        @apply font-bold  text-[#163570] bg-no-repeat bg-right bg-[url(src/fonts/seta-azul.svg)] text-lg sm:text-2xl;
+        @apply font-bold  text-[#163570] bg-no-repeat bg-right bg-[url(../../src/fonts/seta-azul.svg)] text-lg sm:text-2xl;
     }
 }
 
@@ -29,7 +29,7 @@ p {
     @apply flex justify-center items-end bg-white text-[#163570] text-3xl  hover:font-bold ;
 
     &--ativo {
-        @apply font-bold text-3xl text-[#163570] bg-no-repeat bg-right bg-[url(src/fonts/seta-azul.svg)];
+        @apply font-bold text-3xl text-[#163570] bg-no-repeat bg-right bg-[url(../../src/fonts/seta-azul.svg)];
     }
 }
 
