@@ -1,46 +1,8 @@
-//  /* Estilos do Modal */
-//  #calendar-container {
-//     @apply grid grid-cols-2;
-//   }
-
-//   .day {
-//     @apply w-100 p-10 h-100 cursor-pointer box-border bg-var(--color-day) m-5 shadow-var(--box-shadow) flex flex-col justify-between rounded-15%;
-//   }
-
-//   .day:hover {
-//     @apply bg-var(--hover);
-//   }
-
-//   .padding {
-//     @apply cursor-default bg-var(--body-color) !important box-shadow-none !important;
-//   }
-
-//   #newEventModal,
-//   #deleteEventModal {
-//     @apply hidden z-20 p-25 bg-var(--modal-event) shadow-md rounded-5 absolute w-350 top-100 font-sans;
-//   }
-
-//   #eventTitleInput {
-//     @apply p-10 w-full box-border mb-25 border-none outline-none box-shadow-3 gray rounded-3;
-//   }
-
-//   #eventTitleInput.error {
-//     @apply border-2 border-red;
-//   }
-
-//   #eventText {
-//     @apply text-30;
-//   }
-
-//   .event {
-//     @apply bg-yellow-400 rounded-5 p-2 w-full;
-//   }
-
 
 &__calendario{
 
     &__container{
-        @apply grid grid-cols-3 ;
+        @apply grid grid-cols-1 lg:grid-cols-3 ;
     }
 
     &__tamanho{

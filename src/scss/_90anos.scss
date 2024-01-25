@@ -1,9 +1,13 @@
 &__90anos{
 
+    &__hidden{
+        @apply hidden lg:block;
+    }
+
     &__tamanho{
 
         &-titulo{
-            @apply max-w-lg ;
+            @apply max-w-lg mx-auto lg:mx-0;
         }
     }
 
@@ -23,6 +27,13 @@
     }
 
     &__grid{
-        @apply grid grid-cols-5 gap-6 ;
+        @apply grid lg:grid-cols-5 gap-6 ;
+    }
+
+    &__imagem{
+
+        &-90anos{
+            @apply flex justify-center lg:justify-end p-5;
+        }
     }
 }

@@ -1,19 +1,27 @@
-h1 {
-    @apply text-[#000C79] font-bold  text-6xl ;
-}
-
-h2 {
-    @apply text-[#000C79] font-bold leading-5 text-3xl ;
-}
 
 &__header {
+
+    &__fonte{
+        &-titulo1{
+            @apply text-[#000C79] font-bold leading-5 text-4xl w-full text-center px-5 py-2 ;
+            @apply 2xl:text-end 2xl:w-1/2 ;
+
+        }
+        &-titulo2{
+            @apply text-[#000C79] font-bold  text-6xl text-center w-full px-5 pb-3 bg-[#FAC60E] ;
+            @apply 2xl:text-end 2xl:w-auto;
+
+        }
+    }
     &__bg {
         &-azul {
             @apply bg-no-repeat bg-left-top bg-[url("../../src/fonts/bgTopo.png")]  ;
         }
         &-verde {
             @apply bg-auto  bg-no-repeat bg-bottom bg-[#0CAB44] h-72 z-0  ;
+            @apply col-span-1 xl:col-span-2 ;
             clip-path: polygon(0 40%, 100% 0, 100% 60%, 0% 100%);
+            z-index: 2;
         }
     }
 
@@ -24,40 +32,37 @@ h2 {
         &-imagens {
             @apply flex flex-row items-start justify-start ;
             position: relative; // Adiciona posicionamento relativo para criar um novo contexto de posicionamento para as imagens
-            z-index: 10; // Define um valor de z-index maior para que as imagens fiquem acima do fundo verde
         }
     }
 
     &__grid {
-        @apply grid grid-cols-2 ;
+        @apply grid grid-cols-1 xl:grid-cols-2 ;
     }
 
-    &__bgamarelo {
-        @apply  bg-yellow-400 w-1/2 ;
-        @apply text-center ;
-    }
 
     &__nivel1 {
-        @apply static z-10 ;
 
         &__mulher {
-            @apply relative left-32 top-12 ;
+            @apply relative left-32 top-14 ;
+            @apply hidden xl:block;
+            z-index: 1;
         }
     }
 
     &__nivel2 {
-        @apply relative z-20 ;
 
         &__star {
             @apply relative left-12 top-36 ;
+            @apply hidden 2xl:block;
+            z-index: 3;
         }
     }
 
     &__nivel3 {
-        @apply relative z-30 ;
-
         &__urna {
             @apply relative right-96 top-60 ;
+            @apply hidden 2xl:block;
+            z-index: 4;
         }
     }
 }

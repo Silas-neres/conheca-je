@@ -5,12 +5,12 @@
 @import './mixins.scss';
 
 
-*{
-    border: 1px solid hotpink;
-    font-family: 'Unbounded', sans-serif;  
-    font-family: 'Space Grotesk', sans-serif; 
+// *{
+//     border: 1px solid hotpink;
+//     font-family: 'Unbounded', sans-serif;  
+//     font-family: 'Space Grotesk', sans-serif; 
     
-}
+// }
 
 
 p {
@@ -29,7 +29,8 @@ p {
     @apply flex justify-center items-end bg-white text-[#163570] text-3xl  hover:font-bold ;
 
     &--ativo {
-        @apply font-bold text-3xl text-[#163570] bg-no-repeat bg-right bg-[url(../../src/fonts/seta-azul.svg)];
+        @apply font-bold text-3xl text-[#163570] ;
+        @apply bg-no-repeat bg-right sm:bg-[url(../../src/fonts/seta-azul.svg)];
     }
 }
 

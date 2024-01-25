@@ -144,7 +144,7 @@
 
         &--caixa {
 
-            @apply box-border h-full w-48 p-4 py-10 border-2 bg-white rounded-3xl ;
+            @apply box-border h-full w-full p-4 py-10 border-2 bg-white rounded-3xl ;
         }
 
         &--caixa2 {
@@ -156,7 +156,7 @@
     &__posicao{
 
         &-informacao{
-            @apply  my-auto  p-10 bg-[#163570] rounded-r-3xl py-20 ;
+            @apply  my-auto  p-2 bg-[#163570] rounded-r-3xl py-20 sm:p-10 ;
         }
 
         &-container{
