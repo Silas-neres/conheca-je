@@ -9,7 +9,7 @@ const titulos = [
 ];
 
 const subtitulos = [
-  "Os mesários atuam na condução dos trabalhos na seção eleitoral e são peças fundamentais para garantir o sucesso de uma kakakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+  "Os mesários atuam na condução dos trabalhos na seção eleitoral e são peças fundamentais para garantir o sucesso de um lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aspernatur repudiandae consequuntur exercitationem quia ex sed quisquam repellat, ad quas expedita velit obcaecati assumenda modi impedit? Magnam placeat asperiores sunt!",
   "Eleitoras e eleitores da Colômbia foram às urnas no último domingo (29) eleger representantes aos cargos de governador,",
   "As sessões plenárias ordinárias do Tribunal Superior Eleitoral (TSE), realizadas sempre às terças, às 19h,",
   "Os mesários atuam na condução dos trabalhos na seção eleitoral e são peças fundamentais para garantir o sucesso de uma ",

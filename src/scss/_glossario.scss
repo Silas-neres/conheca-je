@@ -18,21 +18,22 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
         }
     }
 
-    &__bg{
-        &-brasil{
-            @apply bg-local bg-contain bg-no-repeat bg-center bg-[url("../../src/fonts/brasilbg.svg")] ;
+    &__bg {
+        &-brasil {
+            @apply bg-local bg-contain bg-no-repeat bg-center bg-[url("../../src/fonts/brasilbg.svg")] min-h-[700px] sm:min-h-[600px] md:min-h-[1000px] md:max-h-[1000px];
+            
         }
-
-
-        &-explicatse{
-            @apply  rounded-full py-4 space-x-2 text-center text-4xl  text-[#FFF] bg-[#A13FE6]  ;
-            @apply md:w-2/3 ;
-
-            &-bold{
+    
+        &-explicatse {
+            @apply rounded-full py-4 space-x-2 text-center text-4xl text-[#FFF] bg-[#A13FE6];
+            @apply md:w-2/3;
+    
+            &-bold {
                 @apply font-bold;
             }
         }
     }
+    
 
     &__fonte{
 
