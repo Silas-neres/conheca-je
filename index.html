@@ -75,6 +75,10 @@
       color: #fff;
     }
 
+    .event:hover{
+      background-color: rgb(34 197 94);
+    }
+
     #myModal {
       display: none;
       position: fixed;
@@ -124,9 +128,9 @@
         </div>
 
         <div class="conheca-je__header__position-imagens conheca-je__header__imagem ">
-          <img class=" conheca-je__header__nivel1__mulher" src="./src/fonts/mulher-feliz.png" alt="">
-          <img class="conheca-je__header__nivel2__star" src="src/fonts/star.svg" alt="">
-          <img class="conheca-je__header__nivel3__urna" src="src/fonts/urna 1.png" alt="">
+          <img class=" conheca-je__header__nivel1__mulher" src="./src/fonts/mulher-feliz.png" alt="mulher-feliz">
+          <img class="conheca-je__header__nivel2__star" src="src/fonts/star.svg" alt="estrela">
+          <img class="conheca-je__header__nivel3__urna" src="src/fonts/urna 1.png" alt="urna">
         </div>
 
         <div class="conheca-je__header__bg-verde ">
@@ -302,7 +306,7 @@
         </div>
 
         <div class="relative h-20 w-full md:h-44 "><img class="conheca-je__glossario__imagem conheca-je__glossario__hide"
-            src="src/fonts/exclamacao.png" alt="">
+            src="src/fonts/exclamacao.png" alt="exclamacao">
         </div>
 
         <div class="flex  conheca-je__glossario__regioes--caixa2 ">
@@ -314,11 +318,11 @@
 
           <div class="mt-12 flex justify-between ">
             <button id="anterior">
-              <img src="/src/fonts/arrow.svg" alt="">
+              <i class='bx bx-left-arrow-alt text-5xl text-gray-400 hover:text-black'></i>
             </button>
 
             <button id="proximo">
-              <img src="/src/fonts/arrow-black.svg" alt="">
+              <i class='bx bx-right-arrow-alt text-5xl text-gray-400 hover:text-black'></i>
             </button>
           </div>
         </div>
@@ -346,7 +350,7 @@
 
       <div class="conheca-je__quiz__box">
         <div>
-          <img src="src/fonts/quiz 1.png" class="conheca-je__quiz__hide" alt="">
+          <img src="src/fonts/quiz 1.png" class="conheca-je__quiz__hide" alt="quiz-balao-pensamento">
         </div>
         <div class="grid gap-4 content-around">
           <div class="conheca-je__quiz__fonte-texto1 ">Você sabe o que a Justiça Eleitoral faz?</div>
@@ -1026,7 +1030,7 @@
                 <div class="accordion-body ">
                   <div class="p-4 ">
                     <div class="conheca-je__historia__alinhar-centro p-4">
-                      <img src="src/fonts/mulher-voto.png" alt="">
+                      <img src="src/fonts/mulher-voto.png" alt="voto-feminino">
                     </div>
 
                     <p>
@@ -1254,7 +1258,7 @@
         <!-- conteudo -->
         <div class="col-span-3">
           <div class="conheca-je__90anos__imagem-90anos">
-            <img class="" src="src/fonts/90-anos.png" alt="">
+            <img class="" src="src/fonts/90-anos.png" alt="90-anos">
           </div>
           <p>
             Para celebrar os 90 anos da Justiça Eleitoral desde a sua primeira instituição, em 24 de fevereiro de 1932,
@@ -1289,7 +1293,7 @@
           </p>
         </div>
         <div class="col-span-2 flex justify-center conheca-je__90anos__hidden">
-          <img class="" src="src/fonts/90anos-em-acao.PNG" alt="">
+          <img class="" src="src/fonts/90anos-em-acao.PNG" alt="90-anos-em-acao">
         </div>
       </div>
 
@@ -1303,9 +1307,9 @@
           <div id="header" class="conheca-je__calendario__header-space">
             <div id="monthDisplay" class="conheca-je__calendario__header-fonte"></div>
             <div class="flex space-x-2">
-              <button id="backButton" class="bg-[#00FF5A] text-white px-2 py-2 rounded"><i
+              <button id="backButton" class=" text-white px-2 py-2 rounded bg-[#00FF5A] hover:bg-green-500"><i
                   class='bx bx-chevron-left text-3xl'></i></button>
-              <button id="nextButton" class="bg-[#00FF5A] text-white px-2 py-2 rounded"><i
+              <button id="nextButton" class=" text-white px-2 py-2 rounded bg-[#00FF5A] hover:bg-green-500"><i
                   class='bx bx-chevron-right text-3xl'></i></button>
             </div>
           </div>
