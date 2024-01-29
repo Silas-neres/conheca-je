@@ -1,4 +1,10 @@
 @layer components{
+    .accordion-header:hover .conheca-je__perguntas__fonte-subtitulo {
+        color: black ;
+    }
+    .accordion-header.active .conheca-je__perguntas__fonte-subtitulo {
+        color: black;
+    }    
     .accordion-header {
         @apply py-4 px-6 cursor-pointer ;
     }
@@ -45,14 +51,14 @@
 
         }
         &-subtitulo{
-            @apply font-semibold text-xl text-green-500 md:text-2xl ;
+            @apply font-semibold text-xl text-green-600 md:text-2xl ;
         }
     }
 
     &__box{
 
         &-tamanho{
-            @apply max-w-2xl mx-auto ;
+            @apply max-w-2xl mx-auto  ;
         }
 
         &-borda{
@@ -60,7 +66,7 @@
         }
 
         &-borda2{
-            @apply border-2 border-gray-300 bg-white ;
+            @apply border-2 border-gray-300 bg-white hover:bg-green-500 hover:text-white;
         }
     }
 

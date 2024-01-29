@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conheça a JE</title>
+  <meta name="description" content="Conheça a história da justiça eleitoral">
+  <meta property="og:site_name" content="Conheça a Justiça Eleitoral">
+  <meta property="og:image" content="">
+  <meta property="og:image:width" content="">
   <link href="src/scss/main.scss" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <style lang="sass">
@@ -10,7 +15,7 @@
     #calendar-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      /* Duas colunas iguais */
+      /* Duas colunas iguais ll */
     }
 
     .day {
@@ -75,7 +80,7 @@
       color: #fff;
     }
 
-    .event:hover{
+    .event:hover {
       background-color: rgb(34 197 94);
     }
 
@@ -112,6 +117,28 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+    #duvidas{
+      background-image: url("src/fonts/exclamacao-esquerda-inferior.svg"), url("src/fonts/exclamacao-esquerda-topo.svg"), url("src/fonts/exclamacao-direita-inferior.svg") ;
+      background-repeat:  no-repeat, no-repeat, no-repeat;
+      background-position:  10% 75% ,15% 10%, 80% 70%;
+    }
+
+    #playlist{
+      background-image: url("src/fonts/play-superior.png"), url("src/fonts/play-inferior.png");
+      background-repeat: no-repeat, no-repeat;
+      background-position: 100% 0%, 0% 100%;
+    }
+
+    #historia-bg{
+      background-image: url("src/fonts/fundo.png") ,url("src/fonts/livro-historia.png") ;
+      background-repeat: repeat, no-repeat ;
+      background-position: center , 85% 0%;
+    }
+
+    /* #star-bg{
+      background-image: ;
+    } */
   </style>
 </head>
 
@@ -120,7 +147,7 @@
   <header class="conheca-je__header__bg-azul ">
 
     <div>
-      
+
       <div class="conheca-je__header__grid ">
         <div class="conheca-je__header__position-titulo space-y-2  mx-auto mt-64 2xl:mx-0 xl:mt-0">
           <div class="conheca-je__header__fonte-titulo1 ">Conheça a</div>
@@ -137,9 +164,9 @@
         </div>
       </div>
 
-      
+
     </div>
-    
+
   </header>
 
 
@@ -297,7 +324,7 @@
         </div>
 
       </div>
-      
+
       <!-- tse-explica -->
       <div class="conheca-je__glossario__posicao-container-infos ">
         <div class="conheca-je__glossario__bg-explicatse conheca-je__glossario__regioes mt-8 ">
@@ -305,8 +332,9 @@
           <h2 class="conheca-je__glossario__bg-explicatse-bold">TSE Explica</h2>
         </div>
 
-        <div class="relative h-20 w-full md:h-44 "><img class="conheca-je__glossario__imagem conheca-je__glossario__hide"
-            src="src/fonts/exclamacao.png" alt="exclamacao">
+        <div class="relative h-20 w-full md:h-44 "><img
+            class="conheca-je__glossario__imagem conheca-je__glossario__hide" src="src/fonts/exclamacao.png"
+            alt="exclamacao">
         </div>
 
         <div class="flex  conheca-je__glossario__regioes--caixa2 ">
@@ -334,7 +362,7 @@
   </section>
 
   <!-- Quiz -->
-  <section class="bg-yellow-400">
+  <section class="bg-no-repeat pt-[100px] xl:py-[260px]" style="background-image: url(src/fonts/bg-amarelo.svg);">
     <div class="conheca-je__container mt-8 mb-10 ">
 
       <!-- O que a JE faz? -->
@@ -397,6 +425,30 @@
           <span id="closeModal" onclick="fecharModal()">&times;</span>
           <p id="explicacao"></p>
         </div>
+      </div>
+
+      <div class="conheca-je__quiz__box-tamanho-glossario conheca-je__quiz__grid-glossario bg-no-repeat bg-right-top"
+      style="background-image: url(src/fonts/colchete-cima.svg);">
+
+        <div class="">
+          <img class="hidden sm:block" src="src/fonts/livro-quiz.png" alt="">
+        </div>
+        <div class="space-y-4 py-10 bg-no-repeat bg-right-bottom" style="background-image: url(src/fonts/colchete-baixo.svg);">
+       
+          <ul>
+            <li>
+              <a href="https://tailwindcss.com/docs/grid-template-columns"
+                class="conheca-je__quiz__fonte-glossario">Glossário Eleitoral</a>
+              <i class='bx bx-link-external text-4xl'></i>
+            </li>
+          </ul>
+          <div class="text-lg">
+            O glossario Eleitoral Brasileiro oferece definições e explicações de termos relacionados
+            ao sistema eleitoral brasileiro, incluindo informações históricas e visuais.
+          </div>
+       
+        </div>
+
       </div>
 
 
@@ -623,10 +675,11 @@
   </section>
 
   <!-- Perguntas Frequentes -->
-  <section class="conheca-je__container  conheca-je__perguntas">
+  <section class="relative conheca-je__container conheca-je__perguntas">
 
 
-    <div class="conheca-je__perguntas  conheca-je__perguntas__alinhar  ">
+
+    <div class="relative conheca-je__perguntas  conheca-je__perguntas__alinhar " id="duvidas">
       <div class="conheca-je__perguntas__alinhar-centro ">
         <h1 class="conheca-je__perguntas__fonte-titulo ">Perguntas <b>Frequentes</b></h1>
       </div>
@@ -635,9 +688,9 @@
       <div class="conheca-je conheca-je__perguntas__box-tamanho">
         <div class="conheca-je__perguntas__box-borda">
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os aplicativos oficiais da JE?</span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre ">
+              <h1 class="conheca-je__perguntas__fonte-subtitulo">Quais são os aplicativos oficiais da JE?</h1>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
@@ -659,7 +712,7 @@
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
             <div class="accordion-header conheca-je__perguntas__alinhar-entre">
               <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
@@ -682,7 +735,7 @@
             <div class="accordion-header conheca-je__perguntas__alinhar-entre">
               <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
                 eleitoral?</span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
@@ -704,7 +757,7 @@
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
             <div class="accordion-header conheca-je__perguntas__alinhar-entre">
               <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
@@ -727,7 +780,7 @@
             <div class="accordion-header conheca-je__perguntas__alinhar-entre">
               <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
                 eleitoral?</span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
@@ -749,7 +802,7 @@
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
             <div class="accordion-header conheca-je__perguntas__alinhar-entre">
               <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
@@ -772,7 +825,7 @@
             <div class="accordion-header conheca-je__perguntas__alinhar-entre">
               <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
                 eleitoral?</span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
@@ -793,9 +846,9 @@
 
 
   <!-- Playlists -->
-  <section class="conheca-je__playlists__bg ">
+  <section class="conheca-je__playlists__bg " id="playlist">
 
-    <div class="conheca-je__container space-y-16 conheca-je__playlists__alinhar">
+    <div class="conheca-je__container space-y-16 conheca-je__playlists__alinhar" >
       <div class="conheca-je__playlists__alinhar-titulo">
         <div class="conheca-je__playlists__fonte-titulo">
           <h1>PLAYLISTS</h1>
@@ -978,7 +1031,7 @@
   </section>
 
   <!-- história -->
-  <section class="conheca-je__historia__bg pt-20">
+  <section class="conheca-je__historia__bg pt-20" id="historia-bg">
 
     <div class="conheca-je__container conheca-je__historia__alinhar-conteudo ">
       <!-- titulo -->
@@ -1349,6 +1402,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- tse-explica -->
   <script type="module" src="src/js/tse-explica.js"></script>

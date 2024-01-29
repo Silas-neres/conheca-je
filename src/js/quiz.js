@@ -1,9 +1,4 @@
-// innerHTML = `<div id="myModal">
-//              <div id="modalContent">
-//              <span id="closeModal" onclick="fecharModal()">&times;</span>
-//              <p id="explicacao"></p>
-//              </div>
-//              </div>`
+
 
 var perguntas = [
     {
@@ -153,10 +148,10 @@ var perguntas = [
     // Adicione mais perguntas conforme necessário
 ];
 
-var numeroPergunta = 0;
-var acertos = 0;
-var erros = 0;
-var placar = 0;
+let numeroPergunta = 0;
+let acertos = 0;
+let erros = 0;
+let placar = 0;
 
 function mostrarPergunta() {
     var pergunta = perguntas[numeroPergunta];
@@ -170,50 +165,56 @@ function verificarResposta(resposta) {
 
     if (resposta == pergunta.respostaCorreta) {
         acertos++;
-        // Exibir o modal com a explicação
-        document.getElementById('explicacao').textContent = pergunta.explicacao;
-        document.getElementById('myModal').style.display = 'block';
     } else {
         erros++;
-        document.getElementById('explicacao').textContent = pergunta.explicacao;
-        document.getElementById('myModal').style.display = 'block';
     }
 
-    numeroPergunta++;
+    // Exibir o modal com a explicação
+    document.getElementById('explicacao').textContent = pergunta.explicacao;
+    document.getElementById('myModal').style.display = 'block';
 
+    // Atualizar o placar
+    document.getElementById('acertos').textContent = acertos;
+    document.getElementById('erros').textContent = erros;
+    document.getElementById('placar').textContent = acertos + erros;
+
+    // Avançar para a próxima pergunta
+    numeroPergunta++;
     if (numeroPergunta < perguntas.length) {
         mostrarPergunta();
     } else {
-        // O quiz terminou
-        document.getElementById('pergunta').textContent = "Quiz terminado!";
-        document.getElementById('respostaA').style.display = 'none';
-        document.getElementById('respostaB').style.display = 'none';
-
+        // Se não houver mais perguntas, terminar o quiz
+        fecharModal();
     }
-
-    document.getElementById('acertos').textContent = acertos;
-    document.getElementById('erros').textContent = erros;
-    document.getElementById('placar').textContent = erros + acertos;
 }
+
 
 function fecharModal() {
     // Fechar o modal
     document.getElementById('myModal').style.display = 'none';
 
-    // Avançar para a próxima pergunta ou finalizar o quiz
+    // Verificar se há mais perguntas a serem exibidas
     if (numeroPergunta < perguntas.length) {
         mostrarPergunta();
     } else {
-        // O quiz terminou
-        document.getElementById('pergunta').textContent = "Quiz terminado!";
+        // O quiz terminou, então oculte as opções de resposta
         document.getElementById('respostaA').style.display = 'none';
         document.getElementById('respostaB').style.display = 'none';
-        // Reiniciar o quiz
-        numeroPergunta = 0;
-        acertos = 0;
-        erros = 0;
+
+        // Exibir mensagem de término do quiz
+        document.getElementById('pergunta').textContent = "Quiz terminado!";
     }
 }
+
+document.querySelectorAll('.resposta-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      verificarResposta(this.dataset.resposta);
+    });
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('myModal').style.display = 'none';
+});
 
 
 

@@ -44,6 +44,10 @@
                 @apply text-3xl font-bold text-white text-center md:text-end ;
             }
         }
+
+        &-glossario{
+            @apply text-4xl font-bold hover:underline ;
+        }
     }
 
     &__box{
@@ -53,6 +57,10 @@
 
         &-tamanho{
             @apply max-w-6xl h-96 mx-auto ;
+
+            &-glossario{
+                @apply max-w-4xl mx-auto  ;
+            }
 
             &-button{
                 @apply max-w-lg mx-auto mt-10 ;
@@ -107,6 +115,15 @@
             }
 
         }
+
+        &-glossario{
+
+          
+            &-baixo{
+                @apply bg-no-repeat bg-right-bottom bg-[url("../../src/fonts/colchete-baixo.svg")] ;
+            }
+        }
+    
     }
 
     &__alinhar{
@@ -144,6 +161,10 @@
             &-contador{
                 @apply col-span-3 md:col-span-5;
             }
+        }
+
+        &-glossario{
+            @apply grid grid-flow-col auto-cols-auto gap-4 ;
         }
     }
 
