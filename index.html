@@ -118,27 +118,43 @@
       cursor: pointer;
     }
 
-    #duvidas{
-      background-image: url("src/fonts/exclamacao-esquerda-inferior.svg"), url("src/fonts/exclamacao-esquerda-topo.svg"), url("src/fonts/exclamacao-direita-inferior.svg") ;
-      background-repeat:  no-repeat, no-repeat, no-repeat;
-      background-position:  10% 75% ,15% 10%, 80% 70%;
+    #star1-bg {
+      background-image: url("src/fonts/estrela1.svg");
+      background-repeat: no-repeat;
+      background-position: 110% -10%;
     }
 
-    #playlist{
-      background-image: url("src/fonts/play-superior.png"), url("src/fonts/play-inferior.png");
-      background-repeat: no-repeat, no-repeat;
-      background-position: 100% 0%, 0% 100%;
-    }
+    @media screen and (min-width: 1200px) {
+      #calendario-bg {
+        display: block;
+        background-image: url("src/fonts/circulo-verde.svg"), url("src/fonts/circulo-amarelo.png"), url("src/fonts/circulo-azul.svg");
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position: -10% 10%, 80% -20%, 100% 100%;
+      }
 
-    #historia-bg{
-      background-image: url("src/fonts/fundo.png") ,url("src/fonts/livro-historia.png") ;
-      background-repeat: repeat, no-repeat ;
-      background-position: center , 85% 0%;
-    }
+      #duvidas {
+        display: block;
+        background-image: url("src/fonts/exclamacao-esquerda-inferior.svg"), url("src/fonts/exclamacao-esquerda-topo.png"), url("src/fonts/exclamacao-direita-inferior.png"), url("src/fonts/exclamacao-direita-topo.png");
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        background-position: 10% 90%, 15% 10%, 80% 100%, 100% 0%;
 
-    /* #star-bg{
-      background-image: ;
-    } */
+      }
+
+      #playlist {
+        display: block;
+        background-image: url("src/fonts/play-superior.png"), url("src/fonts/play-inferior.png");
+        background-repeat: no-repeat, no-repeat;
+        background-position: 100% 0%, 0% 100%;
+      }
+
+      #historia-bg {
+        display: block;
+        background-image: url("src/fonts/fundo.png"), url("src/fonts/livro-historia.png"), url("src/fonts/curiosidade-historia.png");
+        background-repeat: repeat, no-repeat, no-repeat;
+        background-position: center, 85% 0%, 100% 100%;
+      }
+
+    }
   </style>
 </head>
 
@@ -170,7 +186,7 @@
   </header>
 
 
-  <!-- glossário -->
+  <!-- Mapa -->
   <section class="conheca-je__container mt-6 ">
     <div class="conheca-je__glossario__grid">
 
@@ -187,7 +203,7 @@
             <div class="conheca-je__glossario__regioes mt-16  ">
               <ul class="conheca-je__glossario__regioes--caixa">
                 <li class="item">
-                  <a href="#" class="link" tab="norte">NORTE</a>
+                  <a href="#" class="link link--ativo" tab="norte">NORTE</a>
                 </li>
                 <!-- <i class='bx bxs-right-arrow'></i> -->
                 <li class="item">
@@ -209,7 +225,7 @@
 
               <!-- Norte -->
 
-              <div class="tabs tab-norte ">
+              <div class="tabs tab-norte  tab--ativo">
                 <ul>
                   <li>
                     <a href="https://www.tre-ac.jus.br/#/" class="linkinterno">ACRE</a>
@@ -378,7 +394,7 @@
 
       <div class="conheca-je__quiz__box">
         <div>
-          <img src="src/fonts/quiz 1.png" class="conheca-je__quiz__hide" alt="quiz-balao-pensamento">
+          <img src="src/fonts/quiz-balao.png" class="conheca-je__quiz__hide" alt="quiz-balao-pensamento">
         </div>
         <div class="grid gap-4 content-around">
           <div class="conheca-je__quiz__fonte-texto1 ">Você sabe o que a Justiça Eleitoral faz?</div>
@@ -427,17 +443,19 @@
         </div>
       </div>
 
+      <!-- Glossário eleitoral -->
       <div class="conheca-je__quiz__box-tamanho-glossario conheca-je__quiz__grid-glossario bg-no-repeat bg-right-top"
-      style="background-image: url(src/fonts/colchete-cima.svg);">
+        style="background-image: url(src/fonts/colchete-cima.svg);">
 
         <div class="">
           <img class="hidden sm:block" src="src/fonts/livro-quiz.png" alt="">
         </div>
-        <div class="space-y-4 py-10 bg-no-repeat bg-right-bottom" style="background-image: url(src/fonts/colchete-baixo.svg);">
-       
+        <div class="space-y-4 py-10 bg-no-repeat bg-right-bottom"
+          style="background-image: url(src/fonts/colchete-baixo.svg);">
+
           <ul>
             <li>
-              <a href="https://tailwindcss.com/docs/grid-template-columns"
+              <a href="https://www.tse.jus.br/servicos-eleitorais/glossario/glossario-eleitoral"
                 class="conheca-je__quiz__fonte-glossario">Glossário Eleitoral</a>
               <i class='bx bx-link-external text-4xl'></i>
             </li>
@@ -446,7 +464,7 @@
             O glossario Eleitoral Brasileiro oferece definições e explicações de termos relacionados
             ao sistema eleitoral brasileiro, incluindo informações históricas e visuais.
           </div>
-       
+
         </div>
 
       </div>
@@ -675,11 +693,11 @@
   </section>
 
   <!-- Perguntas Frequentes -->
-  <section class="relative conheca-je__container conheca-je__perguntas">
+  <section class="relative conheca-je__container conheca-je__perguntas" id="duvidas">
 
 
 
-    <div class="relative conheca-je__perguntas  conheca-je__perguntas__alinhar " id="duvidas">
+    <div class="relative conheca-je__perguntas  conheca-je__perguntas__alinhar ">
       <div class="conheca-je__perguntas__alinhar-centro ">
         <h1 class="conheca-je__perguntas__fonte-titulo ">Perguntas <b>Frequentes</b></h1>
       </div>
@@ -690,6 +708,51 @@
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
             <div class="accordion-header conheca-je__perguntas__alinhar-entre ">
               <h1 class="conheca-je__perguntas__fonte-subtitulo">Quais são os aplicativos oficiais da JE?</h1>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
+                  quas molestias excepturi sint occaecati cupiditate non provident, similique
+                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre acti">
+              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
+                  quas molestias excepturi sint occaecati cupiditate non provident, similique
+                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+              <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
+                eleitoral?</span>
               <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
@@ -848,7 +911,7 @@
   <!-- Playlists -->
   <section class="conheca-je__playlists__bg " id="playlist">
 
-    <div class="conheca-je__container space-y-16 conheca-je__playlists__alinhar" >
+    <div class="conheca-je__container space-y-16 conheca-je__playlists__alinhar">
       <div class="conheca-je__playlists__alinhar-titulo">
         <div class="conheca-je__playlists__fonte-titulo">
           <h1>PLAYLISTS</h1>
@@ -1035,14 +1098,26 @@
 
     <div class="conheca-je__container conheca-je__historia__alinhar-conteudo ">
       <!-- titulo -->
-      <div>
-        <div class="conheca-je__historia__box-borda ">
-          <div class="conheca-je__historia__box-borda1 ">
-            <h1 class="conheca-je__historia__fonte-titulo">HISTÓRIA</h1>
+
+      <div class="conheca-je__historia__box-borda">
+        <div class="conheca-je__historia__box-borda1">
+          <!-- Utilize a posição relativa para permitir que a imagem seja posicionada de forma absoluta em relação a este elemento -->
+          <div class="position-relative">
+            <!-- Coloque a imagem dentro do elemento com posição relativa -->
+            <img src="src/fonts/estrela1.svg" alt="" class="absolute top-[-20px] right-[-10px]">
+            <h1 class="conheca-je__historia__fonte-titulo ">HISTÓRIA</h1>
           </div>
         </div>
-        <h1 class="conheca-je__historia__fonte-subtitulo">DA JUSTIÇA ELEITORAL</h1>
       </div>
+
+      <!-- Corrigindo o posicionamento da estrela2 -->
+      <div class=" max-w-fit relative">
+        <img src="src/fonts/estrela2.svg" alt="" class="absolute  right-0 top-[-25px]">
+        <div class="conheca-je__historia__fonte-subtitulo px">DA JUSTIÇA ELEITORAL</div>
+      </div>
+
+
+
 
       <!-- conteudo -->
       <div class="conheca-je__historia__alinhar-grid">
@@ -1072,15 +1147,16 @@
             </div>
           </div>
 
+          <!-- voto feminino -->
           <div class="conheca-je conheca-je__historia__box-tamanho  ">
             <div class="conheca-je__historia__box-borda">
               <div class=" conheca-je__historia__box-borda2 ">
-                <div class="accordion-header conheca-je__historia__alinhar-entre">
+                <div class="accordion-header conheca-je__historia__alinhar-entre active">
                   <span class="conheca-je__historia__fonte-topicos">HISTÓRIA DO VOTO FEMININO NO BRASIL</span>
                   <i class='bx bx-chevron-down text-3xl'></i>
                 </div>
 
-                <div class="accordion-body ">
+                <div class="accordion-body  accordion-body--ativo">
                   <div class="p-4 ">
                     <div class="conheca-je__historia__alinhar-centro p-4">
                       <img src="src/fonts/mulher-voto.png" alt="voto-feminino">
@@ -1124,7 +1200,7 @@
             <div class="conheca-je__historia__regioes basis-1/3">
               <ul class="conheca-je__historia__regioes--caixa conheca-je__historia">
                 <li class="item2">
-                  <a href="#" class="link2 " tab="1930">1930</a>
+                  <a href="#" class="link2 link2--ativo" tab="1930">1930</a>
                 </li>
                 <li class="item2">
                   <a href="#" class="link2 " tab="1932">1932</a>
@@ -1168,7 +1244,7 @@
             <div class="conheca-je__historia__conteudo  basis-2/3">
 
               <!-- 1930 -->
-              <div class="tabs tab-1930  conheca-je__historia__posicao-informacao">
+              <div class="tabs tab-1930 tab--ativo  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1930</h1>
                 <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
                   Getulio Vargas enviou ao Congresso Nacional o
@@ -1299,7 +1375,7 @@
   </section>
 
   <!-- 90 anos je -->
-  <section>
+  <section id="calendario-bg">
     <div class="conheca-je__container py-10">
       <!-- 90 anos -->
       <div class="conheca-je__90anos__tamanho-titulo conheca-je__90anos__estilo-titulo">

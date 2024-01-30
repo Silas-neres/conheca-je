@@ -1,6 +1,7 @@
  // variaveis globais
  let nav = 0;
- let clicked = null;
+ let clicked = null ;
+ 
  let predefinedEvents = [
    { date: '3/15/2022', data: '15 DE MARÇO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
    { date: '2/20/2022', data: '20 DE FEVEREIRO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
@@ -39,6 +40,7 @@
  function load() {
    const date = new Date(2022, 0, 1); // Inicia em janeiro de 2022
 
+   
    //mudar titulo do mês:
    if (nav !== 0) {
      date.setMonth(date.getMonth() + nav);

@@ -7,10 +7,12 @@
 
 // *{
 //     border: 1px solid hotpink;
-//     font-family: 'Unbounded', sans-serif;  
-//     font-family: 'Space Grotesk', sans-serif; 
-    
 // }
+
+*{
+    font-family: 'Unbounded', sans-serif;  
+    font-family: 'Space Grotesk', sans-serif; 
+}
 
 
 p {
@@ -78,3 +80,31 @@ p {
 
     
 }
+
+@layer components {
+    .accordion-header:hover .conheca-je__perguntas__fonte-subtitulo {
+      color: black;
+    }
+  
+    .accordion-header.active .conheca-je__perguntas__fonte-subtitulo {
+      color: black;
+    }
+  
+    .accordion-header {
+      @apply py-4 px-6 cursor-pointer;
+    }
+  
+    .accordion-header.active i {
+      @apply transition ease-in-out duration-300;
+      transform: rotateX(180deg);
+    }
+  
+    .accordion-body {
+      @apply max-h-0 overflow-hidden transition-all duration-200 ease-out;
+    }
+  
+    .accordion-header.active + .accordion-body {
+      max-height: fit-content;
+    }
+  }
+  
