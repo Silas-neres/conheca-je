@@ -24,4 +24,4 @@ links.forEach(link => {
       selectedTab.classList.add("tab--ativo");
     }
   });
-});
+});                      

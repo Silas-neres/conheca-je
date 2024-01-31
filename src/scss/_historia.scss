@@ -98,7 +98,7 @@
     &__conteudo {
         @apply w-full py-12 mt-6 xl:w-3/5 ;
 
-        .tabs {
+        .tabs2 {
             @apply hidden;
 
             &--ativo {
@@ -112,19 +112,7 @@
         @include nav-tabs();
         @include tab-content();
 
-        .linkinterno {
-    
-            @apply flex justify-start items-start  text-[#163570] text-lg py-2  hover:font-semibold hover:underline  ;
-           
-            &:hover::after{
-                content: url("#{$linksvg}");
-                right:30%
-            }
-    
-            &--ativo {
-                @apply font-bold  text-[#163570] ;
-            }
-        }
+
     }
 
     &__regioes {

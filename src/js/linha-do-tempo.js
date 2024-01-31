@@ -1,5 +1,5 @@
 const links2 = document.querySelectorAll(" .link2 ");
-const tabs2 = document.querySelectorAll(" .tabs");
+const tabs2 = document.querySelectorAll(" .tabs2");
 
 links2.forEach(link2 => {
   link2.addEventListener("click", (e) => {
@@ -12,15 +12,15 @@ links2.forEach(link2 => {
     link2.classList.add("link2--ativo");
 
     // Obtém o valor do atributo "tab" do link clicado
-    const tabId = link2.getAttribute("tab");
+    const tabId = link2.getAttribute("tab2");
 
     // Remove a classe ativa de todas as abas de conteúdo
-    tabs2.forEach(tab => tab.classList.remove("tab--ativo"));
+    tabs2.forEach(tab => tab.classList.remove("tab2--ativo"));
 
     // Adiciona a classe ativa à aba de conteúdo correspondente
-    const selectedTab = document.querySelector(`.tabs.tab-${tabId}`);
+    const selectedTab = document.querySelector(`.tabs2.tab2-${tabId}`);
     if (selectedTab) {
-      selectedTab.classList.add("tab--ativo");
+      selectedTab.classList.add("tab2--ativo");
     }
   });
 });
