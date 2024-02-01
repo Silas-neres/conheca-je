@@ -36,6 +36,17 @@ p {
     }
 }
 
+.linkinterno2 {
+    
+    @apply   text-blue-800 text-lg  hover:font-semibold hover:underline  ;
+ 
+   
+
+    &--ativo {
+        @apply font-bold  text-[#163570] ;
+    }
+}
+
 
 
 .lista {

@@ -104,6 +104,12 @@
       width: 80%;
     }
 
+    @media screen and (min-width: 1200px){
+      #modalContent{
+        width: 40%;
+      }
+    }
+
     #closeModal {
       color: #aaa;
       float: right;
@@ -439,6 +445,7 @@
       <div id="myModal">
         <div id="modalContent">
           <span id="closeModal">&times;</span>
+          <p id="respostaCorreta" class="text-center text-3xl"></p>
           <p id="explicacao"></p>
         </div>
       </div>
@@ -470,7 +477,7 @@
       </div>
 
 
-      
+
 
     </div>
   </section>
@@ -485,7 +492,7 @@
         <h1 class="conheca-je__perguntas__fonte-titulo ">Perguntas <b>Frequentes</b></h1>
       </div>
 
-
+      <!-- 1. Quais são os aplicativos oficiais da JE? -->
       <div class="conheca-je conheca-je__perguntas__box-tamanho">
         <div class="conheca-je__perguntas__box-borda">
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
@@ -497,10 +504,12 @@
             <div class="accordion-body">
               <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  Conheça e faça o download de cada um dos aplicativos da Justiça Eleitoral no
+                  <a href="https://play.google.com/store/apps/details?id=br.jus.tse.eleitoral.etitulo&amp;hl=pt_BR"
+                    class="linkinterno2">Google Play</a>
+                  ou
+                  <a href="https://itunes.apple.com/br/developer/tribunal-superior-eleitoral/id898364510"
+                    target="_blank" class="linkinterno2">Apple Store</a>.
                 </p>
               </div>
             </div>
@@ -508,6 +517,7 @@
         </div>
       </div>
 
+      <!-- 2. Quais são os órgãos da JE? -->
       <div class="conheca-je conheca-je__perguntas__box-tamanho">
         <div class="conheca-je__perguntas__box-borda">
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
@@ -518,11 +528,12 @@
 
             <div class="accordion-body">
               <div class="p-4 ">
-                <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                <p>O Tribunal Superior Eleitoral, com sede na capital da República e jurisdição em todo o país;</p>
+                <p>Um tribunal regional na capital de cada estado, no Distrito Federal e, mediante proposta do Tribunal
+                  Superior, na capital de território;</p>
+                <p>As juntas eleitorais;</p>
+                <p>Os juízes eleitorais.</p>
+
                 </p>
               </div>
             </div>
@@ -530,6 +541,7 @@
         </div>
       </div>
 
+      <!-- 3. Como faço para acompanhar um processo eleitoral? -->
       <div class="conheca-je conheca-je__perguntas__box-tamanho">
         <div class="conheca-je__perguntas__box-borda">
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
@@ -542,10 +554,137 @@
             <div class="accordion-body">
               <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  É possível acompanhar os processos que tramitam na Justiça Eleitoral pelo
+                  <a href="https://www.tse.jus.br/servicos-judiciais/processos/acompanhamento-processual-push"
+                    class="linkinterno2">portal do TSE.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Quais são os principais serviços on-line oferecidos pela JE? -->
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os principais serviços on-line oferecidos
+                pela JE?</span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  O
+                  <a href="https://www.tse.jus.br/#/" class="linkinterno2">Portal do TSE</a>
+                  dispõe de todas as informações referentes aos principais serviços. Na seção
+                  <a href="https://www.tse.jus.br/servicos-eleitorais/servicos/servicos-ao-eleitor"
+                    class="linkinterno2">Serviços ao Eleitor
+                  </a>
+                  , o interessado pode facilmente emitir as Certidões de Quitação Eleitoral,
+                  Crimes
+                  Eleitorais, Negativa de Alistamento, Composição Partidária e Filiação Partidária. Para isso, basta
+                  informar os dados solicitados na página. Também é possível requerer a justificativa pelo não
+                  comparecimento às urnas por meiodo Sistema de Requerimento de Justificativa.
+                </p>
+                <p>O site possibilita, ainda, consultas ao local de votação e à situação eleitoral, além da validação de
+                  documentos emitidos virtualmente, como o e- Título. Na opção <a
+                    href="https://www.tse.jus.br/servicos-eleitorais/servicos/servicos-ao-eleitor"
+                    class="linkinterno2">Todos os serviços</a>, estão disponíveis os
+                  endereços dos cartórios e das zonas eleitorais, para os casos em que o comparecimento a um posto da
+                  Justiça Eleitoral seja necessário, como, por exemplo, coleta da biometria, alistamento eleitoral,
+                  emissão de segunda via do título de eleitor ou regularização da situação cadastral.
+                </p>
+                <p>
+                  Todos os serviços são gratuitos.Apenas em casos de regularização cadastral em virtude do não
+                  comparecimento às urnas é que o eleitor ficará sujeito a uma multa mínima de R$ 3,51.
+                </p>
+
+                <p>
+                  <a href="https://www.tse.jus.br/comunicacao/noticias/2019/Abril/conheca-os-servicos-disponibilizados-ao-cidadao-pela-justica-eleitoral"
+                    class="linkinterno2">Conheça os serviços disponibilizados ao cidadão pela Justiça Eleitoral.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Somente a JE utiliza a urna eletrônica? -->
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+              <span class="conheca-je__perguntas__fonte-subtitulo">Somente a JE utiliza a urna eletrônica?</span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  A urna eletrônica pode ser utilizada por entidades públicas e instituições de ensino a título de
+                  empréstimo, para utilização em eleições parametrizadas, assegurando-lhes o apoio e o suporte
+                  necessários à realização do pleito, com vista a difundir os serviços desenvolvidos pela Justiça
+                  Eleitoral e garantir a livre manifestação da comunidade, conforme prevê a
+                  <a href="https://www.tse.jus.br/legislacao/codigo-eleitoral/normas-editadas-pelo-tse/resolucao-nb0-22.685-de-13-de-dezembro-de-2007-brasilia-2013-df"
+                    class="linkinterno2">
+                    Resolução-TSE – nº 22.685/2007.
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Como funciona a Justiça Eleitoral? -->
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+              <span class="conheca-je__perguntas__fonte-subtitulo"> Como funciona a Justiça Eleitoral?</span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  A Justiça Eleitoral é um ramo especializado do Poder Judiciário e tem atuação em três esferas:
+                </p>
+                <p>
+                  <b>Administrativa:</b> organiza e realiza eleições, referendos e plebiscitos, além de ser responsável
+                  por
+                  todo o cadastro eleitoral, tanto dos eleitores como dos partidos políticos e candidatos;
+                </p>
+                <p>
+                  <b>Regulamentar:</b> regula e normatiza o processo eleitoral;
+                </p>
+
+                <p>
+                  <b>Jurisdicional:</b> julga questões eleitorais.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Quais os horários de funcionamento? -->
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+              <span class="conheca-je__perguntas__fonte-subtitulo">Quais os horários de funcionamento?</span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  Os horários de funcionamento dos cartórios e postos de atendimento variam de um estado para o outro. É
+                  importante acessar a página do Tribunal Regional Eleitoral do seu estado para verificar.
                 </p>
               </div>
             </div>
@@ -557,136 +696,40 @@
         <div class="conheca-je__perguntas__box-borda">
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
             <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
+              <span class="conheca-je__perguntas__fonte-subtitulo">O título cancelado pode ser regularizado?</span>
               <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
               <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  Sim. Segue o passo a passo:
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="conheca-je conheca-je__perguntas__box-tamanho">
-        <div class="conheca-je__perguntas__box-borda">
-          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
-                eleitoral?</span>
-              <i class='bx bx-chevron-down text-3xl text-black'></i>
-            </div>
-
-            <div class="accordion-body">
-              <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="conheca-je conheca-je__perguntas__box-tamanho">
-        <div class="conheca-je__perguntas__box-borda">
-          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
-              <i class='bx bx-chevron-down text-3xl text-black'></i>
-            </div>
-
-            <div class="accordion-body">
-              <div class="p-4 ">
+                  a) Comparecer a um cartório eleitoral, apresentar um documento de identificação com foto;</p>
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  b) Um comprovante de residência e preencher o Requerimento de Alistamento Eleitoral(RAE).
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="conheca-je conheca-je__perguntas__box-tamanho">
-        <div class="conheca-je__perguntas__box-borda">
-          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
-                eleitoral?</span>
-              <i class='bx bx-chevron-down text-3xl text-black'></i>
-            </div>
-
-            <div class="accordion-body">
-              <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  c) Pagar multa no valor de R$ 3,51 por turno faltante.Cada turno é considerado uma eleição.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="conheca-je conheca-je__perguntas__box-tamanho">
-        <div class="conheca-je__perguntas__box-borda">
-          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
-              <i class='bx bx-chevron-down text-3xl text-black'></i>
-            </div>
-
-            <div class="accordion-body">
-              <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  d) Aguardar o reinício das atualizações de cadastro do banco de dados da Justiça Eleitoral.Só a
+                  partir dessa data é que a situação estará regularizada.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="conheca-je conheca-je__perguntas__box-tamanho">
-        <div class="conheca-je__perguntas__box-borda">
-          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
-                eleitoral?</span>
-              <i class='bx bx-chevron-down text-3xl text-black'></i>
-            </div>
-
-            <div class="accordion-body">
-              <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  <a href="https://www.tse.jus.br/comunicacao/noticias/2022/Abril/saiba-como-regularizar-o-titulo-de-eleitor-em-quatro-etapas"
+                    class="linkinterno2">
+                    Seu título foi cancelado? Saiba o que fazer a partir de agora.
+                  </a>
                 </p>
+
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -1029,112 +1072,125 @@
               <!-- 1930 -->
               <div class="tabs2 tab2-1930 tab2--ativo  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1930</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>3 DE NOVEMBRO:</b> Data em que o governo provisório
+                  de Getulio Vargas enviou ao Congresso Nacional o projeto de lei que asseguraria, dois anos depois, o
+                  direito das mulheres ao voto – motivo pelo qual foi escolhida como o Dia da Instituição do Direito de
+                  Voto da Mulher no Brasil.</p>
               </div>
 
               <!-- 1932 -->
               <div class="tabs2 tab2-1932  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1932</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>24 DE FEVEREIRO:</b> A promulgação do Código
+                  Eleitoral de 1932 mudou a história da democracia no Brasil. Dentre as diversas inovações trazidas pelo
+                  Código, destacam-se a criação da Justiça Eleitoral, o estabelecimento do voto obrigatório e secreto, a
+                  instituição do voto feminino e a adoção do sistema de representação proporcional.
+                </p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>20 DE MAIO:</b> Quase três meses após a criação da
+                  Justiça Eleitoral, em fevereiro, o Tribunal Superior Eleitoral (à época denominado Tribunal Superior
+                  de Justiça Eleitoral) foi instalado no edifício do Supremo Tribunal Federal, localizado na Avenida Rio
+                  Branco, no Rio de Janeiro/RJ. A Secretaria do Tribunal iniciou seu funcionamento em uma das salas do
+                  terceiro andar do prédio, com apenas 17 funcionários.
+                </p>
               </div>
 
               <!-- 1933 -->
               <div class="tabs2 tab2-1933  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1933</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>3 DE MAIO:</b> Ocorreram as primeiras eleições
+                  organizadas pela Justiça Eleitoral, nas quais mais de 1 milhão e 200 mil pessoas escolheram 214
+                  parlamentares constituintes, o que culminou na promulgação da Constituição de 1934.
+                </p>
               </div>
 
               <!-- 1934 -->
               <div class="tabs2 tab2-1934  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1934</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>16 DE JULHO:</b> A primeira constituição brasileira a
+                  garantir o direito das mulheres ao voto foi a de 1934. O voto feminino no Brasil fora instituído pelo
+                  Código Eleitoral de 1932, mas foi a Assembleia Constituinte de 1933 que assegurou esse direito na
+                  Carta Magna do país.
+                </p>
+
+                <p class="conheca-je__historia__fonte-conteudo">
+                  <b>14 DE OUTUBRO:</b> A Justiça Eleitoral realizou, pela primeira vez, as eleições para a Câmara dos
+                  Deputados e para as Assembleias Legislativas Estaduais. Em todo o país, dez mulheres elegem-se
+                  deputadas estaduais.
+                </p>
               </div>
 
               <!-- 1935 -->
               <div class="tabs2 tab2-1935  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1935</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>11 DE FEVEREIRO:</b>O Tribunal Superior Eleitoral,
+                  então chamado de Tribunal Superior da Justiça Eleitoral, foi transferido da antiga sede do Supremo
+                  Tribunal Federal para o prédio onde funcionava o Tribunal Regional Eleitoral do Distrito Federal, na
+                  rua Dom Manoel, no centro do Rio de Janeiro, atualmente ocupado pelo Museu Naval. O edifício,
+                  projetado pelo engenheiro naval Francisco Correia Câmara e construído em 1898 para servir de sede ao
+                  Clube Naval, apresenta estilo eclético.
+                </p>
+                <p class="conheca-je__historia__fonte-conteudo">
+                  <b>4 DE MAIO:</b> Publicação da Lei nº 48, que modificou o Código Eleitoral de 1932. A Lei não chegou
+                  a ser aplicada, pois ocorreu o golpe do Estado Novo em 1937.
+                </p>
+                
               </div>
 
               <!-- 1937 -->
               <div class="tabs2 tab2-1937  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1937</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>10 DE NOVEMBRO:</b> Getulio Vargas instituiu o Estado Novo,
+                  ou a Terceira República Brasileira, em pronunciamento em rede nacional de rádio, e outorgou uma nova
+                  Constituição, que extinguiu a Justiça Eleitoral no Brasil após apenas cinco anos da sua criação,
+                  ocorrida em 1932.
+                </p>
+                <p class="conheca-je__historia__fonte-conteudo">
+                  <b>2 DE DEZEMBRO:</b> Getulio Vargas extinguiu, por meio do Decreto nº 37, todos os partidos políticos.
+                </p>
               </div>
 
               <!-- 1945 -->
               <div class="tabs2 tab2-1945  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1945</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>28 DE MAIO:</b> A Justiça Eleitoral foi recriada pelo Decreto-Lei nº 7.586, após o fim do Estado Novo. No mesmo ano, organizou a eleição presidencial que elegeu Eurico Gaspar Dutra como Presidente da República.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>1º DE JUNHO: </b> Após o restabelecimento da Justiça Eleitoral, o Tribunal Superior Eleitoral foi instalado no Palácio Monroe, no Rio de Janeiro/RJ. Projetado e construído para ser o pavilhão do Brasil na Exposição Internacional de Saint Louis, nos Estados Unidos da América, em 1904, o Palácio Monroe recebeu o grande prêmio de arquitetura do evento.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>30 DE JUNHO:</b> Após a reinstalação da Justiça Eleitoral, foi editada a primeira instrução sobre partidos políticos, que passaram a ter caráter nacional a partir de então.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>2 DE DEZEMBRO:</b> Ocorreram as primeiras eleições organizadas pela Justiça Eleitoral após sua recriação, quase dez anos depois da instituição do Estado Novo. Nesse pleito, houve eleição para presidente da República e para parlamentares, o que culminaria na Constituição de 1946.</p>
+
               </div>
 
               <!-- 1945 -->
               <div class="tabs2 tab2-1946  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1946</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>28 DE MAIO:</b> A Justiça Eleitoral foi recriada pelo Decreto-Lei nº 7.586, após o fim do Estado Novo. No mesmo ano, organizou a eleição presidencial que elegeu Eurico Gaspar Dutra como Presidente da República.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>1º DE JUNHO:</b> Após o restabelecimento da Justiça Eleitoral, o Tribunal Superior Eleitoral foi instalado no Palácio Monroe, no Rio de Janeiro/RJ. Projetado e construído para ser o pavilhão do Brasil na Exposição Internacional de Saint Louis, nos Estados Unidos da América, em 1904, o Palácio Monroe recebeu o grande prêmio de arquitetura do evento.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>30 DE JUNHO:</b> Após a reinstalação da Justiça Eleitoral, foi editada a primeira instrução sobre partidos políticos, que passaram a ter caráter nacional a partir de então.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>2 DE DEZEMBRO:</b> Ocorreram as primeiras eleições organizadas pela Justiça Eleitoral após sua recriação, quase dez anos depois da instituição do Estado Novo. Nesse pleito, houve eleição para presidente da República e para parlamentares, o que culminaria na Constituição de 1946.</p>
+
               </div>
 
               <!-- 1947 -->
               <div class="tabs2 tab2-1947  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1947</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.
-                  3 DE NOVEMBRO: Data em que o governo provisório de Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>19 DE JANEIRO:</b> A população escolheu governadoras, governadores, prefeitas e prefeitos em uma eleição direta pela primeira vez.</p>
               </div>
 
               <!-- 1950 -->
               <div class="tabs2 tab2-1950  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1950</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>24 DE JULHO:</b> Foi promulgada a Lei nº 1.164, estabelecendo novo Código Eleitoral, o quarto na história do Brasil.</p>
               </div>
 
               <!-- 1951 -->
               <div class="tabs2 tab2-1951  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1951</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>31 DE AGOSTO:</b> O TSE publicou a Resolução nº 4.357, que instituiu o 7º modelo de título eleitoral.</p>
               </div>
 
               <!-- 1952 -->
               <div class="tabs2 tab2-1952  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1952</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b></b>29 DE SETEMBRO: É publicado o Regimento Interno do Tribunal Superior Eleitoral – norma em vigor até os dias de hoje.</p>
               </div>
 
               <!-- 1953 -->
