@@ -168,14 +168,18 @@ function verificarResposta(resposta) {
     acertos++;
     // Exibir o modal com a explicação
    
-    document.getElementById('respostaCorreta').textContent = 'Acertou';
+    document.getElementById('resposta').textContent = 'Acertou';
+    document.getElementById('resposta').classList.remove('errou');
+    document.getElementById('resposta').classList.add('acertou');
     document.getElementById('explicacao').textContent = pergunta.explicacao;
     document.getElementById('myModal').style.display = 'block';
     
   } else {
     erros++;
    
-    document.getElementById('respostaCorreta').textContent = 'Errou';
+    document.getElementById('resposta').textContent = 'Errou';
+    document.getElementById('resposta').classList.remove('acertou');
+    document.getElementById('resposta').classList.add('errou');
     document.getElementById('explicacao').textContent =  pergunta.explicacao;   
     document.getElementById('myModal').style.display = 'block';
   }
