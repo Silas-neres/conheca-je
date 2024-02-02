@@ -3,14 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conheça a JE</title>
+  <meta name="description" content="Conheça a história da justiça eleitoral">
+  <meta property="og:site_name" content="Conheça a Justiça Eleitoral">
+  <meta property="og:image" content="">
+  <meta property="og:image:width" content="">
   <link href="src/scss/main.scss" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
   <style lang="sass">
     /* Estilos do Modal */
     #calendar-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      /* Duas colunas iguais */
+      /* Duas colunas iguais ll */
     }
 
     .day {
@@ -75,6 +82,10 @@
       color: #fff;
     }
 
+    .event:hover {
+      background-color: rgb(34 197 94);
+    }
+
     #myModal {
       display: none;
       position: fixed;
@@ -95,6 +106,22 @@
       width: 80%;
     }
 
+
+
+    .acertou {
+      color: #0CAB44;
+    }
+
+    .errou{
+      color: #FF7A00;
+    }
+
+    @media screen and (min-width: 1200px){
+      #modalContent{
+        width: 40%;
+      }
+    }
+
     #closeModal {
       color: #aaa;
       float: right;
@@ -108,34 +135,78 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+    #star1-bg {
+      background-image: url("src/fonts/estrela1.svg");
+      background-repeat: no-repeat;
+      background-position: 110% -10%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      #calendario-bg {
+        display: block;
+        background-image: url("src/fonts/circulo-verde.svg"), url("src/fonts/circulo-amarelo.png"), url("src/fonts/circulo-azul.svg");
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position: -10% 10%, 80% -20%, 100% 100%;
+      }
+
+      #duvidas {
+        display: block;
+        background-image: url("src/fonts/exclamacao-esquerda-inferior.svg"), url("src/fonts/exclamacao-esquerda-topo.png"), url("src/fonts/exclamacao-direita-inferior.png"), url("src/fonts/exclamacao-direita-topo.png");
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        background-position: 10% 90%, 15% 10%, 80% 100%, 100% 0%;
+
+      }
+
+      #playlist {
+        display: block;
+        background-image: url("src/fonts/play-superior.png"), url("src/fonts/play-inferior.png");
+        background-repeat: no-repeat, no-repeat;
+        background-position: 100% 0%, 0% 100%;
+      }
+
+      #historia-bg {
+        display: block;
+        background-image: url("src/fonts/fundo.png"), url("src/fonts/livro-historia.png"), url("src/fonts/curiosidade-historia.png");
+        background-repeat: repeat, no-repeat, no-repeat;
+        background-position: center, 85% 0%, 100% 100%;
+      }
+
+    }
   </style>
+  
+</head>
 </head>
 
 <body>
 
-  <header class="conheca-je">
-    <div class="conheca-je__header__bg-azul">
-      <div class="conheca-je__header__grid">
-        <div class="conheca-je__header__position-titulo space-y-2">
-          <h2 class="conheca-je__header mr-5">Conheça a</h2>
-          <h1 class="conheca-je__header__bgamarelo">Justiça Eleitoral</h1>
+  <header class="conheca-je__header__bg-azul ">
+
+    <div>
+
+      <div class="conheca-je__header__grid ">
+        <div class="conheca-je__header__position-titulo space-y-2  mx-auto mt-64 2xl:mx-0 xl:mt-0">
+          <div class="conheca-je__header__fonte-titulo1 ">Conheça a</div>
+          <div class="conheca-je__header__fonte-titulo2">Justiça Eleitoral</div>
         </div>
 
-        <div class="conheca-je__header__position-imagens conheca-je__header__imagem  ">
-          <img class="conheca-je__header__nivel1__mulher" src="./src/fonts/mulher-feliz.png" alt="">
-          <img class="conheca-je__header__nivel2__star" src="src/fonts/star.svg" alt="">
-          <img class="conheca-je__header__nivel3__urna" src="src/fonts/urna 1.png" alt="">
+        <div class="conheca-je__header__position-imagens conheca-je__header__imagem ">
+          <img class=" conheca-je__header__nivel1__mulher" src="./src/fonts/mulher-feliz.png" alt="mulher-feliz">
+          <img class="conheca-je__header__nivel2__star" src="src/fonts/star.svg" alt="estrela">
+          <img class="conheca-je__header__nivel3__urna" src="src/fonts/urna 1.png" alt="urna">
+        </div>
+
+        <div class="conheca-je__header__bg-verde ">
         </div>
       </div>
 
-      <div class="conheca-je__header__bg-verde">
-        <img src="src/fonts/barra-verde.svg" alt="">
-      </div>
+
     </div>
-    <!-- <div class="box-border h-96 w-full p-4 border-4">babidi</div> -->
+
   </header>
 
-  <!-- glossário -->
+  <button data-fancybox data-src="#dialog-content">Launch Dialog</button>
+  <!-- Mapa -->
   <section class="conheca-je__container mt-6 ">
     <div class="conheca-je__glossario__grid">
 
@@ -152,7 +223,7 @@
             <div class="conheca-je__glossario__regioes mt-16  ">
               <ul class="conheca-je__glossario__regioes--caixa">
                 <li class="item">
-                  <a href="#" class="link" tab="norte">NORTE</a>
+                  <a href="#" class="link link--ativo" tab="norte">NORTE</a>
                 </li>
                 <!-- <i class='bx bxs-right-arrow'></i> -->
                 <li class="item">
@@ -174,7 +245,7 @@
 
               <!-- Norte -->
 
-              <div class="tabs tab-norte ">
+              <div class="tabs tab-norte tab--ativo">
                 <ul>
                   <li>
                     <a href="https://www.tre-ac.jus.br/#/" class="linkinterno">ACRE</a>
@@ -289,6 +360,7 @@
         </div>
 
       </div>
+
       <!-- tse-explica -->
       <div class="conheca-je__glossario__posicao-container-infos ">
         <div class="conheca-je__glossario__bg-explicatse conheca-je__glossario__regioes mt-8 ">
@@ -296,8 +368,9 @@
           <h2 class="conheca-je__glossario__bg-explicatse-bold">TSE Explica</h2>
         </div>
 
-        <div class="relative h-44 w-full"><img class="conheca-je__glossario__imagem conheca-je__glossario__hide" src="src/fonts/exclamacao.png"
-            alt="">
+        <div class="relative h-20 w-full md:h-44 "><img
+            class="conheca-je__glossario__imagem conheca-je__glossario__hide" src="src/fonts/exclamacao.png"
+            alt="exclamacao">
         </div>
 
         <div class="flex  conheca-je__glossario__regioes--caixa2 ">
@@ -309,11 +382,11 @@
 
           <div class="mt-12 flex justify-between ">
             <button id="anterior">
-              <img src="/src/fonts/arrow.svg" alt="">
+              <i class='bx bx-left-arrow-alt text-5xl text-gray-400 hover:text-black'></i>
             </button>
 
             <button id="proximo">
-              <img src="/src/fonts/arrow-black.svg" alt="">
+              <i class='bx bx-right-arrow-alt text-5xl text-gray-400 hover:text-black'></i>
             </button>
           </div>
         </div>
@@ -325,9 +398,9 @@
   </section>
 
   <!-- Quiz -->
-  <!-- Quiz -->
-  <section class="bg-yellow-400">
+  <section class="bg-no-repeat pt-[100px] xl:py-[260px]" style="background-image: url(src/fonts/bg-amarelo.svg);">
     <div class="conheca-je__container mt-8 mb-10 ">
+
       <!-- O que a JE faz? -->
       <div class=" conheca-je__quiz__alinhar-centro p-3">
         <div class="conheca-je__quiz__box-borda ">
@@ -338,9 +411,10 @@
         </div>
       </div>
 
+
       <div class="conheca-je__quiz__box">
         <div>
-          <img src="src/fonts/quiz 1.png" class="conheca-je__quiz__hide" alt="quiz-balao-pensamento">
+          <img src="src/fonts/quiz-balao.png" class="conheca-je__quiz__hide" alt="quiz-balao-pensamento">
         </div>
         <div class="grid gap-4 content-around">
           <div class="conheca-je__quiz__fonte-texto1 ">Você sabe o que a Justiça Eleitoral faz?</div>
@@ -350,6 +424,7 @@
 
       <!-- Quiz -->
       <div class="my-10 conheca-je__quiz__box-tamanho conheca-je__quiz__bg py-5">
+
         <div id="quiz-container" class="">
           <div class="max-w-sm mx-auto">
             <div class="w-24 mx-auto grid grid-cols-2  conheca-je__quiz__bg-placar-topo border-2 border-gray-200">
@@ -374,8 +449,8 @@
 
           <p class="conheca-je__quiz__fonte-perguntas" id="pergunta"></p>
           <div class="conheca-je__quiz__grid-botao conheca-je__quiz__box-tamanho-button ">
-            <button class="conheca-je__quiz__box-botao resposta-btn" data-resposta="a">Faz</button>
-            <button class="conheca-je__quiz__box-botao resposta-btn" data-resposta="b">Não Faz</button>
+            <button class="conheca-je__quiz__box-botao" id="respostaA">faz</button>
+            <button class="conheca-je__quiz__box-botao" id="respostaB">não faz</button>
           </div>
         </div>
       </div>
@@ -384,265 +459,71 @@
       <div id="myModal">
         <div id="modalContent">
           <span id="closeModal">&times;</span>
+          <p id='resposta' class="resposta"></p>
           <p id="explicacao"></p>
         </div>
       </div>
 
+      <!-- Glossário eleitoral -->
+      <div class="conheca-je__quiz__box-tamanho-glossario conheca-je__quiz__grid-glossario bg-no-repeat bg-right-top"
+        style="background-image: url(src/fonts/colchete-cima.svg);">
+
+        <div class="">
+          <img class="hidden sm:block" src="src/fonts/livro-quiz.png" alt="glossário eleitoral">
+        </div>
+        <div class="space-y-4 py-10 bg-no-repeat bg-right-bottom"
+          style="background-image: url(src/fonts/colchete-baixo.svg);">
+
+          <ul>
+            <li>
+              <a href="https://www.tse.jus.br/servicos-eleitorais/glossario/glossario-eleitoral"
+                class="conheca-je__quiz__fonte-glossario">Glossário Eleitoral</a>
+              <i class='bx bx-link-external text-4xl'></i>
+            </li>
+          </ul>
+          <div class="text-lg">
+            O glossario Eleitoral Brasileiro oferece definições e explicações de termos relacionados
+            ao sistema eleitoral brasileiro, incluindo informações históricas e visuais.
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
     </div>
-
-    <script>
-
-
-      var perguntas = [
-        {
-          pergunta: "Fiscaliza os candidatos eleitos",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Acertou! Quem fiscaliza a atuação dos eleitos e denuncia eventuais irregularidades cometidas são os órgãos de controle, como Tribunal de Contas da União e dos estados e dos municípios e o Ministério Público."
-        },
-        {
-          pergunta: "Organiza o processo eleitoral",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Cuida do alistamento eleitoral, votação, apuração dos votos, diplomação dos eleitos etc."
-        },
-        {
-          pergunta: "Envia e-mails informando cancelamento de título",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Define o perfil dos candidatos dos partidos políticos",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Cobra taxa pelos serviços oferecidos",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "b",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "recusa pedidos de registro de candidatura",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "b",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Atua de forma consultiva",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Elege seus própios magistrados(juízes)",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "b",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Realiza testes públicos de segurança de urna periodicamente",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Organiza, fiscaliza e realiza eleições, plebiscitos e referendos ",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Examina as contas dos partidos e candidatos",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Cancela o título de eleitor",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Prende qualquer cidadão durante as eleições",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "b",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Autoriza os partidos políticos a fiscalizarem todas as etapas da eleição",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Emite a indentificação Civil Nacional (ICN)",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        {
-          pergunta: "Julga crimes eleitorais(corrupção, lavagem de dinheiro etc.)",
-          respostas: {
-            a: "FAZ",
-            b: "NÃO FAZ"
-          },
-          respostaCorreta: "a",
-          explicacao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut, ducimus"
-        },
-        // Adicione mais perguntas conforme necessário
-      ];
-
-      let numeroPergunta = 0;
-      let acertos = 0;
-      let erros = 0;
-      let placar = 0;
-
-      function mostrarPergunta() {
-        var pergunta = perguntas[numeroPergunta];
-        document.getElementById('pergunta').textContent = pergunta.pergunta;
-        document.getElementById('respostaA').textContent = pergunta.respostas.a;
-        document.getElementById('respostaB').textContent = pergunta.respostas.b;
-      }
-
-      function verificarResposta(resposta) {
-        var pergunta = perguntas[numeroPergunta];
-
-        if (resposta == pergunta.respostaCorreta) {
-          acertos++;
-        } else {
-          erros++;
-        }
-
-        // Exibir o modal com a explicação
-        document.getElementById('explicacao').textContent = pergunta.explicacao;
-        document.getElementById('myModal').style.display = 'block';
-
-        // Atualizar o placar
-        document.getElementById('acertos').textContent = acertos;
-        document.getElementById('erros').textContent = erros;
-        document.getElementById('placar').textContent = acertos + erros;
-
-        // Avançar para a próxima pergunta
-        numeroPergunta++;
-        if (numeroPergunta < perguntas.length) {
-          mostrarPergunta();
-        } else {
-          // Se não houver mais perguntas, terminar o quiz
-          fecharModal();
-        }
-      }
-
-
-      function fecharModal() {
-        // Fechar o modal
-        document.getElementById('myModal').style.display = 'none';
-
-        // Verificar se há mais perguntas a serem exibidas
-        if (numeroPergunta < perguntas.length) {
-          mostrarPergunta();
-        } else {
-          // O quiz terminou, então oculte as opções de resposta
-          document.getElementById('respostaA').style.display = 'none';
-          document.getElementById('respostaB').style.display = 'none';
-
-          // Exibir mensagem de término do quiz
-          document.getElementById('pergunta').textContent = "Quiz terminado!";
-        }
-      }
-
-      document.querySelectorAll('.resposta-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-          verificarResposta(this.dataset.resposta);
-        });
-      });
-
-      document.getElementById('closeModal').addEventListener('click', function () {
-        document.getElementById('myModal').style.display = 'none';
-      });
-
-
-
-      mostrarPergunta();
-
-
-    </script>
-
   </section>
 
   <!-- Perguntas Frequentes -->
-  <section class="conheca-je__container  conheca-je__perguntas">
+  <section class="relative conheca-je__container conheca-je__perguntas" id="duvidas">
 
 
-    <div class="conheca-je__perguntas  conheca-je__perguntas__alinhar  ">
+
+    <div class="relative conheca-je__perguntas  conheca-je__perguntas__alinhar ">
       <div class="conheca-je__perguntas__alinhar-centro ">
         <h1 class="conheca-je__perguntas__fonte-titulo ">Perguntas <b>Frequentes</b></h1>
       </div>
 
-
+      <!-- 1. Quais são os aplicativos oficiais da JE? -->
       <div class="conheca-je conheca-je__perguntas__box-tamanho">
         <div class="conheca-je__perguntas__box-borda">
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os aplicativos oficiais da JE?</span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre ">
+              <h1 class="conheca-je__perguntas__fonte-subtitulo">Quais são os aplicativos oficiais da JE?</h1>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
               <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  Conheça e faça o download de cada um dos aplicativos da Justiça Eleitoral no
+                  <a href="https://play.google.com/store/apps/details?id=br.jus.tse.eleitoral.etitulo&amp;hl=pt_BR"
+                    class="linkinterno2">Google Play</a>
+                  ou
+                  <a href="https://itunes.apple.com/br/developer/tribunal-superior-eleitoral/id898364510"
+                    target="_blank" class="linkinterno2">Apple Store</a>.
                 </p>
               </div>
             </div>
@@ -650,21 +531,23 @@
         </div>
       </div>
 
+      <!-- 2. Quais são os órgãos da JE? -->
       <div class="conheca-je conheca-je__perguntas__box-tamanho">
         <div class="conheca-je__perguntas__box-borda">
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre acti">
               <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
               <div class="p-4 ">
-                <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                <p>O Tribunal Superior Eleitoral, com sede na capital da República e jurisdição em todo o país;</p>
+                <p>Um tribunal regional na capital de cada estado, no Distrito Federal e, mediante proposta do Tribunal
+                  Superior, na capital de território;</p>
+                <p>As juntas eleitorais;</p>
+                <p>Os juízes eleitorais.</p>
+
                 </p>
               </div>
             </div>
@@ -672,22 +555,150 @@
         </div>
       </div>
 
+      <!-- 3. Como faço para acompanhar um processo eleitoral? -->
       <div class="conheca-je conheca-je__perguntas__box-tamanho">
         <div class="conheca-je__perguntas__box-borda">
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
             <div class="accordion-header conheca-je__perguntas__alinhar-entre">
               <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
                 eleitoral?</span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
               <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  É possível acompanhar os processos que tramitam na Justiça Eleitoral pelo
+                  <a href="https://www.tse.jus.br/servicos-judiciais/processos/acompanhamento-processual-push"
+                    class="linkinterno2">portal do TSE.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Quais são os principais serviços on-line oferecidos pela JE? -->
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os principais serviços on-line oferecidos
+                pela JE?</span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  O
+                  <a href="https://www.tse.jus.br/#/" class="linkinterno2">Portal do TSE</a>
+                  dispõe de todas as informações referentes aos principais serviços. Na seção
+                  <a href="https://www.tse.jus.br/servicos-eleitorais/servicos/servicos-ao-eleitor"
+                    class="linkinterno2">Serviços ao Eleitor
+                  </a>
+                  , o interessado pode facilmente emitir as Certidões de Quitação Eleitoral,
+                  Crimes
+                  Eleitorais, Negativa de Alistamento, Composição Partidária e Filiação Partidária. Para isso, basta
+                  informar os dados solicitados na página. Também é possível requerer a justificativa pelo não
+                  comparecimento às urnas por meiodo Sistema de Requerimento de Justificativa.
+                </p>
+                <p>O site possibilita, ainda, consultas ao local de votação e à situação eleitoral, além da validação de
+                  documentos emitidos virtualmente, como o e- Título. Na opção <a
+                    href="https://www.tse.jus.br/servicos-eleitorais/servicos/servicos-ao-eleitor"
+                    class="linkinterno2">Todos os serviços</a>, estão disponíveis os
+                  endereços dos cartórios e das zonas eleitorais, para os casos em que o comparecimento a um posto da
+                  Justiça Eleitoral seja necessário, como, por exemplo, coleta da biometria, alistamento eleitoral,
+                  emissão de segunda via do título de eleitor ou regularização da situação cadastral.
+                </p>
+                <p>
+                  Todos os serviços são gratuitos.Apenas em casos de regularização cadastral em virtude do não
+                  comparecimento às urnas é que o eleitor ficará sujeito a uma multa mínima de R$ 3,51.
+                </p>
+
+                <p>
+                  <a href="https://www.tse.jus.br/comunicacao/noticias/2019/Abril/conheca-os-servicos-disponibilizados-ao-cidadao-pela-justica-eleitoral"
+                    class="linkinterno2">Conheça os serviços disponibilizados ao cidadão pela Justiça Eleitoral.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Somente a JE utiliza a urna eletrônica? -->
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+              <span class="conheca-je__perguntas__fonte-subtitulo">Somente a JE utiliza a urna eletrônica?</span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  A urna eletrônica pode ser utilizada por entidades públicas e instituições de ensino a título de
+                  empréstimo, para utilização em eleições parametrizadas, assegurando-lhes o apoio e o suporte
+                  necessários à realização do pleito, com vista a difundir os serviços desenvolvidos pela Justiça
+                  Eleitoral e garantir a livre manifestação da comunidade, conforme prevê a
+                  <a href="https://www.tse.jus.br/legislacao/codigo-eleitoral/normas-editadas-pelo-tse/resolucao-nb0-22.685-de-13-de-dezembro-de-2007-brasilia-2013-df"
+                    class="linkinterno2">
+                    Resolução-TSE – nº 22.685/2007.
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Como funciona a Justiça Eleitoral? -->
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+              <span class="conheca-je__perguntas__fonte-subtitulo"> Como funciona a Justiça Eleitoral?</span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  A Justiça Eleitoral é um ramo especializado do Poder Judiciário e tem atuação em três esferas:
+                </p>
+                <p>
+                  <b>Administrativa:</b> organiza e realiza eleições, referendos e plebiscitos, além de ser responsável
+                  por
+                  todo o cadastro eleitoral, tanto dos eleitores como dos partidos políticos e candidatos;
+                </p>
+                <p>
+                  <b>Regulamentar:</b> regula e normatiza o processo eleitoral;
+                </p>
+
+                <p>
+                  <b>Jurisdicional:</b> julga questões eleitorais.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Quais os horários de funcionamento? -->
+      <div class="conheca-je conheca-je__perguntas__box-tamanho">
+        <div class="conheca-je__perguntas__box-borda">
+          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
+            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
+              <span class="conheca-je__perguntas__fonte-subtitulo">Quais os horários de funcionamento?</span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
+            </div>
+
+            <div class="accordion-body">
+              <div class="p-4 ">
+                <p>
+                  Os horários de funcionamento dos cartórios e postos de atendimento variam de um estado para o outro. É
+                  importante acessar a página do Tribunal Regional Eleitoral do seu estado para verificar.
                 </p>
               </div>
             </div>
@@ -699,97 +710,46 @@
         <div class="conheca-je__perguntas__box-borda">
           <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
             <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
-              <i class='bx bx-chevron-down text-3xl'></i>
+              <span class="conheca-je__perguntas__fonte-subtitulo">O título cancelado pode ser regularizado?</span>
+              <i class='bx bx-chevron-down text-3xl text-black'></i>
             </div>
 
             <div class="accordion-body">
               <div class="p-4 ">
                 <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                  Sim. Segue o passo a passo:
                 </p>
+                <p>
+                  a) Comparecer a um cartório eleitoral, apresentar um documento de identificação com foto;</p>
+                <p>
+                  b) Um comprovante de residência e preencher o Requerimento de Alistamento Eleitoral(RAE).
+                </p>
+                <p>
+                  c) Pagar multa no valor de R$ 3,51 por turno faltante.Cada turno é considerado uma eleição.
+                </p>
+                <p>
+                  d) Aguardar o reinício das atualizações de cadastro do banco de dados da Justiça Eleitoral.Só a
+                  partir dessa data é que a situação estará regularizada.
+                </p>
+                <p>
+                  <a href="https://www.tse.jus.br/comunicacao/noticias/2022/Abril/saiba-como-regularizar-o-titulo-de-eleitor-em-quatro-etapas"
+                    class="linkinterno2">
+                    Seu título foi cancelado? Saiba o que fazer a partir de agora.
+                  </a>
+                </p>
+
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="conheca-je conheca-je__perguntas__box-tamanho">
-        <div class="conheca-je__perguntas__box-borda">
-          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
-                eleitoral?</span>
-              <i class='bx bx-chevron-down text-3xl'></i>
-            </div>
-
-            <div class="accordion-body">
-              <div class="p-4 ">
-                <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="conheca-je conheca-je__perguntas__box-tamanho">
-        <div class="conheca-je__perguntas__box-borda">
-          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Quais são os órgãos da JE? </span>
-              <i class='bx bx-chevron-down text-3xl'></i>
-            </div>
-
-            <div class="accordion-body">
-              <div class="p-4 ">
-                <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="conheca-je conheca-je__perguntas__box-tamanho">
-        <div class="conheca-je__perguntas__box-borda">
-          <div class="relative top-[5px] left-[5px] conheca-je__perguntas__box-borda2">
-            <div class="accordion-header conheca-je__perguntas__alinhar-entre">
-              <span class="conheca-je__perguntas__fonte-subtitulo">Como faço para acompanhar um processo
-                eleitoral?</span>
-              <i class='bx bx-chevron-down text-3xl'></i>
-            </div>
-
-            <div class="accordion-body">
-              <div class="p-4 ">
-                <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                  quas molestias excepturi sint occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
 
   <!-- Playlists -->
-  <section class="conheca-je__playlists__bg ">
+  <section class="conheca-je__playlists__bg " id="playlist">
 
     <div class="conheca-je__container space-y-16 conheca-je__playlists__alinhar">
       <div class="conheca-je__playlists__alinhar-titulo">
@@ -813,9 +773,10 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
           </div>
+
           <ul>
             <li>
-              <a href="https://www.tre-ac.jus.br/#/" class="">
+              <a data-fancybox="video-gallery" href="https://www.youtube.com/watch?v=hgCW9Vk01Ow" class="">
                 <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
                   <i class='bx bxs-right-arrow text-2xl'></i>
                   <h1>Os povos indigenas e o sistema eleitoral</h1>
@@ -825,7 +786,7 @@
           </ul>
           <ul>
             <li>
-              <a href="https://www.tre-ac.jus.br/#/" class="">
+              <a data-fancybox="video-gallery" href="https://www.youtube.com/watch?v=hgCW9Vk01Ow" class="">
                 <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
                   <i class='bx bxs-right-arrow text-2xl'></i>
                   <h1>Os povos indigenas e o sistema eleitoral</h1>
@@ -835,7 +796,7 @@
           </ul>
           <ul>
             <li>
-              <a href="https://www.tre-ac.jus.br/#/" class="">
+              <a data-fancybox="video-gallery" href="https://www.youtube.com/watch?v=hgCW9Vk01Ow" class="">
                 <div class="conheca-je__playlists__alinhar-entre conheca-je__playlists__fonte-links">
                   <i class='bx bxs-right-arrow text-2xl'></i>
                   <h1>Os povos indigenas e o sistema eleitoral</h1>
@@ -843,6 +804,7 @@
               </a>
             </li>
           </ul>
+
           <div class="conheca-je__playlists__box-tamanho">
             <div class="conheca-je__playlists__box-borda">
               <div class="conheca-je__playlists__alinhar-frente conheca-je__playlists__box-borda2 ">
@@ -974,18 +936,30 @@
   </section>
 
   <!-- história -->
-  <section class="conheca-je__historia__bg pt-20">
+  <section class="conheca-je__historia__bg pt-20" id="historia-bg">
 
     <div class="conheca-je__container conheca-je__historia__alinhar-conteudo ">
       <!-- titulo -->
-      <div>
-        <div class="conheca-je__historia__box-borda ">
-          <div class="conheca-je__historia__box-borda1 ">
-            <h1 class="conheca-je__historia__fonte-titulo">HISTÓRIA</h1>
+
+      <div class="conheca-je__historia__box-borda">
+        <div class="conheca-je__historia__box-borda1">
+          <!-- Utilize a posição relativa para permitir que a imagem seja posicionada de forma absoluta em relação a este elemento -->
+          <div class="position-relative">
+            <!-- Coloque a imagem dentro do elemento com posição relativa -->
+            <img src="src/fonts/estrela1.svg" alt="estrela" class="absolute top-[-20px] right-[-10px]">
+            <h1 class="conheca-je__historia__fonte-titulo ">HISTÓRIA</h1>
           </div>
         </div>
-        <h1 class="conheca-je__historia__fonte-subtitulo">DA JUSTIÇA ELEITORAL</h1>
       </div>
+
+      <!-- Corrigindo o posicionamento da estrela2 -->
+      <div class=" max-w-fit relative">
+        <img src="src/fonts/estrela2.svg" alt="estrela" class="absolute  right-0 top-[-25px]">
+        <div class="conheca-je__historia__fonte-subtitulo px">DA JUSTIÇA ELEITORAL</div>
+      </div>
+
+
+
 
       <!-- conteudo -->
       <div class="conheca-je__historia__alinhar-grid">
@@ -1015,18 +989,19 @@
             </div>
           </div>
 
+          <!-- voto feminino -->
           <div class="conheca-je conheca-je__historia__box-tamanho  ">
             <div class="conheca-je__historia__box-borda">
               <div class=" conheca-je__historia__box-borda2 ">
-                <div class="accordion-header conheca-je__historia__alinhar-entre">
+                <div class="accordion-header conheca-je__historia__alinhar-entre active">
                   <span class="conheca-je__historia__fonte-topicos">HISTÓRIA DO VOTO FEMININO NO BRASIL</span>
                   <i class='bx bx-chevron-down text-3xl'></i>
                 </div>
 
-                <div class="accordion-body ">
+                <div class="accordion-body  accordion-body--ativo">
                   <div class="p-4 ">
                     <div class="conheca-je__historia__alinhar-centro p-4">
-                      <img src="src/fonts/mulher-voto.png" alt="">
+                      <img src="src/fonts/mulher-voto.png" alt="voto-feminino">
                     </div>
 
                     <p>
@@ -1064,165 +1039,178 @@
 
           <div class="conheca-je__imagem ">
 
-            <div class="conheca-je__historia__regioes">
+            <div class="conheca-je__historia__regioes basis-1/3">
               <ul class="conheca-je__historia__regioes--caixa conheca-je__historia">
                 <li class="item2">
-                  <a href="#" class="link2 " tab="1930">1930</a>
+                  <a href="#" class="link2 link2--ativo" tab2="1930">1930</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2 " tab="1932">1932</a>
+                  <a href="#" class="link2 " tab2="1932">1932</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1933">1933</a>
+                  <a href="#" class="link2" tab2="1933">1933</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1934">1934</a>
+                  <a href="#" class="link2" tab2="1934">1934</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1935">1935</a>
+                  <a href="#" class="link2" tab2="1935">1935</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1937">1937</a>
+                  <a href="#" class="link2" tab2="1937">1937</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1945">1945</a>
+                  <a href="#" class="link2" tab2="1945">1945</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1946">1946</a>
+                  <a href="#" class="link2" tab2="1946">1946</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1947">1947</a>
+                  <a href="#" class="link2" tab2="1947">1947</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1950">1950</a>
+                  <a href="#" class="link2" tab2="1950">1950</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1951">1951</a>
+                  <a href="#" class="link2" tab2="1951">1951</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1952">1952</a>
+                  <a href="#" class="link2" tab2="1952">1952</a>
                 </li>
                 <li class="item2">
-                  <a href="#" class="link2" tab="1953">1953</a>
+                  <a href="#" class="link2" tab2="1953">1953</a>
                 </li>
               </ul>
             </div>
 
-            <div class="conheca-je__historia__conteudo  ">
+            <div class="conheca-je__historia__conteudo  basis-2/3">
 
               <!-- 1930 -->
-              <div class="tabs tab-1930  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1930 tab2--ativo  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1930</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>3 DE NOVEMBRO:</b> Data em que o governo provisório
+                  de Getulio Vargas enviou ao Congresso Nacional o projeto de lei que asseguraria, dois anos depois, o
+                  direito das mulheres ao voto – motivo pelo qual foi escolhida como o Dia da Instituição do Direito de
+                  Voto da Mulher no Brasil.</p>
               </div>
 
               <!-- 1932 -->
-              <div class="tabs tab-1932  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1932  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1932</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>24 DE FEVEREIRO:</b> A promulgação do Código
+                  Eleitoral de 1932 mudou a história da democracia no Brasil. Dentre as diversas inovações trazidas pelo
+                  Código, destacam-se a criação da Justiça Eleitoral, o estabelecimento do voto obrigatório e secreto, a
+                  instituição do voto feminino e a adoção do sistema de representação proporcional.
+                </p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>20 DE MAIO:</b> Quase três meses após a criação da
+                  Justiça Eleitoral, em fevereiro, o Tribunal Superior Eleitoral (à época denominado Tribunal Superior
+                  de Justiça Eleitoral) foi instalado no edifício do Supremo Tribunal Federal, localizado na Avenida Rio
+                  Branco, no Rio de Janeiro/RJ. A Secretaria do Tribunal iniciou seu funcionamento em uma das salas do
+                  terceiro andar do prédio, com apenas 17 funcionários.
+                </p>
               </div>
 
               <!-- 1933 -->
-              <div class="tabs tab-1933  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1933  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1933</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>3 DE MAIO:</b> Ocorreram as primeiras eleições
+                  organizadas pela Justiça Eleitoral, nas quais mais de 1 milhão e 200 mil pessoas escolheram 214
+                  parlamentares constituintes, o que culminou na promulgação da Constituição de 1934.
+                </p>
               </div>
 
               <!-- 1934 -->
-              <div class="tabs tab-1934  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1934  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1934</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>16 DE JULHO:</b> A primeira constituição brasileira a
+                  garantir o direito das mulheres ao voto foi a de 1934. O voto feminino no Brasil fora instituído pelo
+                  Código Eleitoral de 1932, mas foi a Assembleia Constituinte de 1933 que assegurou esse direito na
+                  Carta Magna do país.
+                </p>
+
+                <p class="conheca-je__historia__fonte-conteudo">
+                  <b>14 DE OUTUBRO:</b> A Justiça Eleitoral realizou, pela primeira vez, as eleições para a Câmara dos
+                  Deputados e para as Assembleias Legislativas Estaduais. Em todo o país, dez mulheres elegem-se
+                  deputadas estaduais.
+                </p>
               </div>
 
               <!-- 1935 -->
-              <div class="tabs tab-1935  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1935  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1935</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>11 DE FEVEREIRO:</b>O Tribunal Superior Eleitoral,
+                  então chamado de Tribunal Superior da Justiça Eleitoral, foi transferido da antiga sede do Supremo
+                  Tribunal Federal para o prédio onde funcionava o Tribunal Regional Eleitoral do Distrito Federal, na
+                  rua Dom Manoel, no centro do Rio de Janeiro, atualmente ocupado pelo Museu Naval. O edifício,
+                  projetado pelo engenheiro naval Francisco Correia Câmara e construído em 1898 para servir de sede ao
+                  Clube Naval, apresenta estilo eclético.
+                </p>
+                <p class="conheca-je__historia__fonte-conteudo">
+                  <b>4 DE MAIO:</b> Publicação da Lei nº 48, que modificou o Código Eleitoral de 1932. A Lei não chegou
+                  a ser aplicada, pois ocorreu o golpe do Estado Novo em 1937.
+                </p>
+                
               </div>
 
               <!-- 1937 -->
-              <div class="tabs tab-1937  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1937  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1937</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>10 DE NOVEMBRO:</b> Getulio Vargas instituiu o Estado Novo,
+                  ou a Terceira República Brasileira, em pronunciamento em rede nacional de rádio, e outorgou uma nova
+                  Constituição, que extinguiu a Justiça Eleitoral no Brasil após apenas cinco anos da sua criação,
+                  ocorrida em 1932.
+                </p>
+                <p class="conheca-je__historia__fonte-conteudo">
+                  <b>2 DE DEZEMBRO:</b> Getulio Vargas extinguiu, por meio do Decreto nº 37, todos os partidos políticos.
+                </p>
               </div>
 
               <!-- 1945 -->
-              <div class="tabs tab-1945  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1945  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1945</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>28 DE MAIO:</b> A Justiça Eleitoral foi recriada pelo Decreto-Lei nº 7.586, após o fim do Estado Novo. No mesmo ano, organizou a eleição presidencial que elegeu Eurico Gaspar Dutra como Presidente da República.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>1º DE JUNHO: </b> Após o restabelecimento da Justiça Eleitoral, o Tribunal Superior Eleitoral foi instalado no Palácio Monroe, no Rio de Janeiro/RJ. Projetado e construído para ser o pavilhão do Brasil na Exposição Internacional de Saint Louis, nos Estados Unidos da América, em 1904, o Palácio Monroe recebeu o grande prêmio de arquitetura do evento.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>30 DE JUNHO:</b> Após a reinstalação da Justiça Eleitoral, foi editada a primeira instrução sobre partidos políticos, que passaram a ter caráter nacional a partir de então.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>2 DE DEZEMBRO:</b> Ocorreram as primeiras eleições organizadas pela Justiça Eleitoral após sua recriação, quase dez anos depois da instituição do Estado Novo. Nesse pleito, houve eleição para presidente da República e para parlamentares, o que culminaria na Constituição de 1946.</p>
+
               </div>
 
               <!-- 1945 -->
-              <div class="tabs tab-1946  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1946  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1946</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>28 DE MAIO:</b> A Justiça Eleitoral foi recriada pelo Decreto-Lei nº 7.586, após o fim do Estado Novo. No mesmo ano, organizou a eleição presidencial que elegeu Eurico Gaspar Dutra como Presidente da República.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>1º DE JUNHO:</b> Após o restabelecimento da Justiça Eleitoral, o Tribunal Superior Eleitoral foi instalado no Palácio Monroe, no Rio de Janeiro/RJ. Projetado e construído para ser o pavilhão do Brasil na Exposição Internacional de Saint Louis, nos Estados Unidos da América, em 1904, o Palácio Monroe recebeu o grande prêmio de arquitetura do evento.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>30 DE JUNHO:</b> Após a reinstalação da Justiça Eleitoral, foi editada a primeira instrução sobre partidos políticos, que passaram a ter caráter nacional a partir de então.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>2 DE DEZEMBRO:</b> Ocorreram as primeiras eleições organizadas pela Justiça Eleitoral após sua recriação, quase dez anos depois da instituição do Estado Novo. Nesse pleito, houve eleição para presidente da República e para parlamentares, o que culminaria na Constituição de 1946.</p>
+
               </div>
 
               <!-- 1947 -->
-              <div class="tabs tab-1947  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1947  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1947</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.
-                  3 DE NOVEMBRO: Data em que o governo provisório de Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>19 DE JANEIRO:</b> A população escolheu governadoras, governadores, prefeitas e prefeitos em uma eleição direta pela primeira vez.</p>
               </div>
 
               <!-- 1950 -->
-              <div class="tabs tab-1950  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1950  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1950</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>24 DE JULHO:</b> Foi promulgada a Lei nº 1.164, estabelecendo novo Código Eleitoral, o quarto na história do Brasil.</p>
               </div>
 
               <!-- 1951 -->
-              <div class="tabs tab-1951  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1951  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1951</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b>31 DE AGOSTO:</b> O TSE publicou a Resolução nº 4.357, que instituiu o 7º modelo de título eleitoral.</p>
               </div>
 
               <!-- 1952 -->
-              <div class="tabs tab-1952  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1952  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1952</h1>
-                <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
-                  Getulio Vargas enviou ao Congresso Nacional o
-                  projeto de lei que asseguraria, dois anos depois, o direito das mulheres ao voto – motivo pelo qual
-                  foi escolhida como o Dia da Instituição do Direito de Voto da Mulher no Brasil.</p>
+                <p class="conheca-je__historia__fonte-conteudo"><b></b>29 DE SETEMBRO: É publicado o Regimento Interno do Tribunal Superior Eleitoral – norma em vigor até os dias de hoje.</p>
               </div>
 
               <!-- 1953 -->
-              <div class="tabs tab-1953  conheca-je__historia__posicao-informacao">
+              <div class="tabs2 tab2-1953  conheca-je__historia__posicao-informacao">
                 <h1 class="conheca-je__historia__fonte-titulo-timeline ">1953</h1>
                 <p class="conheca-je__historia__fonte-conteudo">3 DE NOVEMBRO: Data em que o governo provisório de
                   Getulio Vargas enviou ao Congresso Nacional o
@@ -1242,7 +1230,7 @@
   </section>
 
   <!-- 90 anos je -->
-  <section>
+  <section id="calendario-bg">
     <div class="conheca-je__container py-10">
       <!-- 90 anos -->
       <div class="conheca-je__90anos__tamanho-titulo conheca-je__90anos__estilo-titulo">
@@ -1253,8 +1241,8 @@
       <div class="conheca-je__90anos__grid">
         <!-- conteudo -->
         <div class="col-span-3">
-          <div class="flex justify-end p-5">
-            <img class="" src="src/fonts/90-anos.png" alt="">
+          <div class="conheca-je__90anos__imagem-90anos">
+            <img class="" src="src/fonts/90-anos.png" alt="90-anos">
           </div>
           <p>
             Para celebrar os 90 anos da Justiça Eleitoral desde a sua primeira instituição, em 24 de fevereiro de 1932,
@@ -1288,12 +1276,12 @@
           </ul>
           </p>
         </div>
-        <div class="col-span-2 flex justify-center">
-          <img class="" src="src/fonts/90anos-em-acao.PNG" alt="">
+        <div class="col-span-2 flex justify-center conheca-je__90anos__hidden">
+          <img class="" src="src/fonts/90anos-em-acao.PNG" alt="90-anos-em-acao">
         </div>
       </div>
 
-      <div class="rounded-full bg-[#00FF5A] max-w-xl my-4">
+      <div class="rounded-full bg-[#00FF5A] max-w-xl my-4 mx-auto lg:mx-0">
         <h1 class="text-center text-4xl font-bold p-4">Ações e eventos realizados</h1>
       </div>
 
@@ -1303,9 +1291,9 @@
           <div id="header" class="conheca-je__calendario__header-space">
             <div id="monthDisplay" class="conheca-je__calendario__header-fonte"></div>
             <div class="flex space-x-2">
-              <button id="backButton" class="bg-[#00FF5A] text-white px-2 py-2 rounded"><i
+              <button id="backButton" class=" text-white px-2 py-2 rounded bg-[#00FF5A] hover:bg-green-500"><i
                   class='bx bx-chevron-left text-3xl'></i></button>
-              <button id="nextButton" class="bg-[#00FF5A] text-white px-2 py-2 rounded"><i
+              <button id="nextButton" class=" text-white px-2 py-2 rounded bg-[#00FF5A] hover:bg-green-500"><i
                   class='bx bx-chevron-right text-3xl'></i></button>
             </div>
           </div>
@@ -1346,6 +1334,13 @@
     </div>
   </section>
 
+  <!-- quiz -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+  <script type="module" src="src/js/quiz.js"></script>
+
   <!-- tse-explica -->
   <script type="module" src="src/js/tse-explica.js"></script>
 
@@ -1361,6 +1356,37 @@
 
   <!-- accordion -->
   <script type="module" src="src/js/calendario.js"></script>
+
+  <!-- FancyBox -->
+  <script type="module" src="src/js/fancybox.js"></script>
+
+  <script src="dist/js/all.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+  <script src="https://www.justicaeleitoral.jus.br/estrutura-je/js/index.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16748902-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-16748902-1");
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GK47YZMZZQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-GK47YZMZZQ');
+  </script>
 
 </body>
 
