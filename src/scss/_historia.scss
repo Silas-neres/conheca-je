@@ -96,7 +96,7 @@
     }
 
     &__conteudo {
-        @apply w-full py-12 mt-6 xl:w-3/5 ;
+        @apply w-full py-6  mt-6 xl:w-3/5  ;
 
         .tabs2 {
             @apply hidden;
@@ -117,11 +117,14 @@
 
     &__regioes {
         
-        @apply flex flex-col md:flex-row justify-center mt-6 ;
+        @apply flex flex-row justify-center mt-6 ;
+        @apply bg-white rounded-3xl ;
+       
 
         &--caixa {
 
-            @apply box-border h-full w-full p-4 py-10 border-2 bg-white rounded-3xl ;
+            @apply  h-min w-full      ;
+            @apply  overflow-y-auto whitespace-nowrap  max-h-[950px] sm:max-h-[750px];
         }
 
         &--caixa2 {
