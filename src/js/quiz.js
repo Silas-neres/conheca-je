@@ -6,7 +6,7 @@ var perguntas = [
       a: "FAZ",
       b: "NÃO FAZ"
     },
-    respostaCorreta: "a",
+    respostaCorreta: "b",
     explicacao: "Quem fiscaliza a atuação dos eleitos e denuncia eventuais irregularidades cometidas são os órgãos de controle, como Tribunal de Contas da União e dos estados e dos municípios e o Ministério Público."
   },
   {
@@ -24,7 +24,7 @@ var perguntas = [
       a: "FAZ",
       b: "NÃO FAZ"
     },
-    respostaCorreta: "a",
+    respostaCorreta: "b",
     explicacao: "A Justiça Eleitoral não envia e-mails a eleitores para comunicar cancelamento de títulos eleitorais."
   },
   {
@@ -33,7 +33,7 @@ var perguntas = [
       a: "FAZ",
       b: "NÃO FAZ"
     },
-    respostaCorreta: "a",
+    respostaCorreta: "b",
     explicacao: "A Justiça Eleitoral não exige um perfil social específico dos candidatos. A Constituição e a Legislação eleitoral estabelecem condições, tais como idade mínima, nacionalidade brasileira e alistamento eleitoral, entre outros."
   },
   {
