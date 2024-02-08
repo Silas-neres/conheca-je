@@ -79,7 +79,7 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
 
         &--caixa {
 
-            @apply box-border h-full  p-4 border-2 bg-[#B8FE43] rounded-3xl overflow-hidden ;
+            @apply box-border h-full   border-2 bg-[#B8FE43] rounded-3xl overflow-hidden sm:pr-2;
         }
 
         &--caixa2 {
