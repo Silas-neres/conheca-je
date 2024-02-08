@@ -41,7 +41,7 @@
             @apply grid justify-items-center xl:justify-items-start ;
         }
 
-
+   
     }
 
     &__fonte{
@@ -124,7 +124,7 @@
         &--caixa {
 
             @apply  h-min w-full      ;
-            @apply  overflow-y-auto whitespace-nowrap  max-h-[950px] sm:max-h-[750px];
+            @apply  overflow-y-auto whitespace-nowrap  max-h-[1150px] sm:max-h-[900px] xl:max-h-[800px];
         }
 
         &--caixa2 {
@@ -136,7 +136,7 @@
     &__posicao{
 
         &-informacao{
-            @apply  my-auto  p-2 bg-[#163570] rounded-r-3xl py-20 sm:p-10 ;
+            @apply  my-auto  p-2 bg-[#163570] rounded-r-3xl  sm:p-10 sm:py-20 ;
         }
 
         &-container{

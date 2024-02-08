@@ -27,7 +27,7 @@
 
     &__position {
         &-titulo {
-            @apply flex flex-col items-end justify-center ;
+            @apply flex flex-col items-end justify-center space-y-2  mx-auto mt-64 2xl:mx-0 xl:mt-0 ;
         }
         &-imagens {
             @apply flex flex-row items-start justify-start ;

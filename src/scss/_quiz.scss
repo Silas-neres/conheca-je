@@ -123,6 +123,10 @@
                 @apply bg-no-repeat bg-right-bottom bg-[url("../../src/fonts/colchete-baixo.svg")] ;
             }
         }
+
+        &-section{
+            @apply bg-no-repeat pt-[100px] xl:py-[260px];
+        }
     
     }
 
