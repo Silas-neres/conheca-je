@@ -43,8 +43,8 @@
     &__nivel1 {
 
         &__mulher {
-            @apply relative left-32 top-14 ;
-            @apply hidden xl:block;
+            @apply relative xl:left-14 2xl:left-32 top-14 ;
+            @apply hidden xl:block ;
             z-index: 1;
         }
     }
@@ -52,16 +52,16 @@
     &__nivel2 {
 
         &__star {
-            @apply relative left-12 top-36 ;
-            @apply hidden 2xl:block;
+            @apply relative xl:right-10 2xl:left-12 top-36 ;
+            @apply hidden xl:block ;
             z-index: 3;
         }
     }
 
     &__nivel3 {
         &__urna {
-            @apply relative right-96 top-60 ;
-            @apply hidden 2xl:block;
+            @apply relative xl:right-[500px] 2xl:right-96 top-60 ;
+            @apply hidden xl:block;
             z-index: 4;
         }
     }
