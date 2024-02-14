@@ -41,7 +41,7 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
     &__fonte{
 
         &-titulo{
-           @apply text-[#000C79] font-semibold  text-3xl p-2 overflow-hidden	 ; 
+           @apply text-[#000C79] font-semibold  text-3xl p-2 overflow-hidden	text-center ; 
           
         }
 
@@ -49,6 +49,12 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
             @apply text-[#000C79]  text-lg mt-8 tracking-wide leading-loose p-2 overflow-hidden	;
            
         }
+
+        &-link{
+            @apply text-xl text-blue-800 font-bold hover:font-bold hover:underline ;
+          
+        }
+        
         
 
     }
@@ -68,7 +74,7 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
         }
 
         &-arrows {
-            @apply mt-12 flex justify-between ;
+            @apply mt-2 flex justify-between ;
         }
 
     }
