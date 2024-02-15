@@ -130,9 +130,9 @@
 @media screen and (min-width: 1200px) {
   #calendario-bg {
     display: block;
-    background-image: url("../fonts/circulo-verde.svg"), url("../fonts/circulo-amarelo.png"), url("../fonts/circulo-azul.svg");
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: -10% 10%, 80% -20%, 100% 100%;
+    background-image: url("../fonts/circulo-verde.svg"), url("../fonts/circulo-azul.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: -10% 10%, 100% 100%;
   }
 
   #duvidas {
@@ -155,6 +155,13 @@
     background-image: url("../fonts/fundo.png"), url("../fonts/livro-historia.png"), url("../fonts/curiosidade-historia.png");
     background-repeat: repeat, no-repeat, no-repeat;
     background-position: center, 85% 0%, 100% 100%;
+  }
+
+  #anos92-bg {
+   
+    background-image: url('../fonts/estrela-azul.png'), url("../fonts/estrela-azul.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
   }
 
 

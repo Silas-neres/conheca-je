@@ -28,6 +28,7 @@
 
     &__grid{
         @apply grid lg:grid-cols-5 gap-6 ;
+        @apply 2xl:mx-20;
     }
 
     &__imagem{

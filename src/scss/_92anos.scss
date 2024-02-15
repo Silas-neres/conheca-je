@@ -1,0 +1,29 @@
+
+&__92anos{
+    &__bg{
+        @apply bg-[#FAC72C];
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+    }
+    &__grid{
+        &-span{
+            @apply col-span-3 xl:col-span-2 ;
+        }
+        &-superior{
+            @apply grid grid-cols-3 gap-4 ;
+            @apply 2xl:mx-20;
+        }
+        &-inferior{
+            @apply grid grid-cols-1 lg:grid-cols-3 gap-8 ;
+            @apply 2xl:mx-20;
+        }
+    }
+
+    &__fonte{
+        &-titulo{
+            @apply text-6xl text-center text-white bg-[#1e3c9a] my-2 p-2 max-w-fit mx-auto ;
+        }
+        &-subtitulo{
+            @apply text-2xl font-bold text-center xl:text-start;
+        }
+    }
+}

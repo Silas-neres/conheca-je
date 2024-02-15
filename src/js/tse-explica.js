@@ -1,8 +1,8 @@
 const titulos = [
-  'saiba a diferença entre Recursos Ordinário e Especial',
-  'saiba como funciona o direito de resposta',
-  'Recurso Contra Expedição de Diploma pode afastar candidato eleito',
-  'confira como funciona a Representação',
+  'Saiba a diferença entre recursos ordinário e especial',
+  'Saiba como funciona o direito de resposta',
+  'Recurso contra expedição de diploma pode afastar candidato eleito',
+  'Confira como funciona a representação',
   // Adicione mais títulos conforme necessário
 ];
 

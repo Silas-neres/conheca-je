@@ -1,0 +1,745 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Unbounded";
+  src: url("../fonts/Unbounded-ExtraBold.ttf") format("truetype");
+}
+* {
+  border: 1px solid hotpink;
+}
+
+* {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.conheca-je__header__fonte-titulo2 {
+  font-family: "Unbounded", "Space Grotesk", sans-serif;
+}
+
+.resposta {
+  @apply text-center text-3xl;
+}
+
+p {
+  @apply mb-4;
+}
+
+.link {
+  @apply flex justify-center items-center bg-[#B8FE43] text-[#163570]  py-2 px-2  hover:font-bold text-lg sm:text-2xl;
+}
+.link--ativo {
+  @apply font-bold  text-[#163570] bg-no-repeat bg-right bg-[url(../../src/fonts/seta-azul.svg)] text-lg sm:text-2xl;
+}
+
+.link2 {
+  @apply flex justify-center items-end bg-white text-[#163570] text-3xl  hover:font-bold;
+}
+.link2--ativo {
+  @apply font-bold text-3xl text-[#163570];
+  @apply bg-no-repeat bg-right sm:bg-[url(../../src/fonts/seta-azul.svg)];
+}
+
+.linkinterno2 {
+  @apply text-blue-800 text-lg  hover:font-semibold hover:underline;
+}
+.linkinterno2--ativo {
+  @apply font-bold  text-[#163570];
+}
+
+.lista {
+  @apply divide-y flex flex-row md:flex-col gap-4 md:gap-0;
+}
+
+.item {
+  @apply py-4;
+}
+
+.teste {
+  @apply flex justify-items-stretch items-center space-x-4;
+}
+
+.conheca-je__container {
+  @apply container mx-auto px-4 py-4 my-auto;
+}
+.conheca-je__container__sub {
+  @apply flex space-x-4;
+}
+.conheca-je__imagem {
+  @apply flex;
+}
+.conheca-je__grid {
+  @apply grid grid-cols-2;
+}
+.conheca-je__header__fonte-titulo1 {
+  @apply text-[#000C79] font-bold leading-5 text-4xl w-full text-center px-5 py-2;
+  @apply 2xl:text-end 2xl:w-1/2;
+}
+.conheca-je__header__fonte-titulo2 {
+  @apply text-[#000C79] font-bold  text-5xl text-center w-full px-5 pb-3 bg-[#FAC60E];
+  @apply 2xl:text-end 2xl:w-auto;
+}
+.conheca-je__header__bg-azul {
+  @apply bg-no-repeat bg-left-top bg-[url("../../src/fonts/bgTopo.png")];
+}
+.conheca-je__header__bg-verde {
+  @apply bg-auto  bg-no-repeat bg-bottom bg-[#0CAB44] h-72 z-0;
+  @apply col-span-1 xl:col-span-2;
+  -webkit-clip-path: polygon(0 40%, 100% 0, 100% 60%, 0% 100%);
+          clip-path: polygon(0 40%, 100% 0, 100% 60%, 0% 100%);
+  z-index: 2;
+}
+.conheca-je__header__position-titulo {
+  @apply flex flex-col items-end justify-center space-y-2  mx-auto mt-64 2xl:mx-0 xl:mt-0;
+}
+.conheca-je__header__position-imagens {
+  @apply flex flex-row items-start justify-start;
+  position: relative;
+}
+.conheca-je__header__grid {
+  @apply grid grid-cols-1 xl:grid-cols-2;
+}
+.conheca-je__header__nivel1__mulher {
+  @apply relative xl:left-14 2xl:left-32 top-14;
+  @apply hidden xl:block;
+  z-index: 1;
+}
+.conheca-je__header__nivel2__star {
+  @apply relative xl:right-10 2xl:left-12 top-36;
+  @apply hidden xl:block;
+  z-index: 3;
+}
+.conheca-je__header__nivel3__urna {
+  @apply relative xl:right-[500px] 2xl:right-96 top-60;
+  @apply hidden xl:block;
+  z-index: 4;
+}
+.conheca-je__glossario__hide {
+  @apply hidden md:block;
+}
+.conheca-je__glossario__grid {
+  @apply grid grid-cols-1 xl:grid-cols-2;
+}
+.conheca-je__glossario__flex {
+  @apply flex flex-row;
+}
+.conheca-je__glossario__flex-basis {
+  @apply basis-1/2;
+}
+.conheca-je__glossario__bg-brasil {
+  @apply bg-local bg-contain bg-no-repeat bg-center bg-[url("../../src/fonts/brasilbg.svg")] min-h-[700px] sm:min-h-[600px] md:min-h-[1000px] md:max-h-[1000px];
+}
+.conheca-je__glossario__bg-explicatse {
+  @apply rounded-full py-4 space-x-2 text-center text-4xl text-[#FFF] bg-[#A13FE6];
+  @apply md:w-2/3;
+}
+.conheca-je__glossario__bg-explicatse-exclamacao {
+  @apply relative h-20 w-full md:h-44;
+}
+.conheca-je__glossario__bg-explicatse-bold {
+  @apply font-bold;
+}
+.conheca-je__glossario__fonte-titulo {
+  @apply text-[#000C79] font-semibold  text-3xl p-2 overflow-hidden	text-center;
+}
+.conheca-je__glossario__fonte-subtitulo {
+  @apply text-[#000C79]  text-lg mt-8 tracking-wide leading-loose p-2 overflow-hidden;
+}
+.conheca-je__glossario__fonte-link {
+  @apply text-xl text-blue-800 font-bold hover:font-bold hover:underline;
+}
+.conheca-je__glossario__posicao-estados {
+  @apply py-8 mt-16 pl-2 md:pl-10;
+}
+.conheca-je__glossario__posicao-container {
+  @apply md:p-32;
+}
+.conheca-je__glossario__posicao-container-infos {
+  @apply pt-16 md:p-24;
+}
+.conheca-je__glossario__posicao-arrows {
+  @apply mt-2 flex justify-between;
+}
+.conheca-je__glossario__regioes {
+  @apply flex flex-col;
+}
+.conheca-je__glossario__regioes--caixa {
+  @apply box-border h-full   border-2 bg-[#B8FE43] rounded-3xl overflow-hidden sm:pr-2;
+}
+.conheca-je__glossario__regioes--caixa2 {
+  @apply flex flex-col;
+  @apply box-border p-4 border-2 bg-[#D99CD533] rounded-3xl  overflow-hidden;
+}
+.conheca-je__glossario__conteudo {
+  @apply w-full text-[#081326];
+}
+.conheca-je__glossario__conteudo .tabs {
+  @apply hidden;
+}
+.conheca-je__glossario__conteudo .tabs--ativo {
+  @apply block;
+}
+.conheca-je__glossario__conteudo .tabs__ano {
+  @apply text-5xl font-bold p-10;
+}
+.conheca-je__glossario__conteudo .lista {
+  @apply flex flex-row gap-6 border-[#F1EEEE] border-t-[.5px] border-b-[.5px] py-4 px-10 overflow-x-scroll md:overflow-auto;
+}
+.conheca-je__glossario__conteudo .link {
+  @apply flex w-max justify-center items-center bg-white rounded-3xl text-[#41934B] py-2 px-6 hover:bg-[#41934B] hover:text-[#ecfcef];
+}
+.conheca-je__glossario__conteudo .link--ativo {
+  @apply bg-white text-[#ecfcef];
+}
+.conheca-je__glossario__conteudo .tab {
+  @apply p-10 hidden text-xl text-[#081326];
+}
+.conheca-je__glossario__conteudo .tab--ativo {
+  @apply block;
+}
+.conheca-je__glossario__conteudo .tab p {
+  @apply leading-7 mb-4;
+}
+.conheca-je__glossario__conteudo .tab h3 {
+  @apply text-3xl font-bold mb-5;
+}
+.conheca-je__glossario__conteudo .tab h4 {
+  @apply text-2xl font-bold mb-5;
+}
+.conheca-je__glossario__conteudo .tab .file-pdf, .conheca-je__glossario__conteudo .tab .file-vid {
+  @apply flex before:content-[""] before:block before:w-[25px] before:h-[25px] before:mr-2;
+}
+.conheca-je__glossario__conteudo .tab .file-pdf {
+  @apply before:bg-[url:var(--icone-pdf)];
+}
+.conheca-je__glossario__conteudo .tab .file-vid {
+  @apply before:bg-[url:var(--icone-play)];
+}
+.conheca-je__glossario__conteudo .tab a {
+  @apply underline hover:no-underline;
+}
+.conheca-je__glossario__conteudo .tab ul {
+  @apply list-disc ml-4;
+}
+.conheca-je__glossario__conteudo .tab li {
+  @apply my-2;
+}
+.conheca-je__glossario__conteudo .tab .painel-fotos {
+  @apply grid grid-cols-3 md:grid-cols-5 gap-4;
+}
+.conheca-je__glossario__conteudo .tab2 {
+  @apply p-10 hidden text-xl text-[#081326];
+}
+.conheca-je__glossario__conteudo .tab2--ativo {
+  @apply block;
+}
+.conheca-je__glossario__conteudo .tab2 p {
+  @apply leading-7 mb-4;
+}
+.conheca-je__glossario__conteudo .tab2 h3 {
+  @apply text-3xl font-bold mb-5;
+}
+.conheca-je__glossario__conteudo .tab2 h4 {
+  @apply text-2xl font-bold mb-5;
+}
+.conheca-je__glossario__conteudo .tab2 .file-pdf, .conheca-je__glossario__conteudo .tab2 .file-vid {
+  @apply flex before:content-[""] before:block before:w-[25px] before:h-[25px] before:mr-2;
+}
+.conheca-je__glossario__conteudo .tab2 .file-pdf {
+  @apply before:bg-[url:var(--icone-pdf)];
+}
+.conheca-je__glossario__conteudo .tab2 .file-vid {
+  @apply before:bg-[url:var(--icone-play)];
+}
+.conheca-je__glossario__conteudo .tab2 a {
+  @apply underline hover:no-underline;
+}
+.conheca-je__glossario__conteudo .tab2 ul {
+  @apply list-disc ml-4;
+}
+.conheca-je__glossario__conteudo .tab2 li {
+  @apply my-2;
+}
+.conheca-je__glossario__conteudo .tab2 .painel-fotos {
+  @apply grid grid-cols-3 md:grid-cols-5 gap-4;
+}
+.conheca-je__glossario__conteudo .linkinterno {
+  @apply flex justify-start items-start  text-[#163570] text-lg py-2  hover:font-semibold hover:underline;
+}
+.conheca-je__glossario__conteudo .linkinterno:hover::after {
+  content: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3057 8.46473C14.9278 8.46473 14.6205 8.77211 14.6205 9.14997V14.5752C14.6205 15.1007 14.1929 15.5282 13.6675 15.5282H2.32346C1.798 15.5282 1.37048 15.1007 1.37048 14.5752V3.23119C1.37048 2.70573 1.798 2.27821 2.32346 2.27821H7.74871C8.12657 2.27821 8.43395 1.97084 8.43395 1.59297C8.43395 1.21511 8.12657 0.907867 7.74871 0.907867H2.32346C1.04227 0.907867 0 1.95014 0 3.23119V14.5752C0 15.8564 1.04227 16.8987 2.32346 16.8987H13.6675C14.9487 16.8987 15.9909 15.8564 15.9909 14.5752V9.14997C15.9909 8.77211 15.6836 8.46473 15.3057 8.46473Z' fill='%23163570'/%3E%3Cpath d='M15.2199 0.898682H11.3673C11.1866 0.898682 11.0161 0.968356 10.8872 1.09499C10.7585 1.22135 10.6857 1.39032 10.6822 1.57053C10.6787 1.75276 10.7484 1.92593 10.8781 2.05825C11.0095 2.19218 11.192 2.26903 11.3785 2.26903H13.6633L7.5194 8.42835C7.25261 8.69569 7.25301 9.13037 7.52062 9.39757C7.65009 9.5265 7.82191 9.59753 8.00441 9.59753C8.18692 9.59753 8.36022 9.52596 8.48956 9.39621L14.6294 3.24108V5.7507C14.6294 5.93145 14.6991 6.10192 14.8257 6.23085C14.9521 6.35951 15.121 6.43229 15.3013 6.43581C15.4832 6.43946 15.6567 6.36979 15.789 6.23991C15.9229 6.10854 15.9998 5.92604 15.9998 5.73948V1.67876C15.9998 1.24868 15.6498 0.898682 15.2197 0.898682H15.2199Z' fill='%23163570'/%3E%3C/svg%3E%0A");
+  right: 30%;
+}
+.conheca-je__glossario__conteudo .linkinterno--ativo {
+  @apply font-bold  text-[#163570];
+}
+.conheca-je__glossario__tre {
+  @apply rounded-full py-4 px-8 text-center text-5xl font-bold text-[#163570] bg-[#B8FE43] w-1/2 md:w-5/12;
+}
+.conheca-je__glossario__imagem {
+  @apply absolute right-[-60] top-8 drop-shadow-2xl;
+}
+.conheca-je__quiz__hide {
+  @apply hidden xl:block;
+}
+.conheca-je__quiz-teste2 {
+  @apply rounded-full;
+}
+.conheca-je__quiz-teste3 {
+  @apply bg-gradient-to-r from-black;
+}
+.conheca-je__quiz__fonte-titulo {
+  @apply text-center font-bold p-3 text-4xl text-[#000C79] md:text-5xl;
+}
+.conheca-je__quiz__fonte-titulo2 {
+  @apply text-[#00DB4D] font-bold  text-4xl  md:text-5xl;
+}
+.conheca-je__quiz__fonte-texto1 {
+  @apply text-4xl font-bold xl:text-start lg:text-6xl font-bold mr-2 text-center;
+}
+.conheca-je__quiz__fonte-texto2 {
+  @apply text-3xl font-bold xl:text-start lg:text-4xl font-bold text-center;
+}
+.conheca-je__quiz__fonte-perguntas {
+  @apply text-3xl font-bold text-center mt-5;
+}
+.conheca-je__quiz__fonte-placar-erro {
+  @apply text-3xl font-bold text-white text-center md:text-start;
+}
+.conheca-je__quiz__fonte-placar-acerto {
+  @apply text-3xl font-bold text-white text-center md:text-end;
+}
+.conheca-je__quiz__fonte-glossario {
+  @apply text-4xl font-bold hover:underline;
+}
+.conheca-je__quiz__box {
+  @apply xl:grid grid-cols-1  2xl:grid grid-cols-2;
+}
+.conheca-je__quiz__box-tamanho {
+  @apply max-w-6xl h-96 mx-auto;
+}
+.conheca-je__quiz__box-tamanho-glossario {
+  @apply max-w-4xl mx-auto;
+}
+.conheca-je__quiz__box-tamanho-button {
+  @apply max-w-lg mx-auto mt-10;
+}
+.conheca-je__quiz__box-tamanho-placar {
+  @apply max-w-lg mx-auto;
+}
+.conheca-je__quiz__box-tamanho-placar-inferior {
+  @apply hidden md:block max-w-sm mx-auto h-4 rounded-b-full bg-yellow-500;
+}
+.conheca-je__quiz__box-borda {
+  @apply bg-black md:w-1/2;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0 99%, 0 41%);
+          clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0 99%, 0 41%);
+}
+.conheca-je__quiz__box-borda2 {
+  @apply border-4 border-black bg-white;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0 99%, 0 41%);
+          clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0 99%, 0 41%);
+}
+.conheca-je__quiz__box-position {
+  @apply relative top-[5px] left-[5px];
+}
+.conheca-je__quiz__box-botao {
+  @apply rounded-full bg-white shadow-lg p-2 text-xl;
+}
+.conheca-je__quiz__bg {
+  @apply bg-no-repeat bg-bottom bg-[url("../../src/fonts/game-quiz.svg")];
+}
+.conheca-je__quiz__bg-placar {
+  @apply z-0 bg-no-repeat bg-center bg-[url("../../src/fonts/placar-bg-centro.svg")];
+}
+.conheca-je__quiz__bg-placar-centro {
+  @apply bg-no-repeat bg-center  bg-gradient-to-t from-black to-gray-400;
+}
+.conheca-je__quiz__bg-placar-topo {
+  @apply bg-yellow-500;
+  -webkit-clip-path: polygon(30% 0, 75% 0, 100% 100%, 0 100%);
+          clip-path: polygon(30% 0, 75% 0, 100% 100%, 0 100%);
+}
+.conheca-je__quiz__bg-glossario-baixo {
+  @apply bg-no-repeat bg-right-bottom bg-[url("../../src/fonts/colchete-baixo.svg")];
+}
+.conheca-je__quiz__bg-section {
+  @apply bg-no-repeat pt-[100px] xl:py-[260px];
+}
+.conheca-je__quiz__alinhar {
+  @appply relative justify-center items-center max-w-4xl mx-auto;
+}
+.conheca-je__quiz__alinhar-centro {
+  @apply flex  justify-center items-center  mx-auto;
+}
+.conheca-je__quiz__perguntas {
+  @apply w-96  rounded-full p-3 text-center text-3xl place-self-start  bg-[#B8FE43];
+}
+.conheca-je__quiz__grid-botao {
+  @apply grid grid-cols-2 gap-10;
+}
+.conheca-je__quiz__grid-placar {
+  @apply grid grid-cols-11;
+}
+.conheca-je__quiz__grid-placar-acertos {
+  @apply col-span-4 md:col-span-3;
+}
+.conheca-je__quiz__grid-placar-erros {
+  @apply col-span-4 md:col-span-3;
+}
+.conheca-je__quiz__grid-placar-contador {
+  @apply col-span-3 md:col-span-5;
+}
+.conheca-je__quiz__grid-glossario {
+  @apply grid grid-flow-col auto-cols-auto gap-4;
+}
+.conheca-je__perguntas {
+  @apply space-y-4;
+}
+.conheca-je__perguntas__alinhar {
+  @apply h-auto;
+}
+.conheca-je__perguntas__alinhar-centro {
+  @apply flex justify-center items-start max-w-4xl mx-auto md:justify-start items-start max-w-4xl mx-auto;
+}
+.conheca-je__perguntas__alinhar-entre {
+  @apply flex items-center justify-between;
+}
+.conheca-je__perguntas__alinhar-conteudo {
+  @apply p-4 border-t;
+}
+.conheca-je__perguntas__fonte-titulo {
+  @apply text-center  rounded-full p-3  text-slate-900 text-2xl mb-3   bg-[#00FF5A] w-full md:text-3xl md:w-1/2;
+}
+.conheca-je__perguntas__fonte-subtitulo {
+  @apply font-semibold text-xl text-green-600 md:text-2xl;
+}
+.conheca-je__perguntas__box-tamanho {
+  @apply max-w-2xl mx-auto;
+}
+.conheca-je__perguntas__box-borda {
+  @apply bg-black;
+}
+.conheca-je__perguntas__box-borda2 {
+  @apply border-2 border-gray-300 bg-white hover:bg-green-500 hover:text-white;
+}
+.conheca-je__playlists__fonte-titulo {
+  @apply text-center font-bold text-5xl bg-[#15FEF8] w-full mb-4 p-4 xl:w-1/3;
+}
+.conheca-je__playlists__fonte-subtitulo {
+  @apply text-center font-bold text-4xl text-white w-full;
+}
+.conheca-je__playlists__fonte-links {
+  @apply text-center text-white text-2xl font-bold p-4 hover:bg-[#D9D9D933] xl:text-lg sm:text-start;
+}
+.conheca-je__playlists__bg {
+  @apply bg-black mt-20 pt-20 pb-20;
+}
+.conheca-je__playlists__alinhar {
+  @apply h-auto;
+}
+.conheca-je__playlists__alinhar-titulo {
+  @apply p-4 grid justify-items-center xl:justify-items-start;
+}
+.conheca-je__playlists__alinhar-entre {
+  @apply flex  items-center justify-between sm:space-x-4 sm:justify-normal;
+}
+.conheca-je__playlists__alinhar-frente {
+  @apply relative top-[5px] left-[5px];
+}
+.conheca-je__playlists__alinhar-links {
+  @apply p-4 font-bold text-center text-2xl hover:text-sky-500;
+}
+.conheca-je__playlists__alinhar-comeco {
+  @apply flex justify-self-start;
+}
+.conheca-je__playlists__box {
+  @apply grid  grid-cols-1 gap-6  xl:grid-cols-3 gap-6 xl:mx-6;
+}
+.conheca-je__playlists__box-grid {
+  @apply grid  grid-cols-1 gap-6;
+  @apply pb-10;
+}
+.conheca-je__playlists__box-tamanho {
+  @apply mx-10;
+}
+.conheca-je__playlists__box-tamanho-iframe {
+  @apply h-96;
+}
+.conheca-je__playlists__box-borda {
+  @apply bg-[#15fef8];
+}
+.conheca-je__playlists__box-borda2 {
+  @apply border-2 border-gray-300 bg-white p-2;
+}
+.conheca-je__historia .item2 {
+  @apply pb-2;
+}
+.conheca-je__historia__bg {
+  @apply bg-[#15FEF8] bg-[url("../../src/fonts/fundo.png")];
+}
+.conheca-je__historia__alinhar {
+  @apply h-auto;
+}
+.conheca-je__historia__alinhar-conteudo {
+  @apply py-10 pt-10;
+}
+.conheca-je__historia__alinhar-grid {
+  @apply grid grid-cols-1 gap-6 xl:grid-cols-2 lg:mx-6 py-20;
+}
+.conheca-je__historia__alinhar-entre {
+  @apply flex items-center justify-between;
+}
+.conheca-je__historia__alinhar-centro {
+  @apply flex  justify-center items-start mx-auto;
+}
+.conheca-je__historia__alinhar-inicio {
+  @apply flex  justify-start items-start max-w-4xl mx-auto;
+}
+.conheca-je__historia__alinhar-subtitulo {
+  @apply grid justify-items-center xl:justify-items-start;
+}
+.conheca-je__historia__fonte-titulo {
+  @apply text-5xl text-center font-bold pt-2 px-4;
+}
+.conheca-je__historia__fonte-titulo-timeline {
+  @apply text-5xl  font-bold  text-yellow-500 mb-6;
+}
+.conheca-je__historia__fonte-subtitulo {
+  @apply text-5xl  font-bold  px-3;
+}
+.conheca-je__historia__fonte-topicos {
+  @apply text-2xl  font-bold  px-3 sm:text-3xl;
+}
+.conheca-je__historia__fonte-topicos2 {
+  @apply w-full font-bold text-center  rounded-full p-4  text-slate-900 text-4xl bg-[#FFC700] lg:w-3/5;
+}
+.conheca-je__historia__fonte-conteudo {
+  @apply text-yellow-500;
+}
+.conheca-je__historia__box-space {
+  @apply space-y-6;
+}
+.conheca-je__historia__box-tamanho {
+  @apply max-w-2xl mx-auto;
+}
+.conheca-je__historia__box-borda {
+  @apply bg-black max-w-fit;
+}
+.conheca-je__historia__box-borda1 {
+  @apply relative -left-2 -top-2 bg-white;
+}
+.conheca-je__historia__box-borda2 {
+  @apply relative top-[5px] left-[5px] bg-[15FEF8] border-2 border-black;
+}
+.conheca-je__historia__conteudo {
+  @apply w-full py-6  mt-6 xl:w-3/5;
+}
+.conheca-je__historia__conteudo .tabs2 {
+  @apply hidden;
+}
+.conheca-je__historia__conteudo .tabs2--ativo {
+  @apply block;
+}
+.conheca-je__historia__conteudo .tabs2__ano {
+  @apply text-5xl font-bold p-10;
+}
+.conheca-je__historia__conteudo .lista {
+  @apply flex flex-row gap-6 border-[#F1EEEE] border-t-[.5px] border-b-[.5px] py-4 px-10 overflow-x-scroll md:overflow-auto;
+}
+.conheca-je__historia__conteudo .link {
+  @apply flex w-max justify-center items-center bg-white rounded-3xl text-[#41934B] py-2 px-6 hover:bg-[#41934B] hover:text-[#ecfcef];
+}
+.conheca-je__historia__conteudo .link--ativo {
+  @apply bg-white text-[#ecfcef];
+}
+.conheca-je__historia__conteudo .tab {
+  @apply p-10 hidden text-xl text-[#081326];
+}
+.conheca-je__historia__conteudo .tab--ativo {
+  @apply block;
+}
+.conheca-je__historia__conteudo .tab p {
+  @apply leading-7 mb-4;
+}
+.conheca-je__historia__conteudo .tab h3 {
+  @apply text-3xl font-bold mb-5;
+}
+.conheca-je__historia__conteudo .tab h4 {
+  @apply text-2xl font-bold mb-5;
+}
+.conheca-je__historia__conteudo .tab .file-pdf, .conheca-je__historia__conteudo .tab .file-vid {
+  @apply flex before:content-[""] before:block before:w-[25px] before:h-[25px] before:mr-2;
+}
+.conheca-je__historia__conteudo .tab .file-pdf {
+  @apply before:bg-[url:var(--icone-pdf)];
+}
+.conheca-je__historia__conteudo .tab .file-vid {
+  @apply before:bg-[url:var(--icone-play)];
+}
+.conheca-je__historia__conteudo .tab a {
+  @apply underline hover:no-underline;
+}
+.conheca-je__historia__conteudo .tab ul {
+  @apply list-disc ml-4;
+}
+.conheca-je__historia__conteudo .tab li {
+  @apply my-2;
+}
+.conheca-je__historia__conteudo .tab .painel-fotos {
+  @apply grid grid-cols-3 md:grid-cols-5 gap-4;
+}
+.conheca-je__historia__conteudo .tab2 {
+  @apply p-10 hidden text-xl text-[#081326];
+}
+.conheca-je__historia__conteudo .tab2--ativo {
+  @apply block;
+}
+.conheca-je__historia__conteudo .tab2 p {
+  @apply leading-7 mb-4;
+}
+.conheca-je__historia__conteudo .tab2 h3 {
+  @apply text-3xl font-bold mb-5;
+}
+.conheca-je__historia__conteudo .tab2 h4 {
+  @apply text-2xl font-bold mb-5;
+}
+.conheca-je__historia__conteudo .tab2 .file-pdf, .conheca-je__historia__conteudo .tab2 .file-vid {
+  @apply flex before:content-[""] before:block before:w-[25px] before:h-[25px] before:mr-2;
+}
+.conheca-je__historia__conteudo .tab2 .file-pdf {
+  @apply before:bg-[url:var(--icone-pdf)];
+}
+.conheca-je__historia__conteudo .tab2 .file-vid {
+  @apply before:bg-[url:var(--icone-play)];
+}
+.conheca-je__historia__conteudo .tab2 a {
+  @apply underline hover:no-underline;
+}
+.conheca-je__historia__conteudo .tab2 ul {
+  @apply list-disc ml-4;
+}
+.conheca-je__historia__conteudo .tab2 li {
+  @apply my-2;
+}
+.conheca-je__historia__conteudo .tab2 .painel-fotos {
+  @apply grid grid-cols-3 md:grid-cols-5 gap-4;
+}
+.conheca-je__historia__regioes {
+  @apply flex flex-row justify-center mt-6;
+  @apply bg-white rounded-3xl;
+}
+.conheca-je__historia__regioes--caixa {
+  @apply h-min w-full;
+  @apply overflow-y-hidden whitespace-nowrap  max-h-[1150px] sm:max-h-[900px] xl:max-h-[800px];
+}
+.conheca-je__historia__regioes--caixa2 {
+  @apply box-border h-[362px] w-full p-4 border-2 bg-[#D99CD533] rounded-3xl   grid grid-rows-3;
+}
+.conheca-je__historia__posicao-informacao {
+  @apply my-auto  p-2 bg-[#163570] rounded-r-3xl  sm:p-10 sm:py-20;
+}
+.conheca-je__historia__posicao-container {
+  @apply p-32 ml-16;
+}
+.conheca-je__historia__posicao-container-infos {
+  @apply p-24;
+}
+.conheca-je__historia__tabela {
+  @apply rounded-xl overflow-auto;
+}
+.conheca-je__historia__tabela-titulo {
+  @apply bg-slate-600  overflow-hidden my-8;
+}
+.conheca-je__historia__tabela-titulo-fonte {
+  @apply border-b  font-medium py-3 text-white  text-center;
+}
+.conheca-je__historia__tabela-estilo {
+  @apply border-collapse table-auto w-full text-sm;
+}
+.conheca-je__historia__tabela-corpo {
+  @apply bg-white dark:bg-slate-800;
+}
+.conheca-je__historia__tabela-corpo-fonte {
+  @apply border-b border-slate-100 p-3  text-slate-500 text-center;
+}
+.conheca-je__90anos__hidden {
+  @apply hidden lg:block;
+}
+.conheca-je__90anos__tamanho-titulo {
+  @apply max-w-lg mx-auto lg:mx-0;
+}
+.conheca-je__90anos__fonte-titulo {
+  @apply text-5xl text-center font-bold p-3;
+}
+.conheca-je__90anos__estilo-titulo {
+  @apply bg-yellow-500;
+  -webkit-clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0 99%, 0 50%);
+          clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0 99%, 0 50%);
+}
+.conheca-je__90anos__grid {
+  @apply grid lg:grid-cols-5 gap-6;
+  @apply 2xl:mx-20;
+}
+.conheca-je__90anos__imagem-90anos {
+  @apply flex justify-center lg:justify-end p-5;
+}
+.conheca-je__calendario__container {
+  @apply grid grid-cols-1 lg:grid-cols-3;
+}
+.conheca-je__calendario__tamanho {
+  @apply max-w-screen-lg mx-auto p-4;
+}
+.conheca-je__calendario__header-space {
+  @apply flex justify-between items-center bg-white p-4 shadow-md mb-4;
+}
+.conheca-je__calendario__header-fonte {
+  @apply text-3xl font-bold;
+}
+.conheca-je__92anos__bg {
+  @apply bg-yellow-400;
+}
+.conheca-je__92anos__grid-span {
+  @apply col-span-2;
+}
+.conheca-je__92anos__grid-superior {
+  @apply grid grid-cols-3 gap-4;
+  @apply 2xl:mx-20;
+}
+.conheca-je__92anos__grid-inferior {
+  @apply grid grid-cols-3 gap-8;
+  @apply 2xl:mx-20;
+}
+.conheca-je__92anos__fonte-titulo {
+  @apply text-6xl text-center text-white bg-[#1e3c9a] my-2 p-2 max-w-fit mx-auto;
+}
+.conheca-je__92anos__fonte-subtitulo {
+  @apply text-2xl font-bold;
+}
+
+@layer components {
+  .accordion-header:hover .conheca-je__perguntas__fonte-subtitulo {
+    color: black;
+  }
+  .accordion-header.active .conheca-je__perguntas__fonte-subtitulo {
+    color: black;
+  }
+  .accordion-header {
+    @apply py-4 px-6 cursor-pointer;
+  }
+  .accordion-header.active i {
+    @apply transition ease-in-out duration-300;
+    transform: rotateX(180deg);
+  }
+  .accordion-body {
+    @apply max-h-0 overflow-hidden transition-all duration-200 ease-out;
+  }
+  .accordion-header.active + .accordion-body {
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+}/*# sourceMappingURL=main.css.map */
