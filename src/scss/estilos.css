@@ -127,6 +127,12 @@
   background-position: 110% -10%;
 }
 
+@media screen and (max-width: 1200px) {
+  #bg-amarelo{
+    background-color:  #fac60e ;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   #calendario-bg {
     display: block;
@@ -164,27 +170,10 @@
     background-position: top left, bottom right;
   }
 
-
-
-  /* .rolar-up,
-  .rolar-down {
-
-    right: 20px;
-   
-    bottom: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-    z-index: 9999;
+  #bg-amarelo {
+    background-image: url('../fonts/bg-amarelo.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 90% ;
   }
-
-  .rolar-up:hover,
-  .rolar-down:hover {
-    background-color: #555;
-  } */
 
 }

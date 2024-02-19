@@ -7,10 +7,10 @@ const titulos = [
 ];
 
 const subtitulos = [
-  'Recursos Ordinários (ROs) e Recursos Especiais Eleitorais (Respes) são examinados com frequência pelo Plenário do Tribunal Superior Eleitoral (TSE). Eles são propostos a partir da publicação das decisões (acórdãos) proferidas pelos Tribunais Regionais Eleitorais (TREs). Apesar de apresentarem semelhanças na tramitação, as duas classes processuais trazem diferenças importantes quanto ao conteúdo do assunto de que tratam.',
-  'Nesta quinta-feira (21), o Portal do Tribunal Superior Eleitoral (TSE) começa a publicar a série de reportagens  "TSE Explica", que tem o objetivo de esclarecer dúvidas de eleitores, candidatos e jornalistas sobre os mais diversos temas ligados ao processo eleitoral. Até a semana que vem, a temática abordada será "classes processuais", começando pelo direito de resposta, muito usado no período das eleições contra alegações feitas por adversários.',
-  'O Recurso Contra Expedição de Diploma (RCED) pode ser proposto nos casos de inelegibilidade superveniente – que surge após o registro de candidatura – ou de natureza constitucional. O recurso também pode ser ajuizado nas hipóteses de falta de condição de elegibilidade de quem concorre a uma eleição.',
-  'Durante a campanha eleitoral, qualquer partido político, coligação, federação partidária, candidata e candidato e o Ministério Público Eleitoral (MP Eleitoral) podem apresentar representações contra a propaganda eleitoral irregular (inclusive que contenham notícias falsas e desinformação). Nesse período de disputa política, as representações proliferam, e, inclusive, tramitam de maneira preferencial em relação aos demais processos que dão entrada na Justiça Eleitoral.',
+  'Recursos jurídicos são acionados a partir da situação eleitoral de cada caso concreto',
+  'Pedidos, que estão previstos em lei e cabem para afirmação caluniosa, difamatória, injuriosa ou sabidamente inverídica',
+  'Recurso é cabível em caso de inelegibilidade superveniente',
+  'Ação ajuizada contra propagação de notícias falsas cresceu muito na Justiça Eleitoral',
   // Adicione mais subtítulos conforme necessário
 ];
 

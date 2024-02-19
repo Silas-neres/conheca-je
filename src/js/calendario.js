@@ -3,9 +3,9 @@
  let clicked = null ;
  
  let predefinedEvents = [
-   { date: '3/15/2022', data: '15 DE MARÇO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
-   { date: '2/20/2022', data: '20 DE FEVEREIRO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
-   { date: '1/14/2022', data: '14 DE JANEIRO DE 2022', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
+   { date: '10/15/2023', data: '15 DE OUTUBRO DE 2023', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
+   { date: '11/20/2023', data: '20 DE NOVEMBRO DE 2023', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
+   { date: '12/14/2023', data: '14 DE DEZEMBRO DE 2023', title: 'LOCAL: TSE', acao: 'Arrecadação de alimentos especiais para transplantados de medula óssea – etapa da Campanha "90 dias solidários"', detalhes: "Ação realizada em parceria com a HATMO, com encerramento em 29 de julho" },
    // Adicione mais eventos predefinidos conforme necessário
  ];
 
@@ -18,6 +18,7 @@
 
  //funções
  function openModal(date) {
+
    clicked = date;
    const eventDay = predefinedEvents.find((event) => event.date === clicked);
 
@@ -28,19 +29,31 @@
                                   <div>${eventDay.acao}</div><br>
                                   <h2 class="font-bold text-xl">DETALHES</h2>
                                   <div>${eventDay.detalhes}</div><br>`;
-     eventDetailsDiv.style.display = 'block';
-     backDrop.style.display = 'block';
+
    }
 
-
+   eventDetailsDiv.style.display = 'block';
    backDrop.style.display = 'block';
+
+
  }
 
  //função load() será chamada quando a pagina carregar:
  function load() {
-   const date = new Date(2022, 0, 1); // Inicia em janeiro de 2022
+  const date = new Date(2023, 11, 14); // Inicia em outubro de 2023
+  const today = new Date(); // Data atual
 
 
+
+
+  // Verifica se há um evento na data atual
+  const todayString = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+  const eventToday = predefinedEvents.find((event) => event.date === todayString);
+
+  // Se houver um evento hoje, abre o modal automaticamente
+  if (eventToday) {
+    openModal(todayString);
+  }
    
    //mudar titulo do mês:
    if (nav !== 0) {
@@ -109,16 +122,13 @@
 
      calendar.appendChild(dayS);
    }
+
+   if (year === 2023 && month === 11 && day === 14) {
+    openModal('12/14/2023');
+   }
  }
 
- function closeModal() {
-   newEvent.style.display = 'none';
-   eventDetailsDiv.style.display = 'none'; // Oculta a div de detalhes do evento
-   backDrop.style.display = 'none';
-   eventTitleInput.value = '';
-   clicked = null;
-   load();
- }
+
 
  // botões
  function buttons() {
@@ -132,9 +142,7 @@
      load();
    });
 
-   document.getElementById('cancelButton').addEventListener('click', () => closeModal());
 
-   document.getElementById('closeButton').addEventListener('click', () => closeModal());
  }
  buttons();
  load();

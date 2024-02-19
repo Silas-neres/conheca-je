@@ -3,6 +3,7 @@
     &__bg{
         @apply bg-[#FAC72C];
         clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+        @apply top-[-300px];
     }
     &__grid{
         &-span{

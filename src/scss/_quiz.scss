@@ -92,7 +92,7 @@
         }
 
         &-botao{
-            @apply rounded-full bg-white shadow-lg p-2 text-xl ;
+            @apply rounded-full bg-white hover:bg-gray-200 shadow-lg p-2 text-xl ;
         }
 
 
@@ -125,7 +125,7 @@
         }
 
         &-section{
-            @apply bg-no-repeat pt-[100px] xl:py-[260px];
+            @apply bg-no-repeat py-[100px] xl:pb-[120px];
         }
     
     }

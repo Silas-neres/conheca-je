@@ -119,12 +119,13 @@
         
         @apply flex flex-row justify-center mt-6 ;
         @apply bg-white rounded-3xl ;
+        @apply h-fit;
        
 
         &--caixa {
 
-            @apply  h-min w-full      ;
-            @apply  overflow-y-hidden whitespace-nowrap  max-h-[1150px] sm:max-h-[900px] xl:max-h-[800px];
+            @apply   w-full ;
+            @apply  overflow-y-hidden whitespace-nowrap  max-h-[570px];
         }
 
         &--caixa2 {
@@ -136,7 +137,8 @@
     &__posicao{
 
         &-informacao{
-            @apply  my-auto  p-2 bg-[#163570] rounded-r-3xl  sm:p-10 sm:py-20 ;
+            @apply  my-auto  p-2 bg-[#163570] rounded-r-3xl sm:p-10 sm:py-20 ;
+           
         }
 
         &-container{
