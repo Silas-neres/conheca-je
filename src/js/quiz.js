@@ -154,54 +154,70 @@ var placar = 0;
 
 
 function mostrarPergunta() {
+
   var pergunta = perguntas[numeroPergunta];
-  document.getElementById('pergunta').textContent = pergunta.pergunta;
-  document.getElementById('respostaA').textContent = pergunta.respostas.a;
-  document.getElementById('respostaB').textContent = pergunta.respostas.b;
+
+  setTimeout(function () {
+    document.getElementById('pergunta').textContent = pergunta.pergunta;
+    document.getElementById('pergunta').classList.add('slide-in');
+    document.getElementById('respostaA').textContent = pergunta.respostas.a;
+    document.getElementById('respostaA').classList.add('slide-in');
+    document.getElementById('respostaB').textContent = pergunta.respostas.b;
+    document.getElementById('respostaB').classList.add('slide-in');
+    // Adicionar a classe de animação após um atraso de 100ms
+    
+  }, 300);
+
+
 }
+
+
 
 function verificarResposta(resposta) {
   var pergunta = perguntas[numeroPergunta];
+
 
   if (resposta == pergunta.respostaCorreta) {
 
     acertos++;
     // Exibir o modal com a explicação
-   
+
     document.getElementById('resposta').textContent = 'Acertou';
     document.getElementById('resposta').classList.remove('errou');
     document.getElementById('resposta').classList.add('acertou');
     document.getElementById('explicacao').textContent = pergunta.explicacao;
     document.getElementById('myModal').style.display = 'block';
-    
+
   } else {
     erros++;
-   
+
     document.getElementById('resposta').textContent = 'Errou';
     document.getElementById('resposta').classList.remove('acertou');
     document.getElementById('resposta').classList.add('errou');
-    document.getElementById('explicacao').textContent =  pergunta.explicacao;   
+    document.getElementById('explicacao').textContent = pergunta.explicacao;
     document.getElementById('myModal').style.display = 'block';
   }
 
-  numeroPergunta++;
+
 
   if (numeroPergunta < perguntas.length) {
     mostrarPergunta();
   } else {
     // O quiz terminou
-    document.getElementById('pergunta').textContent = "Quiz terminado!";
+    if (erros == 0) {
+      document.getElementById('pergunta').textContent = "Parabéns, você zerou o quiz :)";
+    } else {
+      document.getElementById('pergunta').textContent = "Quiz terminado!";
+    }
     document.getElementById('respostaA').style.display = 'none';
     document.getElementById('respostaB').style.display = 'none';
 
   }
-
+  numeroPergunta++;
   document.getElementById('acertos').textContent = acertos;
   document.getElementById('erros').textContent = erros;
   document.getElementById('placar').textContent = erros + acertos;
 }
-
-
 
 
 function fecharModal() {
@@ -209,11 +225,17 @@ function fecharModal() {
   document.getElementById('myModal').style.display = 'none';
 
   // Avançar para a próxima pergunta ou finalizar o quiz
+
   if (numeroPergunta < perguntas.length) {
     mostrarPergunta();
   } else {
     // O quiz terminou
-    document.getElementById('pergunta').textContent = "Quiz terminado!";
+    if (erros == 0) {
+      document.getElementById('pergunta').textContent = "Parabéns, você zerou o quiz :)";
+    } else {
+      document.getElementById('pergunta').textContent = "Quiz terminado!";
+    }
+
     document.getElementById('respostaA').style.display = 'none';
     document.getElementById('respostaB').style.display = 'none';
     // Reiniciar o quiz
@@ -223,16 +245,16 @@ function fecharModal() {
   }
 }
 
-document.getElementById('respostaA').addEventListener('click', function() {
-verificarResposta('a');
+document.getElementById('respostaA').addEventListener('click', function () {
+  verificarResposta('a');
 });
 
-document.getElementById('respostaB').addEventListener('click', function() {
-verificarResposta('b');
+document.getElementById('respostaB').addEventListener('click', function () {
+  verificarResposta('b');
 });
 
-document.getElementById('closeModal').addEventListener('click', function() {
-fecharModal();
+document.getElementById('closeModal').addEventListener('click', function () {
+  fecharModal();
 });
 
 

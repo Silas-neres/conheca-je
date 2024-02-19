@@ -41,12 +41,12 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
     &__fonte{
 
         &-titulo{
-           @apply text-[#000C79] font-semibold  text-3xl p-2 overflow-hidden	text-center ; 
+           @apply text-[#000C79] font-semibold  text-3xl p-2 overflow-hidden	text-center h-[120px] ; 
           
         }
 
         &-subtitulo {
-            @apply text-[#000C79]  text-lg mt-8 tracking-wide leading-loose p-2 overflow-hidden text-center	;
+            @apply text-[#000C79]  text-lg mt-2 tracking-wide leading-loose p-2 overflow-hidden text-center h-[120px]	;
            
         }
 
@@ -85,7 +85,7 @@ $linksvg: "data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' 
 
         &--caixa {
 
-            @apply box-border h-full   border-2 bg-[#B8FE43] rounded-3xl overflow-hidden sm:pr-2;
+            @apply box-border h-full   border-2 bg-[#B8FE43] rounded-3xl overflow-hidden max-h-[420px] sm:pr-2;
         }
 
         &--caixa2 {
